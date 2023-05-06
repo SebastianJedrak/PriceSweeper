@@ -5,7 +5,7 @@ const Img = styled.img`
 width:100%;
 height: 90vh;
 position: absolute;
-z-index: -100;
+z-index: -1;
 `
 
 export default function BackgroundImg () {
