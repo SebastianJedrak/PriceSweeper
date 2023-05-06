@@ -1,9 +1,11 @@
+import NavItem from "./NavItem";
+
 export default function Nav() {
   return (
     <nav>
-      <span>DealZ</span>
-      <span>About Us</span>
-      <span>Shops</span>
+      <NavItem text="DealZ"></NavItem>
+      <NavItem text="About Us"></NavItem>
+      <NavItem text="Shops"></NavItem>
     </nav>
   );
 }
