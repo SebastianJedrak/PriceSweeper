@@ -1,1 +1,3 @@
-export default function Logo () {}
+export default function Logo () {
+    return <h1>PriceSweeper</h1>
+}
