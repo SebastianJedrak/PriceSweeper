@@ -1,1 +1,5 @@
-export default function Header () {}
+import BackgroundImg from "./BackgroundImg"
+
+export default function Header () {
+    return <BackgroundImg />
+}
