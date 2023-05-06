@@ -1,13 +1,26 @@
-import styled from "styled-components"
-import backgroundImg from "../../img/main-header-img.png"
+import styled from "styled-components";
+import backgroundImg from "../../img/main-header-img.png";
+
+type Props = {
+    children?: React.ReactNode
+}
 
 const Img = styled.img`
-width:100%;
-height: 90vh;
-position: absolute;
-z-index: -1;
-`
+  width: 100%;
+  height: 90vh;
+  position: absolute;
+  z-index: -1;
+`;
 
-export default function BackgroundImg () {
-    return <Img src={backgroundImg} alt="header"/>
+const Container = styled.div`
+    height: 90vh;
+`;
+
+export default function BackgroundImg(props: Props) {
+  return (
+    <Container>
+      <Img src={backgroundImg} alt="header" />
+      {props.children}
+    </Container>
+  );
 }

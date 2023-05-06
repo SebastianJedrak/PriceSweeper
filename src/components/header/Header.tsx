@@ -6,10 +6,12 @@ import Search from "./Search";
 export default function Header() {
   return (
     <>
-      <BackgroundImg />
-    <Nav />
-    <Logo/>
-    <Search/>
+      <BackgroundImg>
+        {" "}
+        <Nav />
+        <Logo />
+        <Search />
+      </BackgroundImg>
     </>
   );
 }
