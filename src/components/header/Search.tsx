@@ -5,6 +5,7 @@ export default function Search() {
     <>
       <form action="">
         <input type="text" placeholder="Search" />
+        <Button />
       </form>
     </>
   );
