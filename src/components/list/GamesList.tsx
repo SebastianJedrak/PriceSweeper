@@ -1,14 +1,23 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import GameItem from "./GameItem";
 import { GamesListContext } from "../../ctx/GamesListProvider";
 
+const ITEM_PER_PAGE = 10;
 
 export default function GamesList() {
-  const gamesList = useContext(GamesListContext);
+  const gamesFullList = useContext(GamesListContext);
+
+  const [page, setPage] = useState<number>(1);
+  const gamesPage = gamesFullList.slice(
+    page * ITEM_PER_PAGE - ITEM_PER_PAGE,
+    page * ITEM_PER_PAGE
+  );
+
+  
 
   return (
     <>
-      {gamesList.map((game) => (
+      {gamesPage.map((game) => (
         <GameItem
           key={game.title}
           title={game.title}
