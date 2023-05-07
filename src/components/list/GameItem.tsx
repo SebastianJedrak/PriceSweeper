@@ -23,7 +23,6 @@ export default function GameItem(props: GameData) {
   const store = stores.filter((store) => {
     return store.storeID === props.storeID;
   });
-console.log(store);
 
   return (
     <Game>

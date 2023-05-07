@@ -24,7 +24,7 @@ export default function GamesList() {
     }
     getData();
   }, []);
-  console.log(gamesList);
+  
   return (
     <>
       {gamesList.map((game) => (
