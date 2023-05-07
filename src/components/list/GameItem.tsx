@@ -3,6 +3,7 @@ import { GameData } from "../../ctx/GamesListProvider";
 import Button from "../UI/Button";
 import { useContext } from "react";
 import { StoreContext } from "../../ctx/StoreProvider";
+import arrow from "../../img/keyboard_arrow_down.svg";
 
 const Game = styled.div`
   color: red;
@@ -13,6 +14,12 @@ const Game = styled.div`
 
   img {
     height: 32px;
+  }
+
+  .svg-icon {
+    background-image: url(${arrow});
+    height: 32px;
+    aspect-ratio: 1/1;
   }
 `;
 
@@ -27,6 +34,14 @@ export default function GameItem(props: GameData) {
   return (
     <Game>
       <img src={store[0].images.icon} alt={store[0].storeName} />
+      <div className="best-wrapper">
+        <p>BEST OFFER</p>
+        <p>{store[0].storeName}</p>
+      </div>
+      <div className="best-wrapper">
+        <p>More Shops</p>
+        <div className="svg-icon"></div>
+      </div>
       <div className="meta-wrapper">
         <p>{props.metacriticScore}</p>
         <a href={metacriticUrl} target="_blank" rel="noreferrer">
