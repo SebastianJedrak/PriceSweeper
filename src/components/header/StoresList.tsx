@@ -14,30 +14,29 @@ const Stores = styled.div`
   flex-wrap: wrap;
   margin: 64px;
   justify-content: center;
-`;
 
-const StoreItem = styled.div`
-  color: white;
-  margin: 16px 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
+  .store-item {
+    color: white;
+    margin: 16px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
 
-  img {
-    height: 64px;
-    width: 64px;
+    img {
+      height: 64px;
+      width: 64px;
+    }
+
+    p {
+      margin: 0;
+    }
   }
-
-  p {
-    margin: 0;
+  .button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
-`;
-
-const ButtonWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
 `;
 
 export default function StoresList() {
@@ -66,16 +65,17 @@ export default function StoresList() {
       <Stores>
         {stores.map((store: Store) => {
           return (
-            <StoreItem key={store.storeID}>
+            <div className="store-item" key={store.storeID}>
               <img src={store.images.logo} alt={store.storeName} />
               <p>{store.storeName}</p>
-            </StoreItem>
+            </div>
           );
         })}
+        <div className="button-wrapper">
+          {" "}
+          <Button text="All Stores" />
+        </div>
       </Stores>
-      <ButtonWrapper>
-        <Button text="All Stores"/>
-      </ButtonWrapper>
     </>
   );
 }
