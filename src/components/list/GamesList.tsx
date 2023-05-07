@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import GameItem from "./GameItem";
 import { GamesListContext } from "../../ctx/GamesListProvider";
+import Pagination from "./Pagination";
 
 const ITEM_PER_PAGE = 10;
 
@@ -13,7 +14,7 @@ export default function GamesList() {
     page * ITEM_PER_PAGE
   );
 
-  
+  const numberOfPages = Math.trunc(gamesFullList.length / 10);
 
   return (
     <>
@@ -29,6 +30,7 @@ export default function GamesList() {
           storeID={game.storeID}
         />
       ))}
+      <Pagination pages={numberOfPages}/>
     </>
   );
 }
