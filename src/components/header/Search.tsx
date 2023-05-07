@@ -12,6 +12,9 @@ export default function Search() {
     <>
       <SearchForm action="">
         <input type="text" placeholder="Search" />
+        <select>
+          <option>sortBy</option>
+        </select>
         <Button text="Search"/>
         <input type="checkbox" id="isOnSale" defaultChecked/>
         <label htmlFor="isOnSale">On Sale</label>
