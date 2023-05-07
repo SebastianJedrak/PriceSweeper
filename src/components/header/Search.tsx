@@ -13,7 +13,7 @@ export default function Search() {
       <SearchForm action="">
         <input type="text" placeholder="Search" />
         <Button />
-        <input type="checkbox" id="isOnSale" checked/>
+        <input type="checkbox" id="isOnSale" defaultChecked/>
         <label htmlFor="isOnSale">On Sale</label>
       </SearchForm>
     </>
