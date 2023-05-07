@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { GameData } from "./GamesList";
 import Button from "../UI/Button";
+import { useContext } from "react";
+import { StoreContext } from "../../ctx/StoreProvider";
 
 const Game = styled.div`
   color: red;
@@ -12,6 +14,10 @@ const Game = styled.div`
 
 export default function GameItem(props: GameData) {
   const metacriticUrl = `https://www.metacritic.com${props.metacriticLink}`;
+  const stores = useContext(StoreContext);
+  const store = stores.filter((store) => {
+    return store.storeID === props.storeID;
+  });
   return (
     <Game>
       <div className="meta-wrapper">

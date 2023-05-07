@@ -4,7 +4,7 @@ export type Store = {
   isActive: number;
   storeName: string;
   storeID: string;
-  images: { logo: string };
+  images: { logo: string; icon: string };
 };
 
 export const StoreContext = createContext<Store[]>([]);
@@ -12,7 +12,6 @@ export const StoreContext = createContext<Store[]>([]);
 export default function StoreProvider(props: { children: React.ReactNode }) {
   const [stores, setStores] = useState([]);
   const imgUrl = `https://www.cheapshark.com`;
-
   useEffect(() => {
     async function getData() {
       const response = await window.fetch(

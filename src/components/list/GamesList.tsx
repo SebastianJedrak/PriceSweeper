@@ -8,6 +8,7 @@ export type GameData = {
   salePrice: string;
   metacriticScore: string;
   metacriticLink: string;
+  storeID: string;
 };
 
 export default function GamesList() {
@@ -16,7 +17,7 @@ export default function GamesList() {
   useEffect(() => {
     async function getData() {
       const response = await window.fetch(
-        "https://www.cheapshark.com/api/1.0/deals?storeID=1&sortBy=recent"
+        "https://www.cheapshark.com/api/1.0/deals?sortBy=recent"
       );
       const data = await response.json();
       setGamesList(data);
@@ -35,6 +36,7 @@ export default function GamesList() {
           salePrice={game.salePrice}
           metacriticScore={game.metacriticScore}
           metacriticLink={game.metacriticLink}
+          storeID={game.storeID}
         />
       ))}
     </>
