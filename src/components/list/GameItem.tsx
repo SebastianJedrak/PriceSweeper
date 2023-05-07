@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { StoreContext } from "../../ctx/StoreProvider";
 import arrow from "../../img/keyboard_arrow_down.svg";
 
-const Game = styled.div`
+const Game = styled.li`
   color: red;
   display: flex;
   flex-direction: row;

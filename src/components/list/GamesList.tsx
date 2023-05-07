@@ -18,19 +18,23 @@ export default function GamesList() {
 
   return (
     <>
-      {gamesPage.map((game) => (
-        <GameItem
-          key={game.title}
-          title={game.title}
-          thumb={game.thumb}
-          normalPrice={game.normalPrice}
-          salePrice={game.salePrice}
-          metacriticScore={game.metacriticScore}
-          metacriticLink={game.metacriticLink}
-          storeID={game.storeID}
-        />
-      ))}
-      <Pagination pages={numberOfPages}/>
+      <ul>
+        {" "}
+        {gamesPage.map((game) => (
+          <GameItem
+            key={game.title}
+            title={game.title}
+            thumb={game.thumb}
+            normalPrice={game.normalPrice}
+            salePrice={game.salePrice}
+            metacriticScore={game.metacriticScore}
+            metacriticLink={game.metacriticLink}
+            storeID={game.storeID}
+          />
+        ))}
+      </ul>
+
+      <Pagination pages={numberOfPages} />
     </>
   );
 }
