@@ -1,13 +1,10 @@
 import styled from "styled-components";
-
-type Props = {
-  name: string;
-};
+import { GameData } from "./GamesList";
 
 const Game = styled.p`
   color: red;
 `;
 
-export default function GameItem(props: Props) {
-  return <Game>{props.name}</Game>;
+export default function GameItem(props: GameData) {
+  return <Game>{props.title}</Game>;
 }

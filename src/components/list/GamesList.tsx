@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import GameItem from "./GameItem";
 
+export type GameData = {
+  title: string;
+  thumb: string;
+};
+
 export default function GamesList() {
-  const [gamesList, setGamesList] = useState<{ title: string }[]>([
-    { title: "game1" },
-    { title: "game2" },
-  ]);
+  const [gamesList, setGamesList] = useState<GameData[]>([]);
 
   useEffect(() => {
     async function getData() {
@@ -13,15 +15,15 @@ export default function GamesList() {
         "https://www.cheapshark.com/api/1.0/deals?storeID=1&sortBy=recent"
       );
       const data = await response.json();
-      setGamesList(data)
+      setGamesList(data);
     }
     getData();
   }, []);
-
+  console.log(gamesList);
   return (
     <>
       {gamesList.map((game) => (
-        <GameItem key={game.title} name={game.title} />
+        <GameItem key={game.title} title={game.title} thumb={game.thumb}/>
       ))}
     </>
   );
