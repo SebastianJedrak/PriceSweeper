@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import GameItem from "./GameItem";
+import { GamesListContext } from "../../ctx/GamesListProvider";
 
 export type GameData = {
   title: string;
@@ -12,19 +13,8 @@ export type GameData = {
 };
 
 export default function GamesList() {
-  const [gamesList, setGamesList] = useState<GameData[]>([]);
+  const gamesList = useContext(GamesListContext);
 
-  useEffect(() => {
-    async function getData() {
-      const response = await window.fetch(
-        "https://www.cheapshark.com/api/1.0/deals?sortBy=recent"
-      );
-      const data = await response.json();
-      setGamesList(data);
-    }
-    getData();
-  }, []);
-  
   return (
     <>
       {gamesList.map((game) => (
