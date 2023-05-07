@@ -1,3 +1,7 @@
-export default function Button() {
-  return <button>Text</button>;
+type Props = {
+    text: string
+}
+
+export default function Button(props: Props) {
+  return <button>{props.text}</button>;
 }

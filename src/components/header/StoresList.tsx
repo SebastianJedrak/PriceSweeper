@@ -74,7 +74,7 @@ export default function StoresList() {
         })}
       </Stores>
       <ButtonWrapper>
-        <Button />
+        <Button text="All Stores"/>
       </ButtonWrapper>
     </>
   );
