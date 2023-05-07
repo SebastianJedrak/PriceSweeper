@@ -4,6 +4,10 @@ import GameItem from "./GameItem";
 export type GameData = {
   title: string;
   thumb: string;
+  normalPrice: string;
+  salePrice: string;
+  metacriticScore: string;
+  metacriticLink: string;
 };
 
 export default function GamesList() {
@@ -23,7 +27,15 @@ export default function GamesList() {
   return (
     <>
       {gamesList.map((game) => (
-        <GameItem key={game.title} title={game.title} thumb={game.thumb}/>
+        <GameItem
+          key={game.title}
+          title={game.title}
+          thumb={game.thumb}
+          normalPrice={game.normalPrice}
+          salePrice={game.salePrice}
+          metacriticScore={game.metacriticScore}
+          metacriticLink={game.metacriticLink}
+        />
       ))}
     </>
   );
