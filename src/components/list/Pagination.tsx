@@ -1,19 +1,21 @@
-import { useState } from "react";
+import styled from "styled-components";
 
 type Props = {
   pages: number;
-  children?: React.ReactNode
 };
 
+const PaginationWrapper = styled.div`
+text-align:center;
+`;
+
 export default function Pagination(props: Props) {
-const [pagesArray, setPagesArray] = useState()
-
-
   return (
-    <>
+    <PaginationWrapper>
       <span>&laquo;</span>
-      <span>{props.pages}</span>
+      {[...Array(props.pages)].map((_, i) => {
+        return <span>{i + 1}</span>;
+      })}
       <span>&raquo;</span>
-    </>
+    </PaginationWrapper>
   );
 }
