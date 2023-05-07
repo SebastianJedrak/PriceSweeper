@@ -4,6 +4,7 @@ import styled from "styled-components";
 type Store = {
   isActive: number;
   storeName: string;
+  storeID: string
 };
 
 const StoreItem = styled.div`
@@ -22,13 +23,14 @@ export default function StoresList() {
       setStores(data.filter((store: Store) => store.isActive === 1));
     }
     getData();
+    console.log(stores);
   }, []);
 
   return (
     <>
       {stores.map((store: Store) => {
         return (
-          <StoreItem>
+          <StoreItem key={store.storeID}>
             <span>{store.storeName}</span>
           </StoreItem>
         );
