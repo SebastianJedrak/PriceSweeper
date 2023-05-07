@@ -1,13 +1,13 @@
 import { createContext, useEffect, useState } from "react";
 
-type Store = {
+export type Store = {
   isActive: number;
   storeName: string;
   storeID: string;
   images: { logo: string };
 };
 
-const StoreContext = createContext<Store[]>([]);
+export const StoreContext = createContext<Store[]>([]);
 
 export default function StoreProvider(props: { children: React.ReactNode }) {
   const [stores, setStores] = useState([]);

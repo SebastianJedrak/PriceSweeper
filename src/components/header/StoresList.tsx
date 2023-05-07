@@ -1,13 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import Button from "../UI/Button";
-
-type Store = {
-  isActive: number;
-  storeName: string;
-  storeID: string;
-  images: { logo: string };
-};
+import { Store, StoreContext } from "../../ctx/StoreProvider";
 
 const Stores = styled.div`
   display: flex;
@@ -36,28 +30,11 @@ const Stores = styled.div`
 `;
 
 export default function StoresList() {
-  const [stores, setStores] = useState([]);
-  const imgUrl = `https://www.cheapshark.com`;
 
-  useEffect(() => {
-    async function getData() {
-      const response = await window.fetch(
-        "https://www.cheapshark.com/api/1.0/stores"
-      );
-      const data = await response.json();
-      const filteredData = data.filter((store: Store) => store.isActive === 1);
-      const transformedData = filteredData.map((store: Store) => {
-        store.images.logo = `${imgUrl}${store.images.logo}`;
-        return store;
-      });
-      setStores(transformedData);
-    }
-    getData();
-  }, [imgUrl]);
+  const stores = useContext(StoreContext)
 
   return (
     <>
-      {" "}
       <Stores>
         {stores.map((store: Store) => {
           return (
@@ -68,7 +45,6 @@ export default function StoresList() {
           );
         })}
         <div className="button-wrapper">
-          {" "}
           <Button text="All Stores" />
         </div>
       </Stores>
