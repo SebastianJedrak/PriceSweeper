@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { GameData } from "./GamesList";
+import { GameData } from "../../ctx/GamesListProvider";
 import Button from "../UI/Button";
 import { useContext } from "react";
 import { StoreContext } from "../../ctx/StoreProvider";
