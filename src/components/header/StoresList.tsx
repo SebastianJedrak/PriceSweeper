@@ -27,10 +27,6 @@ const Stores = styled.div`
       height: 64px;
       width: 64px;
     }
-
-    p {
-      margin: 0;
-    }
   }
   .button-wrapper {
     width: 100%;
