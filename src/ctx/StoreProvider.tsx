@@ -21,6 +21,7 @@ export default function StoreProvider(props: { children: React.ReactNode }) {
       const filteredData = data.filter((store: Store) => store.isActive === 1);
       const transformedData = filteredData.map((store: Store) => {
         store.images.logo = `${imgUrl}${store.images.logo}`;
+        store.images.icon = `${imgUrl}${store.images.icon}`;
         return store;
       });
       setStores(transformedData);

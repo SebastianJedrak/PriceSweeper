@@ -10,16 +10,24 @@ const Game = styled.div`
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
+
+  img {
+    height: 32px;
+  }
 `;
 
 export default function GameItem(props: GameData) {
   const metacriticUrl = `https://www.metacritic.com${props.metacriticLink}`;
   const stores = useContext(StoreContext);
+
   const store = stores.filter((store) => {
     return store.storeID === props.storeID;
   });
+console.log(store);
+
   return (
     <Game>
+      <img src={store[0].images.icon} alt={store[0].storeName} />
       <div className="meta-wrapper">
         <p>{props.metacriticScore}</p>
         <a href={metacriticUrl} target="_blank" rel="noreferrer">
