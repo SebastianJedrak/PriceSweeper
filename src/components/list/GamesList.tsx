@@ -2,8 +2,13 @@ import { useContext, useState } from "react";
 import GameItem from "./GameItem";
 import { GamesListContext } from "../../ctx/GamesListProvider";
 import Pagination from "./Pagination";
+import styled from "styled-components";
 
 const ITEM_PER_PAGE = 10;
+
+const Ul = styled.ul`
+  margin: 0 auto;
+`
 
 export default function GamesList() {
   const gamesFullList = useContext(GamesListContext);
@@ -18,7 +23,7 @@ export default function GamesList() {
 
   return (
     <>
-      <ul>
+      <Ul>
         {" "}
         {gamesPage.map((game) => (
           <GameItem
@@ -32,7 +37,7 @@ export default function GamesList() {
             storeID={game.storeID}
           />
         ))}
-      </ul>
+      </Ul>
 
       <Pagination pages={numberOfPages} />
     </>

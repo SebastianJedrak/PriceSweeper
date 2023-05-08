@@ -8,10 +8,9 @@ const Game = styled.li`
   color: red;
   display: flex;
   flex-direction: row;
-  width: 100%;
-  /* justify-content: space-around; */
   align-items: center;
 
+  //Card
   background-color: darkgray;
   border: 1px solid gray;
   border-radius: 5px;
