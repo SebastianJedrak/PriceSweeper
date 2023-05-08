@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { StoreContext } from "../../ctx/StoreProvider";
 
 const Game = styled.li`
-  color: red;
+  color: black;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -33,6 +33,10 @@ const Game = styled.li`
   Button {
     margin-left:auto
   }
+
+  .prices-wrapper {
+    width: 38px;
+  }
 `;
 
 export default function GameItem(props: GameData) {
@@ -52,10 +56,7 @@ export default function GameItem(props: GameData) {
           <p>BEST OFFER</p>
           <p>{store[0].storeName}</p>
         </div>
-        <div className="best-wrapper">
-          <p>More Shops</p>
-          <p>&#x2304;</p>
-        </div>
+          <p>More Shops &#11167;</p>
         <div className="meta-wrapper">
           <p>{props.metacriticScore}</p>
           <a href={metacriticUrl} target="_blank" rel="noreferrer">
