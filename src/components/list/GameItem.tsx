@@ -35,7 +35,8 @@ const Game = styled.li`
   }
 
   .prices-wrapper {
-    width: 38px;
+    width: 68px;
+    text-align: center;
   }
 `;
 
@@ -64,8 +65,8 @@ export default function GameItem(props: GameData) {
           </a>
         </div>
         <div className="prices-wrapper">
-          <p>{props.normalPrice}</p>
-          <p>{props.salePrice}</p>
+          <p>{props.normalPrice}&#x24;</p>
+          <p>{props.salePrice}&#x24;</p>
         </div>
         <img className="thumb" src={props.thumb} alt={props.title} />
         <span>{props.title}</span>
