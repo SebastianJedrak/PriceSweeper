@@ -10,8 +10,10 @@ export type GameData = {
   storeID: string;
 };
 
-
-export const GamesListContext = createContext<{gamesList: GameData[]}>({ gamesList: [] });
+export const GamesListContext = createContext<{
+  gamesList: GameData[];
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+}>({ gamesList: [], setSearch: () => {} });
 
 export default function GamesListProvider(props: {
   children: React.ReactNode;
@@ -31,7 +33,7 @@ export default function GamesListProvider(props: {
   }, [search]);
 
   return (
-    <GamesListContext.Provider value={{gamesList}}>
+    <GamesListContext.Provider value={{ gamesList, setSearch }}>
       {props.children}
     </GamesListContext.Provider>
   );
