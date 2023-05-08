@@ -19,7 +19,7 @@ const Select = styled.div`
 `;
 
 export default function GamesList() {
-  const { gamesList } = useContext(GamesListContext);
+  const { gamesList, sortBy } = useContext(GamesListContext);
 
   const [page, setPage] = useState<number>(1);
   const gamesPage = gamesList.slice(
@@ -35,7 +35,7 @@ export default function GamesList() {
   return (
     <section>
       <Select>
-        <select>
+        <select value={sortBy}>
           <option value="Title">Title</option>
           <option value="Price">Price</option>
           <option value="Store">Store</option>

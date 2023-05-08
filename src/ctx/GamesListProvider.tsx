@@ -15,7 +15,8 @@ export const GamesListContext = createContext<{
   gamesList: GameData[];
   setSearch: React.Dispatch<React.SetStateAction<string>>;
   setSortBy: React.Dispatch<React.SetStateAction<string>>;
-}>({ gamesList: [], setSearch: () => {}, setSortBy: () => {} });
+  sortBy: string;
+}>({ gamesList: [], setSearch: () => {}, setSortBy: () => {}, sortBy: "" });
 
 export default function GamesListProvider(props: {
   children: React.ReactNode;
@@ -23,7 +24,7 @@ export default function GamesListProvider(props: {
   const [gamesList, setGamesList] = useState<GameData[]>([]);
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("recent");
-  
+
   // Metacritic, recent, Store, Price, Title
 
   useEffect(() => {
@@ -39,7 +40,9 @@ export default function GamesListProvider(props: {
   }, [search, sortBy]);
 
   return (
-    <GamesListContext.Provider value={{ gamesList, setSearch, setSortBy }}>
+    <GamesListContext.Provider
+      value={{ gamesList, setSearch, setSortBy, sortBy }}
+    >
       {props.children}
     </GamesListContext.Provider>
   );
