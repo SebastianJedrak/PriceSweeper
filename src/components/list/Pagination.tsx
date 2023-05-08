@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 type Props = {
   pages: number;
-  onChangePage: (page: number) => void
+  onChangePage: (page: number) => void;
 };
 
 const PaginationWrapper = styled.div`
@@ -24,21 +24,41 @@ const PaginationWrapper = styled.div`
     width: auto;
   }
 
-  span, i{
-    margin: 0 5px;
+  span,
+  i {
+    margin: 0 4px;
+    padding: 1px 6px;
+    cursor: pointer;
   }
 `;
 
 export default function Pagination(props: Props) {
+  const leftArrowHandler = () => {
+    props.onChangePage(1);
+  };
+
+  const rightArrowHandler = () => {
+    props.onChangePage(props.pages);
+  };
+
+  const toPageHandler = (toPage: number) => {
+    props.onChangePage(toPage);
+  };
+
   return (
     <PaginationWrapper>
       <div className="pages">
-        {" "}
-        <i>&laquo;</i>
+        <i onClick={leftArrowHandler}>&laquo;</i>
+
         {[...Array(props.pages)].map((_, i) => {
-          return <span key={i + 1}>{i + 1}</span>;
+          return (
+            <span key={i + 1} onClick={toPageHandler.bind(_, i + 1)}>
+              {i + 1}
+            </span>
+          );
         })}
-        <i>&raquo;</i>
+
+        <i onClick={rightArrowHandler}>&raquo;</i>
       </div>
       <div className="dropdown">
         <label htmlFor="select">Items per page: </label>
