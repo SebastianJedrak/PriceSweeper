@@ -3,6 +3,7 @@ import GameItem from "./GameItem";
 import { GamesListContext } from "../../ctx/GamesListProvider";
 import Pagination from "./Pagination";
 import styled from "styled-components";
+import Button from "../UI/Button";
 
 const ITEM_PER_PAGE = 10;
 
@@ -11,11 +12,11 @@ const Ul = styled.ul`
 `;
 
 const Select = styled.div`
-  margin-left: 10px;
+  
   display: flex;
-  span {
-    margin-left: 10px;
-  }
+ select {
+  margin: 0 10px;
+ }
 `;
 
 export default function GamesList() {
@@ -46,7 +47,7 @@ export default function GamesList() {
           <option value="Store">Store</option>
           <option value="Metacritic">Rating</option>
         </select>
-        <span>Desc &#11167;</span>
+        <Button text="Desc &#11167;"></Button>
       </Select>
       <Ul>
         {" "}

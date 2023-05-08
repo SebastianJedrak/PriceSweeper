@@ -34,7 +34,7 @@ export default function StoresList() {
   const stores = useContext(StoreContext)
 
   return (
-    <>
+    <section>
       <Stores>
         {stores.map((store: Store) => {
           return (
@@ -48,6 +48,6 @@ export default function StoresList() {
           <Button text="All Stores" />
         </div>
       </Stores>
-    </>
+    </section>
   );
 }
