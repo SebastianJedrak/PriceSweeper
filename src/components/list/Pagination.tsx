@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 type Props = {
   pages: number;
+  onChangePage: (page: number) => void
 };
 
 const PaginationWrapper = styled.div`

@@ -8,7 +8,7 @@ export type GameData = {
   metacriticScore: string;
   metacriticLink: string;
   storeID: string;
-  gameID: string
+  gameID: string;
 };
 
 export const GamesListContext = createContext<{

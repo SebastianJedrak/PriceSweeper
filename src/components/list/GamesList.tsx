@@ -25,6 +25,10 @@ export default function GamesList() {
 
   const numberOfPages = Math.trunc(gamesList.length / 10);
 
+  const setPageHandler = (page: number) => {
+    setPage(page);
+  };
+
   return (
     <section>
       <Select>
@@ -47,7 +51,7 @@ export default function GamesList() {
         ))}
       </Ul>
 
-      <Pagination pages={numberOfPages} />
+      <Pagination pages={numberOfPages} onChangePage={setPageHandler}/>
     </section>
   );
 }
