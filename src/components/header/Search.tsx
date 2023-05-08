@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Button from "../UI/Button";
-import { useRef } from "react";
+import { useRef, useContext } from "react";
+import { GamesListContext } from "../../ctx/GamesListProvider";
 
 const SearchForm = styled.form`
   display: flex;
@@ -10,9 +11,10 @@ const SearchForm = styled.form`
 
 export default function Search() {
   const search = useRef<HTMLInputElement>(null);
+  const { setSearch } = useContext(GamesListContext);
 
   const getSearchValue = () => {
-    console.log(search.current?.value);
+    setSearch(search.current!.value);
   };
 
   return (
