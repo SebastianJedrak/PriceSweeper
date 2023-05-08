@@ -5,18 +5,22 @@ type Props = {
 };
 
 const PaginationWrapper = styled.div`
-  display:grid;
-  grid-template-columns: 1/1/1;
-  
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  .pages{
+  margin: 0 10px;
+  .pages {
     grid-column: 2/3;
-    text-align:center;
+    grid-row: 1;
+    text-align: center;
+    width: 100%;
   }
 
-  .dropdown{
-    grid-column: 3/4;
-text-align: end;
+  .dropdown {
+    grid-column: 1/2;
+    grid-row: 1;
+    text-align: start;
+    width: auto;
   }
 `;
 
@@ -32,7 +36,7 @@ export default function Pagination(props: Props) {
         <span>&raquo;</span>
       </div>
       <div className="dropdown">
-        <label htmlFor="select">Items per page</label>
+        <label htmlFor="select">Items per page: </label>
         <select id="select">
           <option>10</option>
           <option>15</option>
