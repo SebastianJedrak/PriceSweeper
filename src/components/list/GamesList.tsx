@@ -8,7 +8,7 @@ const ITEM_PER_PAGE = 10;
 
 const Ul = styled.ul`
   margin: 0 auto;
-`
+`;
 
 export default function GamesList() {
   const gamesFullList = useContext(GamesListContext);
@@ -23,6 +23,9 @@ export default function GamesList() {
 
   return (
     <>
+      <select>
+        <option>sortBy</option>
+      </select>
       <Ul>
         {" "}
         {gamesPage.map((game) => (
