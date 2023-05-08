@@ -1,7 +1,16 @@
 type Props = {
-    text: string
-}
+  text: string;
+  onClickFunction?: () => void;
+};
 
 export default function Button(props: Props) {
-  return <button>{props.text}</button>;
+  const functionHandler = () => {
+    props.onClickFunction?.();
+  };
+
+  return (
+    <button type="button" onClick={functionHandler}>
+      {props.text}
+    </button>
+  );
 }
