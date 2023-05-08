@@ -51,7 +51,7 @@ export default function GamesList() {
         ))}
       </Ul>
 
-      <Pagination pages={numberOfPages} onChangePage={setPageHandler}/>
+      <Pagination pages={numberOfPages} onChangePage={setPageHandler} activePage={page}/>
     </section>
   );
 }

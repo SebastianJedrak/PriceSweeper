@@ -3,6 +3,7 @@ import styled from "styled-components";
 type Props = {
   pages: number;
   onChangePage: (page: number) => void;
+  activePage: number;
 };
 
 const PaginationWrapper = styled.div`
@@ -30,9 +31,15 @@ const PaginationWrapper = styled.div`
     padding: 1px 6px;
     cursor: pointer;
   }
+
+  .active {
+    background-color: darkgray;
+  }
 `;
 
 export default function Pagination(props: Props) {
+  const pagesArray = [...Array(props.pages)];
+
   const leftArrowHandler = () => {
     props.onChangePage(1);
   };
@@ -50,9 +57,13 @@ export default function Pagination(props: Props) {
       <div className="pages">
         <i onClick={leftArrowHandler}>&laquo;</i>
 
-        {[...Array(props.pages)].map((_, i) => {
+        {pagesArray.map((_, i) => {
           return (
-            <span key={i + 1} onClick={toPageHandler.bind(_, i + 1)}>
+            <span
+              key={i + 1}
+              onClick={toPageHandler.bind(_, i + 1)}
+              className={i + 1 === props.activePage ? "active" : ""}
+            >
               {i + 1}
             </span>
           );
