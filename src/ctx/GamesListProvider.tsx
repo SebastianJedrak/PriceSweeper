@@ -16,17 +16,18 @@ export default function GamesListProvider(props: {
   children: React.ReactNode;
 }) {
   const [gamesList, setGamesList] = useState<GameData[]>([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     async function getData() {
       const response = await window.fetch(
-        "https://www.cheapshark.com/api/1.0/deals?sortBy=recent"
+        `https://www.cheapshark.com/api/1.0/deals?sortBy=recent&title=${search}`
       );
       const data = await response.json();
       setGamesList(data);
     }
     getData();
-  }, []);
+  }, [search]);
 
   return (
     <GamesListContext.Provider value={gamesList}>
