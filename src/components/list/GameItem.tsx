@@ -3,24 +3,22 @@ import { GameData } from "../../ctx/GamesListProvider";
 import Button from "../UI/Button";
 import { useContext } from "react";
 import { StoreContext } from "../../ctx/StoreProvider";
-import arrow from "../../img/keyboard_arrow_down.svg";
-import Card from "../UI/Card";
 
 const Game = styled.li`
   color: red;
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  align-items: center;
 
+  background-color: darkgray;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
   img {
     height: 32px;
-  }
-
-  .svg-icon {
-    background-image: url(${arrow});
-    height: 32px;
-    aspect-ratio: 1/1;
   }
 `;
 
@@ -33,8 +31,8 @@ export default function GameItem(props: GameData) {
   });
 
   return (
-    <Card>
-      {" "}
+ 
+ 
       <Game>
         <img src={store[0].images.icon} alt={store[0].storeName} />
         <div className="best-wrapper">
@@ -43,7 +41,7 @@ export default function GameItem(props: GameData) {
         </div>
         <div className="best-wrapper">
           <p>More Shops</p>
-          <div className="svg-icon"></div>
+          <p>&#x2304;</p>
         </div>
         <div className="meta-wrapper">
           <p>{props.metacriticScore}</p>
@@ -59,6 +57,6 @@ export default function GameItem(props: GameData) {
         <span>{props.title}</span>
         <Button text="Go!" />
       </Game>
-    </Card>
+
   );
 }
