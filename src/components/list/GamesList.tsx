@@ -34,7 +34,7 @@ export default function GamesList() {
         {" "}
         {gamesPage.map((game) => (
           <GameItem
-            key={game.title}
+            key={game.gameID}
             title={game.title}
             thumb={game.thumb}
             normalPrice={game.normalPrice}
@@ -42,6 +42,7 @@ export default function GamesList() {
             metacriticScore={game.metacriticScore}
             metacriticLink={game.metacriticLink}
             storeID={game.storeID}
+            gameID={game.gameID}
           />
         ))}
       </Ul>
