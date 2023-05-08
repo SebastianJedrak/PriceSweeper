@@ -6,6 +6,7 @@ export default function Card(props: { children: React.ReactNode }) {
     border: 1px solid gray;
     border-radius: 5px;
     padding: 10px;
+    margin: 10px;
   `;
 
   return <Card>{props.children}</Card>;
