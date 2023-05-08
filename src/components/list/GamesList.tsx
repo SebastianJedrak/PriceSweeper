@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useRef } from "react";
 import GameItem from "./GameItem";
 import { GamesListContext } from "../../ctx/GamesListProvider";
 import Pagination from "./Pagination";
@@ -19,7 +19,7 @@ const Select = styled.div`
 `;
 
 export default function GamesList() {
-  const { gamesList, sortBy } = useContext(GamesListContext);
+  const { gamesList, sortBy , setSortBy} = useContext(GamesListContext);
 
   const [page, setPage] = useState<number>(1);
   const gamesPage = gamesList.slice(
@@ -32,10 +32,15 @@ export default function GamesList() {
     setPage(page);
   };
 
+  const sortByRef = useRef<HTMLSelectElement>(null);
+  const changeSortHandler = () => {
+    setSortBy(sortByRef.current!.value);
+  };
+
   return (
     <section>
       <Select>
-        <select value={sortBy}>
+        <select ref={sortByRef} value={sortBy} name="sortBy" onChange={changeSortHandler}>
           <option value="Title">Title</option>
           <option value="Price">Price</option>
           <option value="Store">Store</option>

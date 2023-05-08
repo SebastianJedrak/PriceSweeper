@@ -19,16 +19,16 @@ export default function Search() {
   };
 
   // sortBy
-  const sortBy = useRef<HTMLSelectElement>(null);
+  const sortByRef = useRef<HTMLSelectElement>(null);
   const changeSortHandler = () => {
-    setSortBy(sortBy.current!.value);
+    setSortBy(sortByRef.current!.value);
   };
 
   return (
     <>
       <SearchForm action="">
         <input type="text" placeholder="Search" ref={search} />
-        <select ref={sortBy} name="sortBy" onChange={changeSortHandler}>
+        <select ref={sortByRef} name="sortBy" onChange={changeSortHandler}>
           <option value="Title">Title</option>
           <option value="Price">Price</option>
           <option value="Store">Store</option>

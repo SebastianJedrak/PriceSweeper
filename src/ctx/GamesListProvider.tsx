@@ -34,7 +34,6 @@ export default function GamesListProvider(props: {
       );
       const data = await response.json();
       setGamesList(data);
-      console.log(sortBy);
     }
     getData();
   }, [search, sortBy]);
