@@ -8,6 +8,7 @@ const ITEM_PER_PAGE = 10;
 
 const Ul = styled.ul`
   margin: 0 auto;
+
 `;
 
 export default function GamesList() {
