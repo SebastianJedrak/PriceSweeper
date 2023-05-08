@@ -10,18 +10,26 @@ const SearchForm = styled.form`
 `;
 
 export default function Search() {
-  const search = useRef<HTMLInputElement>(null);
-  const { setSearch } = useContext(GamesListContext);
+  const { setSearch, setSortBy } = useContext(GamesListContext);
 
+  // Search
+  const search = useRef<HTMLInputElement>(null);
   const getSearchValue = () => {
     setSearch(search.current!.value);
   };
+
+  // sortBy
+  const sortBy = useRef<HTMLSelectElement>(null);
+  const changeSortHandler = () => {
+    setSortBy(sortBy.current!.value);
+  };
+
   return (
     <>
       <SearchForm action="">
         <input type="text" placeholder="Search" ref={search} />
-        <select>
-          <option defaultChecked value="Title">Title</option>
+        <select ref={sortBy} name="sortBy" onChange={changeSortHandler}>
+          <option value="Title">Title</option>
           <option value="Price">Price</option>
           <option value="Store">Store</option>
           <option value="Metacritic">Rating</option>
