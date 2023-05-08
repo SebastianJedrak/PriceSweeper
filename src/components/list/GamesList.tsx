@@ -22,7 +22,7 @@ export default function GamesList() {
   const numberOfPages = Math.trunc(gamesFullList.length / 10);
 
   return (
-    <>
+    <section>
       <select>
         <option>sortBy</option>
       </select>
@@ -43,6 +43,6 @@ export default function GamesList() {
       </Ul>
 
       <Pagination pages={numberOfPages} />
-    </>
+    </section>
   );
 }
