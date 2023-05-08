@@ -22,6 +22,10 @@ const PaginationWrapper = styled.div`
     text-align: start;
     width: auto;
   }
+
+  span, i{
+    margin: 0 5px;
+  }
 `;
 
 export default function Pagination(props: Props) {
@@ -29,11 +33,11 @@ export default function Pagination(props: Props) {
     <PaginationWrapper>
       <div className="pages">
         {" "}
-        <span>&laquo;</span>
+        <i>&laquo;</i>
         {[...Array(props.pages)].map((_, i) => {
           return <span key={i + 1}>{i + 1}</span>;
         })}
-        <span>&raquo;</span>
+        <i>&raquo;</i>
       </div>
       <div className="dropdown">
         <label htmlFor="select">Items per page: </label>

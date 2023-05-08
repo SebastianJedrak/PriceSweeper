@@ -35,7 +35,11 @@ const Game = styled.li`
 
   .prices-wrapper {
     width: 68px;
-    text-align: center;
+    text-align: end;
+  }
+
+  .meta-wrapper{
+    text-align:center;
   }
 
   .best-wrapper{
