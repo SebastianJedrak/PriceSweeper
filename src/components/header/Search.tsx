@@ -16,13 +16,15 @@ export default function Search() {
   const getSearchValue = () => {
     setSearch(search.current!.value);
   };
-
   return (
     <>
       <SearchForm action="">
         <input type="text" placeholder="Search" ref={search} />
         <select>
-          <option>sortBy</option>
+          <option defaultChecked value="Title">Title</option>
+          <option value="Price">Price</option>
+          <option value="Store">Store</option>
+          <option value="Metacritic">Rating</option>
         </select>
         <Button text="Search" onClickFunction={getSearchValue} />
         <input type="checkbox" id="isOnSale" defaultChecked />

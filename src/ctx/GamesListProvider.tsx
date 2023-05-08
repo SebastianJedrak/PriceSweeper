@@ -21,7 +21,7 @@ export default function GamesListProvider(props: {
 }) {
   const [gamesList, setGamesList] = useState<GameData[]>([]);
   const [search, setSearch] = useState("");
-
+// Metacritic, recent, Store, Price, Title
   useEffect(() => {
     async function getData() {
       const response = await window.fetch(

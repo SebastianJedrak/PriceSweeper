@@ -10,8 +10,12 @@ const Ul = styled.ul`
   margin: 0 auto;
 `;
 
-const Select = styled.select`
+const Select = styled.div`
   margin-left: 10px;
+  display: flex;
+  span {
+    margin-left: 10px;
+  }
 `;
 
 export default function GamesList() {
@@ -31,7 +35,13 @@ export default function GamesList() {
   return (
     <section>
       <Select>
-        <option>sortBy</option>
+        <select>
+          <option value="Title">Title</option>
+          <option value="Price">Price</option>
+          <option value="Store">Store</option>
+          <option value="Metacritic">Rating</option>
+        </select>
+        <span>Desc &#11167;</span>
       </Select>
       <Ul>
         {" "}
@@ -50,7 +60,11 @@ export default function GamesList() {
         ))}
       </Ul>
 
-      <Pagination pages={numberOfPages} onChangePage={setPageHandler} activePage={page}/>
+      <Pagination
+        pages={numberOfPages}
+        onChangePage={setPageHandler}
+        activePage={page}
+      />
     </section>
   );
 }
