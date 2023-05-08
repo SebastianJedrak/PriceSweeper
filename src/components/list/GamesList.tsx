@@ -11,19 +11,19 @@ const Ul = styled.ul`
 `;
 
 const Select = styled.select`
-  margin-left:10px;
-`
+  margin-left: 10px;
+`;
 
 export default function GamesList() {
-  const gamesFullList = useContext(GamesListContext);
+  const { gamesList } = useContext(GamesListContext);
 
   const [page, setPage] = useState<number>(1);
-  const gamesPage = gamesFullList.slice(
+  const gamesPage = gamesList.slice(
     page * ITEM_PER_PAGE - ITEM_PER_PAGE,
     page * ITEM_PER_PAGE
   );
 
-  const numberOfPages = Math.trunc(gamesFullList.length / 10);
+  const numberOfPages = Math.trunc(gamesList.length / 10);
 
   return (
     <section>
