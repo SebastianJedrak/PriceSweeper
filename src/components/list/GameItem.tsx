@@ -10,14 +10,28 @@ const Game = styled.li`
   flex-direction: row;
   align-items: center;
 
+
   //Card
   background-color: darkgray;
   border: 1px solid gray;
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
+
+  * {
+    margin: 0 10px;
+  }
   img {
     height: 32px;
+  }
+
+  .thumb{
+    width: 90px;
+    object-fit: contain;
+  }
+
+  Button {
+    margin-left:auto
   }
 `;
 
@@ -52,7 +66,7 @@ export default function GameItem(props: GameData) {
           <p>{props.normalPrice}</p>
           <p>{props.salePrice}</p>
         </div>
-        <img src={props.thumb} alt={props.title} />
+        <img className="thumb" src={props.thumb} alt={props.title} />
         <span>{props.title}</span>
         <Button text="Go!" />
       </Game>
