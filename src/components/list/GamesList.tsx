@@ -7,21 +7,33 @@ import Button from "../UI/Button";
 
 const ITEM_PER_PAGE = 10;
 
-const Ul = styled.ul`
-  margin: 0 auto;
-`;
-
-const Select = styled.div`
+const Section = styled.section`
   
-  display: flex;
- select {
+  ul{
+    margin: 0 auto;
+  }
+
+  .select-wrapper {
+    display: flex;
+  }
+
+  select {
   margin: 0 10px;
  }
-`;
+
+ h2 {
+  text-align: center;
+ }
+`
+
+export let resultsHeader: React.RefObject<HTMLHeadingElement> | null
 
 export default function GamesList() {
   const { gamesList, sortBy , setSortBy} = useContext(GamesListContext);
+   resultsHeader = useRef<HTMLHeadingElement>(null)
 
+
+  //Page
   const [page, setPage] = useState<number>(1);
   const gamesPage = gamesList.slice(
     page * ITEM_PER_PAGE - ITEM_PER_PAGE,
@@ -33,14 +45,16 @@ export default function GamesList() {
     setPage(page);
   };
 
+  //Sort
   const sortByRef = useRef<HTMLSelectElement>(null);
   const changeSortHandler = () => {
     setSortBy(sortByRef.current!.value);
   };
 
   return (
-    <section>
-      <Select>
+    <Section>
+      <h2 ref={resultsHeader}>Result of / Recent/ No</h2>
+      <div className="select-wrapper">
         <select ref={sortByRef} value={sortBy} name="sortBy" onChange={changeSortHandler}>
           <option value="Title">Title</option>
           <option value="Price">Price</option>
@@ -48,9 +62,8 @@ export default function GamesList() {
           <option value="Metacritic">Rating</option>
         </select>
         <Button text="Desc &#11167;"></Button>
-      </Select>
-      <Ul>
-        {" "}
+      </div>
+      <ul>
         {gamesPage.map((game) => (
           <GameItem
             key={`${game.gameID}${game.storeID}`}
@@ -64,13 +77,13 @@ export default function GamesList() {
             gameID={game.gameID}
           />
         ))}
-      </Ul>
+      </ul>
 
       <Pagination
         pages={numberOfPages}
         onChangePage={setPageHandler}
         activePage={page}
       />
-    </section>
+    </Section>
   );
 }

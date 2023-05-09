@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Button from "../UI/Button";
 import { useRef, useContext } from "react";
 import { GamesListContext } from "../../ctx/GamesListProvider";
+import { resultsHeader } from "../list/GamesList";
 
 const SearchForm = styled.form`
   display: flex;
@@ -16,6 +17,10 @@ export default function Search() {
   const search = useRef<HTMLInputElement>(null);
   const getSearchValue = () => {
     setSearch(search.current!.value);
+
+    //scroll
+    const {top} = resultsHeader!.current!.getBoundingClientRect();
+    window.scroll({top: top, behavior: "smooth"})
   };
 
   // sortBy
