@@ -15,12 +15,13 @@ export default function Search() {
 
   // Search
   const search = useRef<HTMLInputElement>(null);
-  const getSearchValue = () => {
+  const getSearchValue = (e: React.FormEvent) => {
+    e.preventDefault();
     setSearch(search.current!.value);
 
     //scroll
-    const {top} = resultsHeader!.current!.getBoundingClientRect();
-    window.scroll({top: top, behavior: "smooth"})
+    const { top } = resultsHeader!.current!.getBoundingClientRect();
+    window.scroll({ top: top, behavior: "smooth" });
   };
 
   // sortBy
@@ -31,7 +32,7 @@ export default function Search() {
 
   return (
     <>
-      <SearchForm action="">
+      <SearchForm onSubmit={getSearchValue}>
         <input type="text" placeholder="Search" ref={search} />
         <select ref={sortByRef} name="sortBy" onChange={changeSortHandler}>
           <option value="Title">Title</option>
@@ -39,7 +40,10 @@ export default function Search() {
           <option value="Store">Store</option>
           <option value="Metacritic">Rating</option>
         </select>
-        <Button text="Search" onClickFunction={getSearchValue} />
+        <Button
+          text="Search"
+          // onClickFunction={getSearchValue}
+        />
         <input type="checkbox" id="isOnSale" defaultChecked />
         <label htmlFor="isOnSale">On Sale</label>
       </SearchForm>
