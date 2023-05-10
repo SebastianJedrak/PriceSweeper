@@ -31,6 +31,7 @@ export default function GamesList() {
   const { gamesList, sortBy, setSortBy, sortDirection, setSortDirection } =
     useContext(GamesListContext);
   resultsHeader = useRef<HTMLHeadingElement>(null);
+  const [sortDesc, setSortDesc] = useState(true);
 
   //Page
   const [page, setPage] = useState<number>(1);
@@ -57,6 +58,7 @@ export default function GamesList() {
     if (sortDirection === 1) {
       setSortDirection(0);
     }
+    setSortDesc(!sortDesc);
   };
 
   return (
@@ -74,7 +76,17 @@ export default function GamesList() {
           <option value="Store">Store</option>
           <option value="Metacritic">Rating</option>
         </select>
-        <Button onClick={sortDirectionHandler} text="Desc &#11167;"></Button>
+        {sortDesc ? (
+          <Button
+            onClick={sortDirectionHandler}
+            text="Descending &#11167;"
+          ></Button>
+        ) : (
+          <Button
+            onClick={sortDirectionHandler}
+            text="Ascending &#x2B9D;"
+          ></Button>
+        )}
       </div>
       <ul>
         {gamesPage.map((game) => (
