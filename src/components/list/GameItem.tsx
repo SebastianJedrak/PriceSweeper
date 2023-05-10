@@ -38,12 +38,12 @@ const Game = styled.li`
     text-align: end;
   }
 
-  .meta-wrapper{
-    text-align:center;
+  .meta-wrapper {
+    text-align: center;
   }
 
-  .best-wrapper{
-    width:150px;
+  .store-name {
+    width: 150px;
   }
 
   :nth-child(2n) {
@@ -62,10 +62,7 @@ export default function GameItem(props: GameData) {
   return (
     <Game>
       <img src={store[0].images.icon} alt={store[0].storeName} />
-      <div className="best-wrapper">
-        <p>BEST OFFER</p>
-        <p>{store[0].storeName}</p>
-      </div>
+      <h3 className="store-name">{store[0].storeName}</h3>
       <div className="meta-wrapper">
         <p>{props.metacriticScore}</p>
         <a href={metacriticUrl} target="_blank" rel="noreferrer">
