@@ -49,6 +49,10 @@ const Game = styled.li`
   :nth-child(2n) {
     background-color: #727272;
   }
+
+  .normal-price-on-sale {
+    text-decoration: line-through;
+  }
 `;
 
 export default function GameItem(props: GameData) {
@@ -61,17 +65,26 @@ export default function GameItem(props: GameData) {
 
   return (
     <Game>
-      <img src={store[0].images.icon} alt={store[0].storeName} />
-      <h3 className="store-name">{store[0].storeName}</h3>
       <div className="meta-wrapper">
         <p>{props.metacriticScore}</p>
         <a href={metacriticUrl} target="_blank" rel="noreferrer">
           MORE
         </a>
       </div>
+      <img src={store[0].images.icon} alt={store[0].storeName} />
+      <h3 className="store-name">{store[0].storeName}</h3>
       <div className="prices-wrapper">
-        <p>{props.normalPrice}&#x24;</p>
-        <p>{props.salePrice}&#x24;</p>
+        {/* <p>{props.normalPrice}&#x24;</p> */}
+        {props.normalPrice === props.salePrice ? (
+          <p>{props.normalPrice}&#x24;</p>
+        ) : (
+          <p className="normal-price-on-sale">{props.normalPrice}&#x24;</p>
+        )}
+        {props.normalPrice === props.salePrice ? (
+          ""
+        ) : (
+          <p>{props.salePrice}&#x24;</p>
+        )}
       </div>
       <img className="thumb" src={props.thumb} alt={props.title} />
       <span>{props.title}</span>
