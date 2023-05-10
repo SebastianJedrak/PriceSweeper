@@ -15,8 +15,17 @@ export const GamesListContext = createContext<{
   gamesList: GameData[];
   setSearch: React.Dispatch<React.SetStateAction<string>>;
   setSortBy: React.Dispatch<React.SetStateAction<string>>;
+  setSortDirection: React.Dispatch<React.SetStateAction<number>>;
   sortBy: string;
-}>({ gamesList: [], setSearch: () => {}, setSortBy: () => {}, sortBy: "" });
+  sortDirection: number;
+}>({
+  gamesList: [],
+  setSearch: () => {},
+  setSortBy: () => {},
+  sortBy: "",
+  sortDirection: 0,
+  setSortDirection: () => {},
+});
 
 export default function GamesListProvider(props: {
   children: React.ReactNode;
@@ -24,23 +33,32 @@ export default function GamesListProvider(props: {
   const [gamesList, setGamesList] = useState<GameData[]>([]);
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("recent");
+  const [sortDirection, setSortDirection] = useState(0);
 
   // Metacritic, recent, Store, Price, Title
 
   useEffect(() => {
     async function getData() {
       const response = await window.fetch(
-        `https://www.cheapshark.com/api/1.0/deals?sortBy=${sortBy}&title=${search}`
+        `https://www.cheapshark.com/api/1.0/deals?sortBy=${sortBy}&title=${search}&desc=${sortDirection}`
       );
       const data = await response.json();
       setGamesList(data);
     }
     getData();
-  }, [search, sortBy]);
+    console.log(sortDirection);
+  }, [search, sortBy, sortDirection]);
 
   return (
     <GamesListContext.Provider
-      value={{ gamesList, setSearch, setSortBy, sortBy }}
+      value={{
+        gamesList,
+        setSearch,
+        setSortBy,
+        sortBy,
+        sortDirection,
+        setSortDirection,
+      }}
     >
       {props.children}
     </GamesListContext.Provider>

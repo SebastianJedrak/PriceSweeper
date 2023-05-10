@@ -22,6 +22,9 @@ export default function Search() {
     //scroll
     const { top } = resultsHeader!.current!.getBoundingClientRect();
     window.scroll({ top: top, behavior: "smooth" });
+
+    //reset page TODO
+
   };
 
   // sortBy

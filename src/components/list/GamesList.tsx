@@ -8,8 +8,7 @@ import Button from "../UI/Button";
 const ITEM_PER_PAGE = 10;
 
 const Section = styled.section`
-  
-  ul{
+  ul {
     margin: 0 auto;
   }
 
@@ -18,20 +17,20 @@ const Section = styled.section`
   }
 
   select {
-  margin: 0 10px;
- }
+    margin: 0 10px;
+  }
 
- h2 {
-  text-align: center;
- }
-`
+  h2 {
+    text-align: center;
+  }
+`;
 
-export let resultsHeader: React.RefObject<HTMLHeadingElement> | null
+export let resultsHeader: React.RefObject<HTMLHeadingElement> | null;
 
 export default function GamesList() {
-  const { gamesList, sortBy , setSortBy} = useContext(GamesListContext);
-   resultsHeader = useRef<HTMLHeadingElement>(null)
-
+  const { gamesList, sortBy, setSortBy, sortDirection, setSortDirection } =
+    useContext(GamesListContext);
+  resultsHeader = useRef<HTMLHeadingElement>(null);
 
   //Page
   const [page, setPage] = useState<number>(1);
@@ -51,17 +50,31 @@ export default function GamesList() {
     setSortBy(sortByRef.current!.value);
   };
 
+  const sortDirectionHandler = () => {
+    if (sortDirection === 0) {
+      setSortDirection(1);
+    }
+    if (sortDirection === 1) {
+      setSortDirection(0);
+    }
+  };
+
   return (
     <Section>
       <h2 ref={resultsHeader}>Result of / Recent/ No</h2>
       <div className="select-wrapper">
-        <select ref={sortByRef} value={sortBy} name="sortBy" onChange={changeSortHandler}>
+        <select
+          ref={sortByRef}
+          value={sortBy}
+          name="sortBy"
+          onChange={changeSortHandler}
+        >
           <option value="Title">Title</option>
           <option value="Price">Price</option>
           <option value="Store">Store</option>
           <option value="Metacritic">Rating</option>
         </select>
-        <Button text="Desc &#11167;"></Button>
+        <Button onClick={sortDirectionHandler} text="Desc &#11167;"></Button>
       </div>
       <ul>
         {gamesPage.map((game) => (
