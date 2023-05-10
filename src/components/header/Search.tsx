@@ -5,9 +5,13 @@ import { GamesListContext } from "../../ctx/GamesListProvider";
 import { resultsHeader } from "../list/GamesList";
 
 const SearchForm = styled.form`
-  display: flex;
-  justify-content: center;
+  margin: 0 auto;
+  width: max-content;
   color: white;
+
+  .sale-input {
+    display: block;
+  }
 `;
 
 export default function Search() {
@@ -53,10 +57,10 @@ export default function Search() {
           text="Search"
           // onClickFunction={getSearchValue}
         />
-        <input type="checkbox" id="isOnSale" onClick={onSaleHandler}/>
-        <label htmlFor="isOnSale">
-          Only on Sale
-        </label>
+        <div className="sale-input">
+          <input type="checkbox" id="isOnSale" onClick={onSaleHandler} />
+          <label htmlFor="isOnSale">Only on Sale</label>
+        </div>
       </SearchForm>
     </>
   );
