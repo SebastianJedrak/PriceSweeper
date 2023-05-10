@@ -66,7 +66,6 @@ export default function GameItem(props: GameData) {
         <p>BEST OFFER</p>
         <p>{store[0].storeName}</p>
       </div>
-      <p>More Shops &#11167;</p>
       <div className="meta-wrapper">
         <p>{props.metacriticScore}</p>
         <a href={metacriticUrl} target="_blank" rel="noreferrer">
