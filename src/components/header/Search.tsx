@@ -11,7 +11,8 @@ const SearchForm = styled.form`
 `;
 
 export default function Search() {
-  const { setSearch, setSortBy } = useContext(GamesListContext);
+  const { setSearch, setSortBy, onSale, setOnSale } =
+    useContext(GamesListContext);
 
   // Search
   const search = useRef<HTMLInputElement>(null);
@@ -24,7 +25,12 @@ export default function Search() {
     window.scroll({ top: top, behavior: "smooth" });
 
     //reset page TODO
+  };
 
+  //On Sale
+  const onSaleHandler = () => {
+    if (onSale === 0) setOnSale(1);
+    if (onSale === 1) setOnSale(0);
   };
 
   // sortBy
@@ -47,8 +53,10 @@ export default function Search() {
           text="Search"
           // onClickFunction={getSearchValue}
         />
-        <input type="checkbox" id="isOnSale" defaultChecked />
-        <label htmlFor="isOnSale">On Sale</label>
+        <input type="checkbox" id="isOnSale" onClick={onSaleHandler}/>
+        <label htmlFor="isOnSale">
+          Only on Sale
+        </label>
       </SearchForm>
     </>
   );
