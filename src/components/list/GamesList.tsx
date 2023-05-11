@@ -25,7 +25,6 @@ const Section = styled.section`
   }
 `;
 
-// TO DELETE?
 export let resultsHeader: React.RefObject<HTMLHeadingElement> | null;
 
 export default function GamesList() {
@@ -65,7 +64,7 @@ export default function GamesList() {
   if (isLoading)
     return (
       <Section>
-        <h2>Loading...</h2>
+        <h2 ref={resultsHeader}>Loading...</h2>
       </Section>
     );
 
@@ -73,7 +72,7 @@ export default function GamesList() {
   if (gamesList.length === 0)
     return (
       <Section>
-        {search ? <h2>No Results of {search}</h2> : <h2>No Results</h2>}
+        {search ? <h2 ref={resultsHeader}>No Results of {search}</h2> : <h2 ref={resultsHeader}>No Results</h2>}
       </Section>
     );
 
