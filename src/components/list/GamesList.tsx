@@ -7,6 +7,7 @@ import Button from "../UI/Button";
 import { PageContext } from "../../ctx/PageProvider";
 
 const Section = styled.section`
+  min-height: 100vh;
   ul {
     margin: 0 auto;
   }
