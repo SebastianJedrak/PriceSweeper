@@ -24,7 +24,8 @@ export const GamesListContext = createContext<{
   onSale: number;
   activeStoresId: string[];
   setActiveStores: React.Dispatch<React.SetStateAction<Store[]>>;
-  isLoading: boolean
+  isLoading: boolean;
+  search: string
 }>({
   gamesList: [],
   setSearch: () => {},
@@ -36,7 +37,8 @@ export const GamesListContext = createContext<{
   setOnSale: () => {},
   activeStoresId: [],
   setActiveStores: () => {},
-  isLoading: false
+  isLoading: false,
+  search: ""
 });
 
 export default function GamesListProvider(props: {
@@ -82,7 +84,8 @@ export default function GamesListProvider(props: {
         setOnSale,
         activeStoresId,
         setActiveStores,
-        isLoading
+        isLoading,
+        search
       }}
     >
       {props.children}

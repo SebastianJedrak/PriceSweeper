@@ -29,8 +29,15 @@ export let resultsHeader: React.RefObject<HTMLHeadingElement> | null;
 
 export default function GamesList() {
   //Sort
-  const { sortBy, setSortBy, sortDirection, setSortDirection, isLoading } =
-    useContext(GamesListContext);
+  const {
+    sortBy,
+    setSortBy,
+    sortDirection,
+    setSortDirection,
+    isLoading,
+    gamesList,
+    search
+  } = useContext(GamesListContext);
   resultsHeader = useRef<HTMLHeadingElement>(null);
   const [sortDesc, setSortDesc] = useState(true);
 
@@ -50,14 +57,18 @@ export default function GamesList() {
   };
 
   // Page
-  const {gamesPage, numberOfPages, setPageHandler, page} = useContext(PageContext)
+  const { gamesPage, numberOfPages, setPageHandler, page } =
+    useContext(PageContext);
 
   // Loading
-  if (isLoading) return <h2>Loading...</h2>
+  if (isLoading) return <h2>Loading...</h2>;
+
+  // No results
+  if (gamesList.length === 0) return <h2>No Results of {search}</h2>;
 
   return (
     <Section>
-      <h2 ref={resultsHeader}>Result of / Recent/ No</h2>
+      <h2 ref={resultsHeader}>Results of {search}</h2>
       <div className="select-wrapper">
         <select
           ref={sortByRef}
