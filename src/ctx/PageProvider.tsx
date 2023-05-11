@@ -8,12 +8,14 @@ export const PageContext = createContext<{
   numberOfPages: number;
   setItemPerPage: React.Dispatch<React.SetStateAction<number>>;
   setPageHandler: (page: number) => void;
+  itemPerPage: number
 }>({
     page: 1,
   gamesPage: [],
   numberOfPages: 1,
   setItemPerPage: () => {},
   setPageHandler: (page: number) => {},
+  itemPerPage: 10,
 });
 
 export default function PageProvider(props: { children: React.ReactNode }) {
@@ -35,7 +37,7 @@ export default function PageProvider(props: { children: React.ReactNode }) {
 
   return (
     <PageContext.Provider
-      value={{ page, gamesPage, numberOfPages, setItemPerPage, setPageHandler }}
+      value={{ page, gamesPage, numberOfPages, setItemPerPage, setPageHandler, itemPerPage }}
     >
       {props.children}
     </PageContext.Provider>

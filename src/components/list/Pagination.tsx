@@ -56,7 +56,7 @@ export default function Pagination(props: Props) {
   };
 
   // Change items per page
-  const { setItemPerPage } = useContext(PageContext);
+  const { setItemPerPage, itemPerPage } = useContext(PageContext);
   const itemsPerPageRefValue = useRef<HTMLSelectElement>(null);
 
   const itemsPerPageHandler = () => {
@@ -90,6 +90,7 @@ export default function Pagination(props: Props) {
           ref={itemsPerPageRefValue}
           onChange={itemsPerPageHandler}
           id="select"
+          value={itemPerPage}
         >
           <option value="10">10</option>
           <option value="15">15</option>
