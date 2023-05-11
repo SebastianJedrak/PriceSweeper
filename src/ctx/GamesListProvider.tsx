@@ -51,7 +51,6 @@ export default function GamesListProvider(props: {
       setGamesList(data);
     }
     getData();
-    console.log(onSale);
 
   }, [search, sortBy, sortDirection, onSale]);
 

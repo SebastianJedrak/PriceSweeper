@@ -5,7 +5,6 @@ import Pagination from "./Pagination";
 import styled from "styled-components";
 import Button from "../UI/Button";
 
-const ITEM_PER_PAGE = 10;
 
 const Section = styled.section`
   ul {
