@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import Button from "../UI/Button";
 import { Store, StoreContext } from "../../ctx/StoreProvider";
@@ -36,7 +36,6 @@ const Stores = styled.div`
 
 export default function StoresList() {
   const { stores, setActiveStores, activeStoresId } = useContext(StoreContext);
-  const [isActive, setIsActive] = useState(true)
 
   const onStoresHandler = (e: React.MouseEvent) => {
     const storeTarget = (e.target as HTMLElement).closest("div.store-item");
