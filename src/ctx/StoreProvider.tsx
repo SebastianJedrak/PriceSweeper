@@ -7,7 +7,10 @@ export type Store = {
   images: { logo: string; icon: string };
 };
 
-export const StoreContext = createContext<Store[]>([]);
+export const StoreContext = createContext<{
+  stores: Store[];
+  activeStoresId: string[];
+}>({ stores: [], activeStoresId: [] });
 
 export default function StoreProvider(props: { children: React.ReactNode }) {
   const [stores, setStores] = useState([]);
@@ -25,17 +28,17 @@ export default function StoreProvider(props: { children: React.ReactNode }) {
         return store;
       });
       setStores(transformedData);
-      setActiveStores(transformedData)
+      setActiveStores(transformedData);
     }
     getData();
   }, [imgUrl]);
 
   //active stores filter
-  const [activeStores, setActiveStores] = useState<Store[]>([])
-  const activeStoresId = activeStores.map(store => store.storeID)
+  const [activeStores, setActiveStores] = useState<Store[]>([]);
+  const activeStoresId = activeStores.map((store) => store.storeID);
 
   return (
-    <StoreContext.Provider value={stores}>
+    <StoreContext.Provider value={{ stores, activeStoresId }}>
       {props.children}
     </StoreContext.Provider>
   );
