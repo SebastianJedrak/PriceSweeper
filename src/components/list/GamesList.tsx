@@ -78,7 +78,11 @@ export default function GamesList() {
 
   return (
     <Section>
-      <h2 ref={resultsHeader}>Results of {search}</h2>
+      {search ? (
+        <h2 ref={resultsHeader}>Results of {search}</h2>
+      ) : (
+        <h2 ref={resultsHeader}>Recent Deals</h2>
+      )}
       <div className="select-wrapper">
         <select
           ref={sortByRef}
