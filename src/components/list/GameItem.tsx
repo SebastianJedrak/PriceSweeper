@@ -38,6 +38,7 @@ const Game = styled.li`
 
   .meta-wrapper {
     text-align: center;
+    width: 80px;
   }
 
   .store-name {
@@ -66,7 +67,7 @@ export default function GameItem(props: GameData) {
     <Game>
       {/* Metacritic */}
       <div className="meta-wrapper">
-        <p>{props.metacriticScore}</p>
+        {-props.metacriticScore !== 0 ? <p>{props.metacriticScore}</p> : <p>No Rating</p>}
         <a href={metacriticUrl} target="_blank" rel="noreferrer">
           MORE
         </a>
