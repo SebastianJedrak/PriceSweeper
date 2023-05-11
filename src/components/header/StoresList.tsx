@@ -22,6 +22,11 @@ const Stores = styled.div`
       width: 64px;
     }
   }
+
+.active {
+  background-color: #ffffff28;
+}
+
   .button-wrapper {
     width: 100%;
     display: flex;
@@ -43,7 +48,7 @@ export default function StoresList() {
       <Stores onClick={onStoresHandler}>
         {stores.map((store: Store) => {
           return (
-            <div className="store-item" key={store.storeID} data-id={store.storeID}>
+            <div className="store-item active" key={store.storeID} data-id={store.storeID}>
               <img src={store.images.logo} alt={store.storeName} />
               <p>{store.storeName}</p>
             </div>
