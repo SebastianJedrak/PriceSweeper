@@ -9,23 +9,29 @@ const Stores = styled.div`
   flex-wrap: wrap;
   margin: 64px;
   justify-content: center;
+  
 
   .store-item {
     color: white;
-    margin: 16px 32px;
+    margin: 16px ;
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    width:140px;
+    padding: 20px 5px;
+    border: 1px solid transparent;
 
     img {
-      height: 64px;
-      width: 64px;
+      height: 48px;
+      width: 48px;
     }
   }
 
   .active {
     background-color: #ffffff28;
+    border: 1px solid white;
+    border-radius: 5px;
   }
 
   .button-wrapper {
