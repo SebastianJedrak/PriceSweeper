@@ -42,9 +42,21 @@ export default function StoresList() {
     if (!storeTarget) return;
     const storeTargetId = storeTarget.getAttribute("data-id");
 
-    setActiveStores((prev) => {
-      return prev.filter((store) => store.storeID !== storeTargetId);
-    });
+    if (activeStoresId.includes(storeTargetId!)) {
+      setActiveStores((prev) => {
+        return prev.filter((store) => store.storeID !== storeTargetId);
+      });
+    }
+
+    if (!activeStoresId.includes(storeTargetId!)) {
+      const storeToAdd = stores.find(store => store.storeID === storeTargetId)
+
+      setActiveStores((prev) => {
+        return [...prev, storeToAdd!];
+      });
+    }
+
+    console.log(activeStoresId);
   };
 
   return (
