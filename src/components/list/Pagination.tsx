@@ -45,6 +45,7 @@ export default function Pagination(props: Props) {
   };
 
   const rightArrowHandler = () => {
+    if (props.pages === 0) return;
     props.onChangePage(props.pages);
   };
 
