@@ -1,4 +1,5 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { GamesListContext } from "./GamesListProvider";
 
 export type Store = {
   isActive: number;
@@ -9,12 +10,12 @@ export type Store = {
 
 export const StoreContext = createContext<{
   stores: Store[];
-  activeStoresId: string[];
-  setActiveStores: React.Dispatch<React.SetStateAction<Store[]>>;
-}>({ stores: [], activeStoresId: [], setActiveStores: () => {} });
+
+}>({ stores: [] });
 
 export default function StoreProvider(props: { children: React.ReactNode }) {
   const [stores, setStores] = useState([]);
+  const {setActiveStores} = useContext(GamesListContext)
   const imgUrl = `https://www.cheapshark.com`;
   useEffect(() => {
     async function getData() {
@@ -34,13 +35,10 @@ export default function StoreProvider(props: { children: React.ReactNode }) {
     getData();
   }, [imgUrl]);
 
-  //active stores filter
-  const [activeStores, setActiveStores] = useState<Store[]>([]);
-  // console.log(activeStores);
-  const activeStoresId = activeStores.map((store) => store.storeID);
+  
 
   return (
-    <StoreContext.Provider value={{ stores, activeStoresId, setActiveStores }}>
+    <StoreContext.Provider value={{ stores}}>
       {props.children}
     </StoreContext.Provider>
   );

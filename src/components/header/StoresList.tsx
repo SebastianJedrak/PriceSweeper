@@ -2,6 +2,7 @@ import { useContext } from "react";
 import styled from "styled-components";
 import Button from "../UI/Button";
 import { Store, StoreContext } from "../../ctx/StoreProvider";
+import { GamesListContext } from "../../ctx/GamesListProvider";
 
 const Stores = styled.div`
   display: flex;
@@ -35,7 +36,8 @@ const Stores = styled.div`
 `;
 
 export default function StoresList() {
-  const { stores, setActiveStores, activeStoresId } = useContext(StoreContext);
+  const { stores } = useContext(StoreContext);
+  const { setActiveStores, activeStoresId } = useContext(GamesListContext);
 
   const onStoresHandler = (e: React.MouseEvent) => {
     const storeTarget = (e.target as HTMLElement).closest("div.store-item");
@@ -49,7 +51,9 @@ export default function StoresList() {
     }
 
     if (!activeStoresId.includes(storeTargetId!)) {
-      const storeToAdd = stores.find(store => store.storeID === storeTargetId)
+      const storeToAdd = stores.find(
+        (store) => store.storeID === storeTargetId
+      );
       setActiveStores((prev) => {
         return [...prev, storeToAdd!];
       });
@@ -62,7 +66,9 @@ export default function StoresList() {
         {stores.map((store: Store) => {
           return (
             <div
-              className={`store-item ${activeStoresId.includes(store.storeID) && "active"}`}
+              className={`store-item ${
+                activeStoresId.includes(store.storeID) && "active"
+              }`}
               key={store.storeID}
               data-id={store.storeID}
             >

@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { Store } from "./StoreProvider";
 
 export type GameData = {
   title: string;
@@ -20,6 +21,8 @@ export const GamesListContext = createContext<{
   sortBy: string;
   sortDirection: number;
   onSale: number;
+  activeStoresId: string[];
+  setActiveStores: React.Dispatch<React.SetStateAction<Store[]>>;
 }>({
   gamesList: [],
   setSearch: () => {},
@@ -29,6 +32,8 @@ export const GamesListContext = createContext<{
   onSale: 0,
   setSortDirection: () => {},
   setOnSale: () => {},
+  activeStoresId: [],
+  setActiveStores: () => {},
 });
 
 export default function GamesListProvider(props: {
@@ -38,7 +43,11 @@ export default function GamesListProvider(props: {
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("recent");
   const [sortDirection, setSortDirection] = useState(0);
-  const [onSale, setOnSale] = useState(0)
+  const [onSale, setOnSale] = useState(0);
+
+  //active stores filter
+  const [activeStores, setActiveStores] = useState<Store[]>([]);
+  const activeStoresId = activeStores.map((store) => store.storeID);
 
   // Metacritic, recent, Store, Price, Title
 
@@ -51,7 +60,6 @@ export default function GamesListProvider(props: {
       setGamesList(data);
     }
     getData();
-
   }, [search, sortBy, sortDirection, onSale]);
 
   return (
@@ -64,7 +72,9 @@ export default function GamesListProvider(props: {
         sortDirection,
         setSortDirection,
         onSale,
-        setOnSale
+        setOnSale,
+        activeStoresId,
+        setActiveStores,
       }}
     >
       {props.children}
