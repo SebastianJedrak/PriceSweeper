@@ -1,4 +1,6 @@
+import { useContext, useRef } from "react";
 import styled from "styled-components";
+import { PageContext } from "../../ctx/PageProvider";
 
 type Props = {
   pages: number;
@@ -53,6 +55,15 @@ export default function Pagination(props: Props) {
     props.onChangePage(toPage);
   };
 
+  // Change items per page
+  const { setItemPerPage } = useContext(PageContext);
+  const itemsPerPageRefValue = useRef<HTMLSelectElement>(null);
+
+  const itemsPerPageHandler = () => {
+    const PageValue = Number(itemsPerPageRefValue.current!.value);
+    setItemPerPage(PageValue);
+  };
+
   return (
     <PaginationWrapper>
       <div className="pages">
@@ -74,10 +85,14 @@ export default function Pagination(props: Props) {
       </div>
       <div className="dropdown">
         <label htmlFor="select">Items per page: </label>
-        <select id="select">
-          <option>10</option>
-          <option>15</option>
-          <option>20</option>
+        <select
+          ref={itemsPerPageRefValue}
+          onChange={itemsPerPageHandler}
+          id="select"
+        >
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
         </select>
       </div>
     </PaginationWrapper>
