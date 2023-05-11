@@ -10,7 +10,8 @@ export type Store = {
 export const StoreContext = createContext<{
   stores: Store[];
   activeStoresId: string[];
-}>({ stores: [], activeStoresId: [] });
+  setActiveStores: React.Dispatch<React.SetStateAction<Store[]>>;
+}>({ stores: [], activeStoresId: [], setActiveStores: () => {} });
 
 export default function StoreProvider(props: { children: React.ReactNode }) {
   const [stores, setStores] = useState([]);
@@ -38,7 +39,7 @@ export default function StoreProvider(props: { children: React.ReactNode }) {
   const activeStoresId = activeStores.map((store) => store.storeID);
 
   return (
-    <StoreContext.Provider value={{ stores, activeStoresId }}>
+    <StoreContext.Provider value={{ stores, activeStoresId, setActiveStores }}>
       {props.children}
     </StoreContext.Provider>
   );
