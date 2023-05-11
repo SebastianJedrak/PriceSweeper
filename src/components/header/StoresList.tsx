@@ -60,6 +60,13 @@ export default function StoresList() {
     }
   };
 
+  // allStoresHandler button
+  
+  const allStoresHandler = () => {
+   if (activeStoresId.length !== stores.length) setActiveStores(stores)
+   if (activeStoresId.length === stores.length) setActiveStores([])
+  }
+
   return (
     <section>
       <Stores onClick={onStoresHandler}>
@@ -78,7 +85,7 @@ export default function StoresList() {
           );
         })}
         <div className="button-wrapper">
-          <Button text="All Stores" />
+          <Button onClick={allStoresHandler} text="All Stores" />
         </div>
       </Stores>
     </section>
