@@ -25,9 +25,14 @@ export default function StoreProvider(props: { children: React.ReactNode }) {
         return store;
       });
       setStores(transformedData);
+      setActiveStores(transformedData)
     }
     getData();
   }, [imgUrl]);
+
+  //active stores filter
+  const [activeStores, setActiveStores] = useState<Store[]>([])
+  const activeStoresId = activeStores.map(store => store.storeID)
 
   return (
     <StoreContext.Provider value={stores}>

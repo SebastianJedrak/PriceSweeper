@@ -45,7 +45,7 @@ export default function GamesListProvider(props: {
   useEffect(() => {
     async function getData() {
       const response = await window.fetch(
-        `https://www.cheapshark.com/api/1.0/deals?sortBy=${sortBy}&title=${search}&desc=${sortDirection}&onSale=${onSale}`
+        `https://www.cheapshark.com/api/1.0/deals?sortBy=${sortBy}&title=${search}&desc=${sortDirection}&onSale=${onSale}&storeID=1,2,3`
       );
       const data = await response.json();
       setGamesList(data);
