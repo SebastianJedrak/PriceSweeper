@@ -36,7 +36,7 @@ export default function GamesList() {
     setSortDirection,
     isLoading,
     gamesList,
-    search
+    search,
   } = useContext(GamesListContext);
   resultsHeader = useRef<HTMLHeadingElement>(null);
   const [sortDesc, setSortDesc] = useState(true);
@@ -61,10 +61,20 @@ export default function GamesList() {
     useContext(PageContext);
 
   // Loading
-  if (isLoading) return <h2>Loading...</h2>;
+  if (isLoading)
+    return (
+      <Section>
+        <h2>Loading...</h2>
+      </Section>
+    );
 
   // No results
-  if (gamesList.length === 0) return <h2>No Results of {search}</h2>;
+  if (gamesList.length === 0)
+    return (
+      <Section>
+        <h2>No Results of {search}</h2>
+      </Section>
+    );
 
   return (
     <Section>
