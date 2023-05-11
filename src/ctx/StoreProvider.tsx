@@ -33,7 +33,7 @@ export default function StoreProvider(props: { children: React.ReactNode }) {
       setActiveStores(transformedData);
     }
     getData();
-  }, [imgUrl]);
+  }, [imgUrl, setActiveStores]);
 
   
 

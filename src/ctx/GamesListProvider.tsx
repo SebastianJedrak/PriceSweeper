@@ -48,19 +48,21 @@ export default function GamesListProvider(props: {
   //active stores filter
   const [activeStores, setActiveStores] = useState<Store[]>([]);
   const activeStoresId = activeStores.map((store) => store.storeID);
+  const activeStoresIdString = activeStoresId.join(",")
+  console.log(activeStoresIdString);
 
-  // Metacritic, recent, Store, Price, Title
+  // Filters: Metacritic, recent, Store, Price, Title
 
   useEffect(() => {
     async function getData() {
       const response = await window.fetch(
-        `https://www.cheapshark.com/api/1.0/deals?sortBy=${sortBy}&title=${search}&desc=${sortDirection}&onSale=${onSale}&storeID=1,2,3`
+        `https://www.cheapshark.com/api/1.0/deals?sortBy=${sortBy}&title=${search}&desc=${sortDirection}&onSale=${onSale}&storeID=${activeStoresIdString}`
       );
       const data = await response.json();
       setGamesList(data);
     }
     getData();
-  }, [search, sortBy, sortDirection, onSale]);
+  }, [search, sortBy, sortDirection, onSale, activeStoresIdString]);
 
   return (
     <GamesListContext.Provider
