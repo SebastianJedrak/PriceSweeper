@@ -71,8 +71,8 @@ export default function GameItem(props: GameData) {
           MORE
         </a>
       </div>
-      <img src={store[0].images.icon} alt={store[0].storeName} />
-      <h3 className="store-name">{store[0].storeName}</h3>
+      {store[0] ? <img src={store[0].images.icon} alt={store[0].storeName} /> : null}
+      {store[0] ? <h3 className="store-name">{store[0].storeName}</h3> : null}
       <div className="prices-wrapper">
         {/* <p>{props.normalPrice}&#x24;</p> */}
         {props.normalPrice === props.salePrice ? (
