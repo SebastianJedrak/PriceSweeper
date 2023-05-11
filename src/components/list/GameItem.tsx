@@ -57,7 +57,8 @@ const Game = styled.li`
 
 export default function GameItem(props: GameData) {
   const metacriticUrl = `https://www.metacritic.com${props.metacriticLink}`;
-  const {stores} = useContext(StoreContext);
+  const dealUrl = `https://www.cheapshark.com/redirect?dealID=${props.dealID}  `;
+  const { stores } = useContext(StoreContext);
 
   const store = stores.filter((store) => {
     return store.storeID === props.storeID;
@@ -71,7 +72,9 @@ export default function GameItem(props: GameData) {
           MORE
         </a>
       </div>
-      {store[0] ? <img src={store[0].images.icon} alt={store[0].storeName} /> : null}
+      {store[0] ? (
+        <img src={store[0].images.icon} alt={store[0].storeName} />
+      ) : null}
       {store[0] ? <h3 className="store-name">{store[0].storeName}</h3> : null}
       <div className="prices-wrapper">
         {/* <p>{props.normalPrice}&#x24;</p> */}
@@ -88,7 +91,9 @@ export default function GameItem(props: GameData) {
       </div>
       <img className="thumb" src={props.thumb} alt={props.title} />
       <span>{props.title}</span>
-      <Button text="Go!" />
+      <Button text="">
+        <a href={dealUrl} target="_blank" rel="noreferrer">Go To Offer!</a>
+      </Button>
     </Game>
   );
 }

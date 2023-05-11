@@ -1,6 +1,7 @@
 type Props = {
   text: string;
   onClick?: () => void;
+  children?: React.ReactNode
 };
 
 export default function Button(props: Props) {
@@ -12,6 +13,7 @@ export default function Button(props: Props) {
   return (
     <button  onClick={functionHandler}>
       {props.text}
+      {props.children}
     </button>
   );
 }

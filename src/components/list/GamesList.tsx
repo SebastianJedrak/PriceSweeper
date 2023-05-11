@@ -90,6 +90,7 @@ export default function GamesList() {
             metacriticLink={game.metacriticLink}
             storeID={game.storeID}
             gameID={game.gameID}
+            dealID={game.dealID}
           />
         ))}
       </ul>

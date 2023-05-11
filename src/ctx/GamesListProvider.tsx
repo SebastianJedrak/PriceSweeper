@@ -10,6 +10,7 @@ export type GameData = {
   metacriticLink: string;
   storeID: string;
   gameID: string;
+  dealID: string
 };
 
 export const GamesListContext = createContext<{
@@ -63,6 +64,8 @@ export default function GamesListProvider(props: {
     }
     getData();
   }, [search, sortBy, sortDirection, onSale, activeStoresIdString]);
+
+  console.log(gamesList);
 
   return (
     <GamesListContext.Provider
