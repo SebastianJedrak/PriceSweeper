@@ -19,6 +19,7 @@ const Game = styled.li`
 
   img {
     height: 32px;
+    width: 32px;
   }
 
   .thumb {
@@ -40,7 +41,7 @@ const Game = styled.li`
   }
 
   .store-name {
-    width: 150px;
+    width: 200px;
   }
 
   :nth-child(2n) {
@@ -75,7 +76,9 @@ export default function GameItem(props: GameData) {
       {store[0] ? (
         <img src={store[0].images.icon} alt={store[0].storeName} />
       ) : (
-        <img src="" alt="" />
+        <div>
+          <img src="" alt="" />
+        </div>
       )}
       {store[0] ? (
         <h3 className="store-name">{store[0].storeName}</h3>
