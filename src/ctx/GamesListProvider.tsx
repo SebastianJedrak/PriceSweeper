@@ -50,7 +50,6 @@ export default function GamesListProvider(props: {
   const [activeStores, setActiveStores] = useState<Store[]>([]);
   const activeStoresId = activeStores.map((store) => store.storeID);
   const activeStoresIdString = activeStoresId.join(",")
-  console.log(activeStoresIdString);
 
   // Filters: Metacritic, recent, Store, Price, Title
 
@@ -64,8 +63,6 @@ export default function GamesListProvider(props: {
     }
     getData();
   }, [search, sortBy, sortDirection, onSale, activeStoresIdString]);
-
-  console.log(gamesList);
 
   return (
     <GamesListContext.Provider

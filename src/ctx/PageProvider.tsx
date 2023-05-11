@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 import { GamesListContext } from "./GamesListProvider";
 import { GameData } from "./GamesListProvider";
 
@@ -22,11 +22,13 @@ export default function PageProvider(props: { children: React.ReactNode }) {
   const [itemPerPage, setItemPerPage] = useState<number>(10);
 
   const [page, setPage] = useState<number>(1);
+  useEffect(()=>{}, [])
   const gamesPage = gamesList.slice(
     page * itemPerPage - itemPerPage,
     page * itemPerPage
   );
-  const numberOfPages = Math.trunc(gamesList.length / 10);
+  const numberOfPages = Math.trunc(gamesList.length / itemPerPage);
+  // console.log(gamesList.length);
 
   const setPageHandler = (page: number) => {
     setPage(page);
