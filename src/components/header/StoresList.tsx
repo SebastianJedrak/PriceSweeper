@@ -36,6 +36,7 @@ const Stores = styled.div`
 
 export default function StoresList() {
   const { stores, setActiveStores, activeStoresId } = useContext(StoreContext);
+  const [isActive, setIsActive] = useState(true)
 
   const onStoresHandler = (e: React.MouseEvent) => {
     const storeTarget = (e.target as HTMLElement).closest("div.store-item");
@@ -50,13 +51,10 @@ export default function StoresList() {
 
     if (!activeStoresId.includes(storeTargetId!)) {
       const storeToAdd = stores.find(store => store.storeID === storeTargetId)
-
       setActiveStores((prev) => {
         return [...prev, storeToAdd!];
       });
     }
-
-    console.log(activeStoresId);
   };
 
   return (
@@ -65,7 +63,7 @@ export default function StoresList() {
         {stores.map((store: Store) => {
           return (
             <div
-              className="store-item active"
+              className={`store-item ${activeStoresId.includes(store.storeID) && "active"}`}
               key={store.storeID}
               data-id={store.storeID}
             >
