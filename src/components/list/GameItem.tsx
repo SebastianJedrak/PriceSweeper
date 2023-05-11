@@ -17,7 +17,6 @@ const Game = styled.li`
   padding: 10px;
   margin: 10px;
 
-  
   img {
     height: 32px;
   }
@@ -64,18 +63,28 @@ export default function GameItem(props: GameData) {
 
   return (
     <Game>
+      {/* Metacritic */}
       <div className="meta-wrapper">
         <p>{props.metacriticScore}</p>
         <a href={metacriticUrl} target="_blank" rel="noreferrer">
           MORE
         </a>
       </div>
+
+      {/* Stores */}
       {store[0] ? (
         <img src={store[0].images.icon} alt={store[0].storeName} />
-      ) : null}
-      {store[0] ? <h3 className="store-name">{store[0].storeName}</h3> : null}
+      ) : (
+        <img src="" alt="" />
+      )}
+      {store[0] ? (
+        <h3 className="store-name">{store[0].storeName}</h3>
+      ) : (
+        <div className="store-name" />
+      )}
+
+      {/* Prices */}
       <div className="prices-wrapper">
-        {/* <p>{props.normalPrice}&#x24;</p> */}
         {props.normalPrice === props.salePrice ? (
           <p>{props.normalPrice}&#x24;</p>
         ) : (
@@ -87,10 +96,16 @@ export default function GameItem(props: GameData) {
           <p>{props.salePrice}&#x24;</p>
         )}
       </div>
+
+      {/* Game Details */}
       <img className="thumb" src={props.thumb} alt={props.title} />
       <span>{props.title}</span>
+
+      {/* Button */}
       <Button text="">
-        <a href={dealUrl} target="_blank" rel="noreferrer">Go To Offer!</a>
+        <a href={dealUrl} target="_blank" rel="noreferrer">
+          Go To Offer!
+        </a>
       </Button>
     </Game>
   );
