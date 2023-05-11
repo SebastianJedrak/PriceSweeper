@@ -17,9 +17,7 @@ const Game = styled.li`
   padding: 10px;
   margin: 10px;
 
-  * {
-    margin: 0 10px;
-  }
+  
   img {
     height: 32px;
   }
