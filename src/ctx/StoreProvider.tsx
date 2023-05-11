@@ -36,6 +36,7 @@ export default function StoreProvider(props: { children: React.ReactNode }) {
 
   //active stores filter
   const [activeStores, setActiveStores] = useState<Store[]>([]);
+  // console.log(activeStores);
   const activeStoresId = activeStores.map((store) => store.storeID);
 
   return (

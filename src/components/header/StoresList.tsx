@@ -23,9 +23,9 @@ const Stores = styled.div`
     }
   }
 
-.active {
-  background-color: #ffffff28;
-}
+  .active {
+    background-color: #ffffff28;
+  }
 
   .button-wrapper {
     width: 100%;
@@ -38,9 +38,13 @@ export default function StoresList() {
   const { stores, setActiveStores, activeStoresId } = useContext(StoreContext);
 
   const onStoresHandler = (e: React.MouseEvent) => {
-    const storeTarget = (e.target as HTMLElement).closest("div.store-item")
-    if (!storeTarget) return
-    console.log(storeTarget.getAttribute("data-id"));
+    const storeTarget = (e.target as HTMLElement).closest("div.store-item");
+    if (!storeTarget) return;
+    const storeTargetId = storeTarget.getAttribute("data-id");
+
+    setActiveStores((prev) => {
+      return prev.filter((store) => store.storeID !== storeTargetId);
+    });
   };
 
   return (
@@ -48,7 +52,11 @@ export default function StoresList() {
       <Stores onClick={onStoresHandler}>
         {stores.map((store: Store) => {
           return (
-            <div className="store-item active" key={store.storeID} data-id={store.storeID}>
+            <div
+              className="store-item active"
+              key={store.storeID}
+              data-id={store.storeID}
+            >
               <img src={store.images.logo} alt={store.storeName} />
               <p>{store.storeName}</p>
             </div>
