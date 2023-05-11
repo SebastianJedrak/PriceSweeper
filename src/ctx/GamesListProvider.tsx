@@ -24,6 +24,7 @@ export const GamesListContext = createContext<{
   onSale: number;
   activeStoresId: string[];
   setActiveStores: React.Dispatch<React.SetStateAction<Store[]>>;
+  isLoading: boolean
 }>({
   gamesList: [],
   setSearch: () => {},
@@ -35,11 +36,13 @@ export const GamesListContext = createContext<{
   setOnSale: () => {},
   activeStoresId: [],
   setActiveStores: () => {},
+  isLoading: false
 });
 
 export default function GamesListProvider(props: {
   children: React.ReactNode;
 }) {
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   const [gamesList, setGamesList] = useState<GameData[]>([]);
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("recent");
@@ -77,6 +80,7 @@ export default function GamesListProvider(props: {
         setOnSale,
         activeStoresId,
         setActiveStores,
+        isLoading
       }}
     >
       {props.children}
