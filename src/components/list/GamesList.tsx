@@ -72,7 +72,7 @@ export default function GamesList() {
   if (gamesList.length === 0)
     return (
       <Section>
-        <h2>No Results of {search}</h2>
+        {search ? <h2>No Results of {search}</h2> : <h2>No Results</h2>}
       </Section>
     );
 
