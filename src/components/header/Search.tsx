@@ -3,6 +3,7 @@ import Button from "../UI/Button";
 import { useRef, useContext } from "react";
 import { GamesListContext } from "../../ctx/GamesListProvider";
 import { resultsHeader } from "../list/GamesList";
+import { PageContext } from "../../ctx/PageProvider";
 
 const SearchForm = styled.form`
   margin: 0 auto;
@@ -20,6 +21,7 @@ export default function Search() {
 
   // Search
   const search = useRef<HTMLInputElement>(null);
+  const {setPageHandler} = useContext(PageContext)
   const getSearchValue = (e: React.FormEvent) => {
     e.preventDefault();
     setSearch(search.current!.value);
@@ -28,7 +30,8 @@ export default function Search() {
     const { top } = resultsHeader!.current!.getBoundingClientRect();
     window.scroll({ top: top, behavior: "smooth" });
 
-    //reset page TODO
+    //reset page
+    setPageHandler(1)
   };
 
   //On Sale
