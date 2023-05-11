@@ -57,7 +57,7 @@ const Game = styled.li`
 
 export default function GameItem(props: GameData) {
   const metacriticUrl = `https://www.metacritic.com${props.metacriticLink}`;
-  const stores = useContext(StoreContext);
+  const {stores} = useContext(StoreContext);
 
   const store = stores.filter((store) => {
     return store.storeID === props.storeID;
