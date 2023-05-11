@@ -4,7 +4,7 @@ import { GamesListContext } from "../../ctx/GamesListProvider";
 import Pagination from "./Pagination";
 import styled from "styled-components";
 import Button from "../UI/Button";
-
+import { PageContext } from "../../ctx/PageProvider";
 
 const Section = styled.section`
   ul {
@@ -27,24 +27,12 @@ const Section = styled.section`
 export let resultsHeader: React.RefObject<HTMLHeadingElement> | null;
 
 export default function GamesList() {
-  const { gamesList, sortBy, setSortBy, sortDirection, setSortDirection } =
+  //Sort
+  const { sortBy, setSortBy, sortDirection, setSortDirection } =
     useContext(GamesListContext);
   resultsHeader = useRef<HTMLHeadingElement>(null);
   const [sortDesc, setSortDesc] = useState(true);
 
-  //Page
-  const [page, setPage] = useState<number>(1);
-  const gamesPage = gamesList.slice(
-    page * ITEM_PER_PAGE - ITEM_PER_PAGE,
-    page * ITEM_PER_PAGE
-  );
-  const numberOfPages = Math.trunc(gamesList.length / 10);
-
-  const setPageHandler = (page: number) => {
-    setPage(page);
-  };
-
-  //Sort
   const sortByRef = useRef<HTMLSelectElement>(null);
   const changeSortHandler = () => {
     setSortBy(sortByRef.current!.value);
@@ -59,6 +47,9 @@ export default function GamesList() {
     }
     setSortDesc(!sortDesc);
   };
+
+  // Page
+  const {gamesPage, numberOfPages, setPageHandler, page} = useContext(PageContext)
 
   return (
     <Section>
