@@ -27,8 +27,7 @@ export default function PageProvider(props: { children: React.ReactNode }) {
     page * itemPerPage - itemPerPage,
     page * itemPerPage
   );
-  const numberOfPages = Math.trunc(gamesList.length / itemPerPage);
-  // console.log(gamesList.length);
+  const numberOfPages = Math.ceil(gamesList.length / itemPerPage);
 
   const setPageHandler = (page: number) => {
     setPage(page);

@@ -55,7 +55,7 @@ export default function Pagination(props: Props) {
     props.onChangePage(toPage);
   };
 
-  // Change items per page TODO BUG
+  // Change items per page
   const { setItemPerPage } = useContext(PageContext);
   const itemsPerPageRefValue = useRef<HTMLSelectElement>(null);
 
