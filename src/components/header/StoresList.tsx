@@ -30,12 +30,12 @@ const Stores = styled.div`
 `;
 
 export default function StoresList() {
-  const { stores, setActiveStores } = useContext(StoreContext);
+  const { stores, setActiveStores, activeStoresId } = useContext(StoreContext);
 
   const onStoresHandler = (e: React.MouseEvent) => {
     const storeTarget = (e.target as HTMLElement).closest("div.store-item")
     if (!storeTarget) return
-    console.log(storeTarget);
+    console.log(storeTarget.getAttribute("data-id"));
   };
 
   return (
@@ -43,7 +43,7 @@ export default function StoresList() {
       <Stores onClick={onStoresHandler}>
         {stores.map((store: Store) => {
           return (
-            <div className="store-item" key={store.storeID}>
+            <div className="store-item" key={store.storeID} data-id={store.storeID}>
               <img src={store.images.logo} alt={store.storeName} />
               <p>{store.storeName}</p>
             </div>
