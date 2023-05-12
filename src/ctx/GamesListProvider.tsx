@@ -10,7 +10,7 @@ export type GameData = {
   metacriticLink: string;
   storeID: string;
   gameID: string;
-  dealID: string
+  dealID: string;
 };
 
 export const GamesListContext = createContext<{
@@ -25,7 +25,8 @@ export const GamesListContext = createContext<{
   activeStoresId: string[];
   setActiveStores: React.Dispatch<React.SetStateAction<Store[]>>;
   isLoading: boolean;
-  search: string
+  search: string;
+  isError: string
 }>({
   gamesList: [],
   setSearch: () => {},
@@ -38,35 +39,42 @@ export const GamesListContext = createContext<{
   activeStoresId: [],
   setActiveStores: () => {},
   isLoading: false,
-  search: ""
+  search: "",
+  isError: ""
 });
 
 export default function GamesListProvider(props: {
   children: React.ReactNode;
 }) {
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [gamesList, setGamesList] = useState<GameData[]>([]);
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("recent");
   const [sortDirection, setSortDirection] = useState(0);
   const [onSale, setOnSale] = useState(0);
+  const [isError, setIsError] = useState<string>("");
 
   //active stores filter
   const [activeStores, setActiveStores] = useState<Store[]>([]);
   const activeStoresId = activeStores.map((store) => store.storeID);
-  const activeStoresIdString = activeStoresId.join(",")
+  const activeStoresIdString = activeStoresId.join(",");
 
   // Filters: Metacritic, recent, Store, Price, Title
 
   useEffect(() => {
     async function getData() {
-      setIsLoading(true)
-      const response = await window.fetch(
-        `https://www.cheapshark.com/api/1.0/deals?sortBy=${sortBy}&title=${search}&desc=${sortDirection}&onSale=${onSale}&storeID=${activeStoresIdString}`
-      );
-      const data = await response.json();
-      setGamesList(data);
-      setIsLoading(false)
+      try {
+        setIsLoading(true);
+        const response = await window.fetch(
+          `https://www.cheapshark.com/api/1.0/deals?sortBy=${sortBy}&title=${search}&desc=${sortDirection}&onSale=${onSale}&storeID=${activeStoresIdString}`
+        );
+        if (!response.ok) throw new Error("Failed to fetch data");
+        const data = await response.json();
+        setGamesList(data);
+        setIsLoading(false);
+      } catch (error: any) {
+        setIsError(`Something goes wrong ${error.message}`);
+      }
     }
     getData();
   }, [search, sortBy, sortDirection, onSale, activeStoresIdString]);
@@ -85,7 +93,8 @@ export default function GamesListProvider(props: {
         activeStoresId,
         setActiveStores,
         isLoading,
-        search
+        search,
+        isError
       }}
     >
       {props.children}

@@ -40,7 +40,7 @@ const Section = styled.section`
     margin-top: 60px;
   }
 
-  .logo>img {
+  .logo > img {
     animation: rotate 2.5s infinite linear;
   }
 `;
@@ -57,6 +57,7 @@ export default function GamesList() {
     isLoading,
     gamesList,
     search,
+    isError,
   } = useContext(GamesListContext);
   resultsHeader = useRef<HTMLHeadingElement>(null);
   const [sortDesc, setSortDesc] = useState(true);
@@ -79,6 +80,15 @@ export default function GamesList() {
   // Page
   const { gamesPage, numberOfPages, setPageHandler, page } =
     useContext(PageContext);
+
+  // Error
+
+  if (isError !== "")
+    return (
+      <Section>
+        <h2 ref={resultsHeader}>{isError}</h2>
+      </Section>
+    );
 
   // Loading
   if (isLoading)
