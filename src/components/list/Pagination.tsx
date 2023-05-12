@@ -37,6 +37,13 @@ const PaginationWrapper = styled.div`
   .active {
     background-color: darkgray;
   }
+
+  .page-up {
+    grid-column: 3 / 4;
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: end;
+  }
 `;
 
 export default function Pagination(props: Props) {
@@ -64,6 +71,11 @@ export default function Pagination(props: Props) {
     setItemPerPage(PageValue);
     props.onChangePage(1)
   };
+
+  // Page Up
+  const pageUpHandler = () => {
+    window.scroll({top: 0, behavior: "smooth"})
+  }
 
   return (
     <PaginationWrapper>
@@ -97,6 +109,7 @@ export default function Pagination(props: Props) {
           <option value="20">20</option>
         </select>
       </div>
+      <p className="page-up" onClick={pageUpHandler}>Page Up</p>
     </PaginationWrapper>
   );
 }
