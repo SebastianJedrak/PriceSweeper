@@ -42,6 +42,7 @@ const PaginationWrapper = styled.div`
     grid-column: 3 / 4;
     text-decoration: underline;
     cursor: pointer;
+    padding: 0;
     text-align: end;
   }
 `;
@@ -109,7 +110,7 @@ export default function Pagination(props: Props) {
           <option value="20">20</option>
         </select>
       </div>
-      <p className="page-up" onClick={pageUpHandler}>Page Up</p>
+      <span className="page-up" onClick={pageUpHandler}>Page Up</span>
     </PaginationWrapper>
   );
 }
