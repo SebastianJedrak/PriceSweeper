@@ -5,6 +5,7 @@ import Pagination from "./Pagination";
 import styled from "styled-components";
 import Button from "../UI/Button";
 import { PageContext } from "../../ctx/PageProvider";
+import logo from "../../img/minesweeper-logo.png";
 
 const Section = styled.section`
   min-height: 100vh;
@@ -22,6 +23,23 @@ const Section = styled.section`
 
   h2 {
     text-align: center;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 60px;
+    animation: rotate 2.5s infinite linear;
   }
 `;
 
@@ -65,6 +83,9 @@ export default function GamesList() {
     return (
       <Section>
         <h2 ref={resultsHeader}>Loading...</h2>
+        <div className="logo">
+          <img src={logo} alt="loading" />
+        </div>
       </Section>
     );
 
@@ -72,7 +93,11 @@ export default function GamesList() {
   if (gamesList.length === 0)
     return (
       <Section>
-        {search ? <h2 ref={resultsHeader}>No Results of {search}</h2> : <h2 ref={resultsHeader}>No Results</h2>}
+        {search ? (
+          <h2 ref={resultsHeader}>No Results of {search}</h2>
+        ) : (
+          <h2 ref={resultsHeader}>No Results</h2>
+        )}
       </Section>
     );
 
