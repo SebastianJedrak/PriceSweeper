@@ -37,8 +37,10 @@ const Section = styled.section`
   .logo {
     display: flex;
     justify-content: center;
-    width: 100%;
     margin-top: 60px;
+  }
+
+  .logo>img {
     animation: rotate 2.5s infinite linear;
   }
 `;
