@@ -26,7 +26,7 @@ export const GamesListContext = createContext<{
   setActiveStores: React.Dispatch<React.SetStateAction<Store[]>>;
   isLoading: boolean;
   search: string;
-  isError: string
+  isError: string;
 }>({
   gamesList: [],
   setSearch: () => {},
@@ -40,7 +40,7 @@ export const GamesListContext = createContext<{
   setActiveStores: () => {},
   isLoading: false,
   search: "",
-  isError: ""
+  isError: "",
 });
 
 export default function GamesListProvider(props: {
@@ -71,10 +71,10 @@ export default function GamesListProvider(props: {
         if (!response.ok) throw new Error("Failed to fetch data");
         const data = await response.json();
         setGamesList(data);
-        setIsLoading(false);
       } catch (error: any) {
         setIsError(`Something goes wrong ${error.message}`);
       }
+      setIsLoading(false);
     }
     getData();
   }, [search, sortBy, sortDirection, onSale, activeStoresIdString]);
@@ -94,7 +94,7 @@ export default function GamesListProvider(props: {
         setActiveStores,
         isLoading,
         search,
-        isError
+        isError,
       }}
     >
       {props.children}

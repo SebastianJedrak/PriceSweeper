@@ -9,16 +9,15 @@ const Stores = styled.div`
   flex-wrap: wrap;
   margin: 64px;
   justify-content: center;
-  
 
   .store-item {
     color: white;
-    margin: 16px ;
+    margin: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    width:140px;
+    width: 140px;
     padding: 20px 5px;
     border: 1px solid transparent;
 
@@ -42,7 +41,7 @@ const Stores = styled.div`
 `;
 
 export default function StoresList() {
-  const { stores } = useContext(StoreContext);
+  const { stores, isError } = useContext(StoreContext);
   const { setActiveStores, activeStoresId } = useContext(GamesListContext);
 
   const onStoresHandler = (e: React.MouseEvent) => {
@@ -67,11 +66,20 @@ export default function StoresList() {
   };
 
   // allStoresHandler button
-  
+
   const allStoresHandler = () => {
-   if (activeStoresId.length !== stores.length) setActiveStores(stores)
-   if (activeStoresId.length === stores.length) setActiveStores([])
-  }
+    if (activeStoresId.length !== stores.length) setActiveStores(stores);
+    if (activeStoresId.length === stores.length) setActiveStores([]);
+  };
+
+  // Error
+
+  if (isError !== "")
+    return (
+      <section>
+        <h2>{isError}</h2>
+      </section>
+    );
 
   return (
     <section>
