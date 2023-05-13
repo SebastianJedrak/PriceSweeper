@@ -20,6 +20,7 @@ const Game = styled.li`
   img {
     height: 32px;
     width: 32px;
+    margin-right:10px;
   }
 
   .thumb {
@@ -34,11 +35,13 @@ const Game = styled.li`
   .prices-wrapper {
     width: 68px;
     text-align: end;
+    margin-right:20px;
   }
 
   .meta-wrapper {
     text-align: center;
     width: 80px;
+    margin-right:20px;
   }
 
   .store-name {
