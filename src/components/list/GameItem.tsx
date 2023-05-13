@@ -39,12 +39,22 @@ const Game = styled.li`
   }
 
   .meta-wrapper {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 80px;
+    height: 60px;
     margin-right: 20px;
-    background-color: gray;
     border: 1px solid white;
     border-radius: 5px;
+    color: white;
+  }
+
+
+  .meta-wrapper a {
+    text-decoration: underline;
+    color: white;
   }
 
   .meta-green {
@@ -57,6 +67,11 @@ const Game = styled.li`
 
   .meta-red {
     background-color: #ff0000;
+  }
+
+  .meta-gray {
+    background-color: #cccccc;
+    color: black;
   }
 
   .store-name {
@@ -81,18 +96,37 @@ export default function GameItem(props: GameData) {
     return store.storeID === props.storeID;
   });
 
+  // Metacritic background color
+  let metacriticBackgroundColor;
+  const metacriticScoreNumber = Number(props.metacriticScore);
+  if (metacriticScoreNumber >= 70) {
+    metacriticBackgroundColor = "meta-green";
+  }
+  if (metacriticScoreNumber < 70 && metacriticScoreNumber >= 40) {
+    metacriticBackgroundColor = "meta-yellow";
+  }
+  if (metacriticScoreNumber < 40 && metacriticScoreNumber !== 0) {
+    metacriticBackgroundColor = "meta-red";
+  }
+  if (metacriticScoreNumber === 0) {
+    metacriticBackgroundColor = "meta-gray";
+  }
+
   return (
     <Game>
       {/* Metacritic */}
-      <div className="meta-wrapper">
+      <div className={`meta-wrapper ${metacriticBackgroundColor}`}>
         {-props.metacriticScore !== 0 ? (
-          <p>{props.metacriticScore}</p>
+          <>
+            {" "}
+            <p>{props.metacriticScore}</p>
+            <a href={metacriticUrl} target="_blank" rel="noreferrer">
+              Metacritic
+            </a>
+          </>
         ) : (
           <p>No Rating</p>
         )}
-        <a href={metacriticUrl} target="_blank" rel="noreferrer">
-          MORE
-        </a>
       </div>
 
       {/* Stores */}
