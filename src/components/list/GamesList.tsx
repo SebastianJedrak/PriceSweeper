@@ -17,8 +17,8 @@ const Section = styled.section`
     display: flex;
   }
 
-  select {
-    margin: 0 10px;
+  .select-wrapper * {
+    margin-left: 10px;
   }
 
   h2 {
@@ -121,6 +121,7 @@ export default function GamesList() {
         <h2 ref={resultsHeader}>Recent Deals</h2>
       )}
       <div className="select-wrapper">
+        <span>Sort By:</span>
         <select
           ref={sortByRef}
           value={sortBy}

@@ -21,7 +21,7 @@ export default function Search() {
 
   // Search
   const search = useRef<HTMLInputElement>(null);
-  const {setPageHandler} = useContext(PageContext)
+  const { setPageHandler } = useContext(PageContext);
   const getSearchValue = (e: React.FormEvent) => {
     e.preventDefault();
     setSearch(search.current!.value);
@@ -31,7 +31,7 @@ export default function Search() {
     window.scroll({ top: top, behavior: "smooth" });
 
     //reset page
-    setPageHandler(1)
+    setPageHandler(1);
   };
 
   //On Sale
@@ -51,6 +51,7 @@ export default function Search() {
       <SearchForm onSubmit={getSearchValue}>
         <input type="text" placeholder="Search" ref={search} />
         <select ref={sortByRef} name="sortBy" onChange={changeSortHandler}>
+          <option disabled value="Title">Sort By</option>
           <option value="Title">Title</option>
           <option value="Price">Price</option>
           <option value="Store">Store</option>
