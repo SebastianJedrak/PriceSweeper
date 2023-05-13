@@ -20,7 +20,7 @@ const Game = styled.li`
   img {
     height: 32px;
     width: 32px;
-    margin-right:10px;
+    margin-right: 10px;
   }
 
   .thumb {
@@ -35,13 +35,28 @@ const Game = styled.li`
   .prices-wrapper {
     width: 68px;
     text-align: end;
-    margin-right:20px;
+    margin-right: 20px;
   }
 
   .meta-wrapper {
     text-align: center;
     width: 80px;
-    margin-right:20px;
+    margin-right: 20px;
+    background-color: gray;
+    border: 1px solid white;
+    border-radius: 5px;
+  }
+
+  .meta-green {
+    background-color: #66cc33;
+  }
+
+  .meta-yellow {
+    background-color: #ffcc33;
+  }
+
+  .meta-red {
+    background-color: #ff0000;
   }
 
   .store-name {
@@ -70,7 +85,11 @@ export default function GameItem(props: GameData) {
     <Game>
       {/* Metacritic */}
       <div className="meta-wrapper">
-        {-props.metacriticScore !== 0 ? <p>{props.metacriticScore}</p> : <p>No Rating</p>}
+        {-props.metacriticScore !== 0 ? (
+          <p>{props.metacriticScore}</p>
+        ) : (
+          <p>No Rating</p>
+        )}
         <a href={metacriticUrl} target="_blank" rel="noreferrer">
           MORE
         </a>
