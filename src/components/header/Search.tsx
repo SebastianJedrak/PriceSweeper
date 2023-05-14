@@ -13,6 +13,11 @@ const SearchForm = styled.form`
   .sale-input {
     display: block;
   }
+
+  .input-search {
+    padding: 5px;
+    min-width: 250px;
+  }
 `;
 
 export default function Search() {
@@ -44,7 +49,7 @@ export default function Search() {
   return (
     <>
       <SearchForm onSubmit={getSearchValue}>
-        <input type="text" placeholder="Search" ref={search} />
+        <input className="input-search" type="text" placeholder="Search" ref={search} />
         <Button
           text="Search"
           // onClickFunction={getSearchValue}

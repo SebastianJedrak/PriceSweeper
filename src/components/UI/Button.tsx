@@ -1,8 +1,15 @@
+import styled from "styled-components";
+
 type Props = {
   text: string;
   onClick?: () => void;
   children?: React.ReactNode
 };
+
+const ButtonStyled = styled.button`
+  padding: 5px;
+  min-width: 80px;
+`
 
 export default function Button(props: Props) {
 
@@ -11,9 +18,9 @@ export default function Button(props: Props) {
   };
 
   return (
-    <button  onClick={functionHandler}>
+    <ButtonStyled  onClick={functionHandler}>
       {props.text}
       {props.children}
-    </button>
+    </ButtonStyled>
   );
 }
