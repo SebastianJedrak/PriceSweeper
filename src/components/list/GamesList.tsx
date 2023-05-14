@@ -9,9 +9,14 @@ import logo from "../../img/minesweeper-logo.png";
 const Section = styled.section`
   min-height: 100vh;
 
-  .sort-desc {
+  .sort-desc-wrapper {
     cursor: pointer;
-    width: 80px;
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sort-desc {
   }
 
   ul {
@@ -140,15 +145,15 @@ export default function GamesList() {
           <option value="Metacritic">Rating</option>
         </select>
         {sortDesc ? (
-          <>
-            <span className="sort-desc" onClick={sortDirectionHandler}>Descending</span>
+          <div className="sort-desc-wrapper" onClick={sortDirectionHandler}>
+            <span className="sort-desc">Descending</span>
             <span>&#11167;</span>
-          </>
+          </div>
         ) : (
-          <>
-            <span className="sort-desc" onClick={sortDirectionHandler}>Ascending</span>
+          <div className="sort-desc-wrapper" onClick={sortDirectionHandler}>
+            <span className="sort-desc">Ascending</span>
             <span>&#x2B9D;</span>
-          </>
+          </div>
         )}
       </div>
       <ul>
