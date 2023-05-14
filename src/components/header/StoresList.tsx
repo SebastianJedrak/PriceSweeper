@@ -84,6 +84,9 @@ export default function StoresList() {
   return (
     <section>
       <Stores onClick={onStoresHandler}>
+        <div className="button-wrapper">
+          <Button onClick={allStoresHandler} text="All Stores" />
+        </div>
         {stores.map((store: Store) => {
           return (
             <div
@@ -98,9 +101,6 @@ export default function StoresList() {
             </div>
           );
         })}
-        <div className="button-wrapper">
-          <Button onClick={allStoresHandler} text="All Stores" />
-        </div>
       </Stores>
     </section>
   );

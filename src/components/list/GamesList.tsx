@@ -3,12 +3,17 @@ import GameItem from "./GameItem";
 import { GamesListContext } from "../../ctx/GamesListProvider";
 import Pagination from "./Pagination";
 import styled from "styled-components";
-import Button from "../UI/Button";
 import { PageContext } from "../../ctx/PageProvider";
 import logo from "../../img/minesweeper-logo.png";
 
 const Section = styled.section`
   min-height: 100vh;
+
+  .sort-desc {
+    cursor: pointer;
+    width: 80px;
+  }
+
   ul {
     margin: 0 auto;
   }
@@ -134,15 +139,15 @@ export default function GamesList() {
           <option value="Metacritic">Rating</option>
         </select>
         {sortDesc ? (
-          <Button
-            onClick={sortDirectionHandler}
-            text="Descending &#11167;"
-          ></Button>
+          <>
+            <span className="sort-desc" onClick={sortDirectionHandler}>Descending</span>
+            <span>&#11167;</span>
+          </>
         ) : (
-          <Button
-            onClick={sortDirectionHandler}
-            text="Ascending &#x2B9D;"
-          ></Button>
+          <>
+            <span className="sort-desc" onClick={sortDirectionHandler}>Ascending</span>
+            <span>&#x2B9D;</span>
+          </>
         )}
       </div>
       <ul>
