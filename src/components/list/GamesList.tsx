@@ -133,12 +133,13 @@ export default function GamesList() {
         <h2 ref={resultsHeader}>Recent Deals</h2>
       )}
       <div className="select-wrapper">
-        <span>Sort By:</span>
+        <label htmlFor="sort-select">Sort By:</label>
         <select
           ref={sortByRef}
           value={sortBy}
           name="sortBy"
           onChange={changeSortHandler}
+          id="sort-select"
         >
           <option value="Title">Title</option>
           <option value="Price">Price</option>
