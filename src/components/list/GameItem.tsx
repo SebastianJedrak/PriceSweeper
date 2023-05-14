@@ -20,7 +20,7 @@ const Game = styled.li`
   .store-wrapper {
     display: flex;
     flex-direction: row;
-    width: 20%;
+    min-width: 20%;
     @media all and (max-width: 1000px) {
       flex-direction: column;
     }
@@ -42,7 +42,7 @@ const Game = styled.li`
 
   .offer-link {
     margin-left: auto;
-    min-width: 90px;
+    min-width: 80px;
   }
 
   .prices-wrapper {
@@ -61,8 +61,8 @@ const Game = styled.li`
     border: 1px solid white;
     border-radius: 5px;
     color: white;
-    min-width: 90px;
-  }
+    min-width: 80px;
+      }
 
   .meta-wrapper a {
     text-decoration: underline;
@@ -102,6 +102,9 @@ const Game = styled.li`
 
   .store-name {
     word-wrap: break-word;
+    @media all and (max-width: 500px) {
+    display: none;
+    }
   }
 
   :nth-child(2n) {

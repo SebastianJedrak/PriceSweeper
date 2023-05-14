@@ -20,11 +20,9 @@ const StyledHeader = styled.header`
 export default function Header() {
   return (
     <StyledHeader>
-      {/* <BackgroundImg> */}
       <Logo />
       <Search />
       <StoresList />
-      {/* </BackgroundImg> */}
     </StyledHeader>
   );
 }
