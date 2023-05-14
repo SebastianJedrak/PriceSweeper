@@ -2,11 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: auto;
 }
 
 body {
-  background-color:white;
+  background-color: white;
 }
 
 li {
@@ -16,4 +15,10 @@ li {
 a {
   color: black;
   text-decoration: none;
+}
+
+@media all and (max-width: 475px) {
+  * {
+    overflow: auto;
+  }
 }
