@@ -51,6 +51,7 @@ const Game = styled.li`
     border: 1px solid white;
     border-radius: 5px;
     color: white;
+    min-width: 90px;
   }
 
   .meta-wrapper a {
@@ -60,7 +61,6 @@ const Game = styled.li`
 
   .meta-wrapper p {
     text-align: center;
-    width: 100px;
   }
 
   .meta-green {
