@@ -9,6 +9,14 @@ import logo from "../../img/minesweeper-logo.png";
 const Section = styled.section`
   min-height: 100vh;
 
+  .select-wrapper {
+    display: flex;
+  }
+
+  .select-wrapper * {
+    margin-left: 10px;
+  }
+
   .sort-desc-wrapper {
     cursor: pointer;
     width: 120px;
@@ -17,18 +25,11 @@ const Section = styled.section`
   }
 
   .sort-desc {
+    margin: 0
   }
 
   ul {
     margin: 0 auto;
-  }
-
-  .select-wrapper {
-    display: flex;
-  }
-
-  .select-wrapper * {
-    margin-left: 10px;
   }
 
   h2 {
