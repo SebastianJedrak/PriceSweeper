@@ -28,6 +28,7 @@ const Section = styled.section`
 
   h2 {
     text-align: center;
+    margin-bottom: 20px;
   }
 
   @keyframes rotate {
