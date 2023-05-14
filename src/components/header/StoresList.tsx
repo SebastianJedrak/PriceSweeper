@@ -38,6 +38,15 @@ const Stores = styled.div`
       padding: 10px 10px;
       width: 180px;
     }
+    @media all and (max-width: 500px) {
+      width: fit-content;
+    }
+  }
+
+  .store-name {
+    @media all and (max-width: 500px) {
+      display: none;
+    }
   }
 
   img {
@@ -47,6 +56,10 @@ const Stores = styled.div`
       height: 16px;
       width: 16px;
       margin-right: 5px;
+    }
+    @media all and (max-width: 500px) {
+      height: 32px;
+      width: 32px;
     }
   }
 
@@ -90,7 +103,9 @@ export default function StoresList() {
 
   // Hide stores
 
-  const [hideStores, setHideStores] = useState(window.screen.width > 1000 ? false : true);
+  const [hideStores, setHideStores] = useState(
+    window.screen.width > 1000 ? false : true
+  );
 
   const hideStoresHandler = () => {
     setHideStores(!hideStores);
@@ -144,7 +159,7 @@ export default function StoresList() {
               data-id={store.storeID}
             >
               <img src={store.images.logo} alt={store.storeName} />
-              <p>{store.storeName}</p>
+              <p className="store-name">{store.storeName}</p>
             </div>
           );
         })}
