@@ -9,22 +9,19 @@ type Props = {
 };
 
 const PaginationWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-
+  display: flex;
+  justify-content: space-between;
   margin: 0 10px;
   .pages {
-    grid-column: 2/3;
-    grid-row: 1;
     text-align: center;
-    width: 100%;
+    min-width: 70%;
+    
   }
 
   .dropdown {
-    grid-column: 1/2;
-    grid-row: 1;
     text-align: start;
     width: auto;
+    min-width: 15%;
   }
 
   span,
@@ -39,8 +36,8 @@ const PaginationWrapper = styled.div`
   }
 
   .page-up-container {
-    grid-column: 3 / 4;
     text-align: end;
+    min-width: 15%;
 
   }
 
@@ -84,6 +81,20 @@ export default function Pagination(props: Props) {
 
   return (
     <PaginationWrapper>
+       <div className="dropdown">
+        <label htmlFor="select">Items per page: </label>
+        <select
+          ref={itemsPerPageRefValue}
+          onChange={itemsPerPageHandler}
+          id="select"
+          value={itemPerPage}
+        >
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+
       <div className="pages">
         <i onClick={leftArrowHandler}>&laquo;</i>
 
@@ -101,19 +112,7 @@ export default function Pagination(props: Props) {
 
         <i onClick={rightArrowHandler}>&raquo;</i>
       </div>
-      <div className="dropdown">
-        <label htmlFor="select">Items per page: </label>
-        <select
-          ref={itemsPerPageRefValue}
-          onChange={itemsPerPageHandler}
-          id="select"
-          value={itemPerPage}
-        >
-          <option value="10">10</option>
-          <option value="15">15</option>
-          <option value="20">20</option>
-        </select>
-      </div>
+     
       <div className="page-up-container">
         <span className="page-up" onClick={pageUpHandler}>
           Page Up
