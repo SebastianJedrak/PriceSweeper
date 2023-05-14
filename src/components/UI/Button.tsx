@@ -9,6 +9,7 @@ type Props = {
 const ButtonStyled = styled.button`
   padding: 5px;
   min-width: 80px;
+  cursor: pointer;
 `
 
 export default function Button(props: Props) {

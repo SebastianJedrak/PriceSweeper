@@ -28,7 +28,7 @@ const Game = styled.li`
     object-fit: contain;
   }
 
-  Button {
+  .offer-link {
     margin-left: auto;
   }
 
@@ -162,11 +162,9 @@ export default function GameItem(props: GameData) {
       <span>{props.title}</span>
 
       {/* Button */}
-      <Button text="">
-        <a href={dealUrl} target="_blank" rel="noreferrer">
-          Go To Offer!
+        <a className="offer-link" href={dealUrl} target="_blank" rel="noreferrer">
+        <Button text="Go To Offer!" />
         </a>
-      </Button>
     </Game>
   );
 }
