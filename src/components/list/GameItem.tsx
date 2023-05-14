@@ -17,7 +17,7 @@ const Game = styled.li`
   padding: 10px;
   margin: 10px;
 
-  .store-wrapper{
+  .store-wrapper {
     display: flex;
     flex-direction: row;
     width: 20%;
@@ -42,6 +42,7 @@ const Game = styled.li`
 
   .offer-link {
     margin-left: auto;
+    min-width: 90px;
   }
 
   .prices-wrapper {
@@ -193,9 +194,12 @@ export default function GameItem(props: GameData) {
       </div>
 
       {/* Button */}
-      <a className="offer-link" href={dealUrl} target="_blank" rel="noreferrer">
-        <Button text="Go To Offer!" />
-      </a>
+      <div className="offer-link">
+        {" "}
+        <a href={dealUrl} target="_blank" rel="noreferrer">
+          <Button text="Go To Offer!" />
+        </a>
+      </div>
     </Game>
   );
 }
