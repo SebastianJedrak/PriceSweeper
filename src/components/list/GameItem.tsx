@@ -43,7 +43,6 @@ const Game = styled.li`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80px;
     height: 60px;
     margin-right: 20px;
     border: 1px solid white;
@@ -55,6 +54,11 @@ const Game = styled.li`
   .meta-wrapper a {
     text-decoration: underline;
     color: white;
+  }
+
+  .meta-wrapper p {
+    text-align: center;
+    width: 100px;
   }
 
   .meta-green {
