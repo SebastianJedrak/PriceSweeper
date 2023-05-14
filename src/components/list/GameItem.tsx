@@ -26,6 +26,9 @@ const Game = styled.li`
   .thumb {
     width: 90px;
     object-fit: contain;
+    @media all and (max-width: 1000px) {
+      width: fit-content
+    }
   }
 
   .offer-link {
@@ -49,7 +52,6 @@ const Game = styled.li`
     border-radius: 5px;
     color: white;
   }
-
 
   .meta-wrapper a {
     text-decoration: underline;
@@ -78,6 +80,16 @@ const Game = styled.li`
     color: black;
   }
 
+  .game-details {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+
+    @media all and (max-width: 1000px) {
+      flex-direction: column;
+    }
+  }
+
   .store-name {
     width: 200px;
   }
@@ -90,9 +102,6 @@ const Game = styled.li`
     text-decoration: line-through;
   }
 
-  .game-title {
-    width: 100%;
-  }
 `;
 
 export default function GameItem(props: GameData) {
@@ -166,13 +175,16 @@ export default function GameItem(props: GameData) {
       </div>
 
       {/* Game Details */}
-      <img className="thumb" src={props.thumb} alt={props.title} />
-      <span className="game-title">{props.title}</span>
+      <div className="game-details">
+        {" "}
+        <img className="thumb" src={props.thumb} alt={props.title} />
+        <span className="game-title">{props.title}</span>
+      </div>
 
       {/* Button */}
-        <a className="offer-link" href={dealUrl} target="_blank" rel="noreferrer">
+      <a className="offer-link" href={dealUrl} target="_blank" rel="noreferrer">
         <Button text="Go To Offer!" />
-        </a>
+      </a>
     </Game>
   );
 }
