@@ -89,6 +89,10 @@ const Game = styled.li`
   .normal-price-on-sale {
     text-decoration: line-through;
   }
+
+  .game-title {
+    width: 100%;
+  }
 `;
 
 export default function GameItem(props: GameData) {
@@ -163,7 +167,7 @@ export default function GameItem(props: GameData) {
 
       {/* Game Details */}
       <img className="thumb" src={props.thumb} alt={props.title} />
-      <span>{props.title}</span>
+      <span className="game-title">{props.title}</span>
 
       {/* Button */}
         <a className="offer-link" href={dealUrl} target="_blank" rel="noreferrer">
