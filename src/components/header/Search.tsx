@@ -30,8 +30,9 @@ export default function Search() {
     const { top } = resultsHeader!.current!.getBoundingClientRect();
     window.scroll({ top: top, behavior: "smooth" });
 
-    //reset page
+    //reset
     setPageHandler(1);
+    setSortBy("title");
   };
 
   //On Sale
@@ -40,23 +41,10 @@ export default function Search() {
     if (onSale === 1) setOnSale(0);
   };
 
-  // sortBy
-  const sortByRef = useRef<HTMLSelectElement>(null);
-  const changeSortHandler = () => {
-    setSortBy(sortByRef.current!.value);
-  };
-
   return (
     <>
       <SearchForm onSubmit={getSearchValue}>
         <input type="text" placeholder="Search" ref={search} />
-        <select ref={sortByRef} name="sortBy" onChange={changeSortHandler}>
-          <option disabled value="Title">Sort By</option>
-          <option value="Title">Title</option>
-          <option value="Price">Price</option>
-          <option value="Store">Store</option>
-          <option value="Metacritic">Rating</option>
-        </select>
         <Button
           text="Search"
           // onClickFunction={getSearchValue}

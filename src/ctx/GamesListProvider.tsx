@@ -48,7 +48,7 @@ export default function GamesListProvider(props: {
 }) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [gamesList, setGamesList] = useState<GameData[]>([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("title");
   const [sortBy, setSortBy] = useState("recent");
   const [sortDirection, setSortDirection] = useState(0);
   const [onSale, setOnSale] = useState(0);
