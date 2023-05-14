@@ -17,6 +17,15 @@ const Game = styled.li`
   padding: 10px;
   margin: 10px;
 
+  .store-wrapper{
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    @media all and (max-width: 1000px) {
+      flex-direction: column;
+    }
+  }
+
   img {
     height: 32px;
     width: 32px;
@@ -27,7 +36,7 @@ const Game = styled.li`
     width: 90px;
     object-fit: contain;
     @media all and (max-width: 1000px) {
-      width: fit-content
+      width: fit-content;
     }
   }
 
@@ -91,7 +100,7 @@ const Game = styled.li`
   }
 
   .store-name {
-    width: 200px;
+    word-wrap: break-word;
   }
 
   :nth-child(2n) {
@@ -101,7 +110,6 @@ const Game = styled.li`
   .normal-price-on-sale {
     text-decoration: line-through;
   }
-
 `;
 
 export default function GameItem(props: GameData) {
@@ -147,18 +155,21 @@ export default function GameItem(props: GameData) {
       </div>
 
       {/* Stores */}
-      {store[0] ? (
-        <img src={store[0].images.icon} alt={store[0].storeName} />
-      ) : (
-        <div>
-          <img src="" alt="" />
-        </div>
-      )}
-      {store[0] ? (
-        <h3 className="store-name">{store[0].storeName}</h3>
-      ) : (
-        <div className="store-name" />
-      )}
+      <div className="store-wrapper">
+        {" "}
+        {store[0] ? (
+          <img src={store[0].images.icon} alt={store[0].storeName} />
+        ) : (
+          <div>
+            <img src="" alt="" />
+          </div>
+        )}
+        {store[0] ? (
+          <h3 className="store-name">{store[0].storeName}</h3>
+        ) : (
+          <div className="store-name" />
+        )}
+      </div>
 
       {/* Prices */}
       <div className="prices-wrapper">
