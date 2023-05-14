@@ -38,12 +38,16 @@ const PaginationWrapper = styled.div`
     background-color: darkgray;
   }
 
-  .page-up {
+  .page-up-container {
     grid-column: 3 / 4;
+    text-align: end;
+
+  }
+
+  .page-up {
     text-decoration: underline;
     cursor: pointer;
     padding: 0;
-    text-align: end;
   }
 `;
 
@@ -70,13 +74,13 @@ export default function Pagination(props: Props) {
   const itemsPerPageHandler = () => {
     const PageValue = Number(itemsPerPageRefValue.current!.value);
     setItemPerPage(PageValue);
-    props.onChangePage(1)
+    props.onChangePage(1);
   };
 
   // Page Up
   const pageUpHandler = () => {
-    window.scroll({top: 0, behavior: "smooth"})
-  }
+    window.scroll({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <PaginationWrapper>
@@ -110,7 +114,11 @@ export default function Pagination(props: Props) {
           <option value="20">20</option>
         </select>
       </div>
-      <span className="page-up" onClick={pageUpHandler}>Page Up</span>
+      <div className="page-up-container">
+        <span className="page-up" onClick={pageUpHandler}>
+          Page Up
+        </span>
+      </div>
     </PaginationWrapper>
   );
 }
