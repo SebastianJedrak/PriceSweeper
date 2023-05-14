@@ -9,6 +9,10 @@ const Stores = styled.div`
   flex-wrap: wrap;
   margin: 64px;
   justify-content: center;
+  @media all and (max-width: 1000px) {
+    margin: 48px 24px;
+  }
+
 
   .store-item {
     color: white;
@@ -16,16 +20,28 @@ const Stores = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
     width: 140px;
     padding: 20px 5px;
     border: 1px solid transparent;
+    @media all and (max-width: 1000px) {
+      flex-direction: row;
+      padding: 10px 10px;
+      width: 180px;
 
-    img {
-      height: 48px;
-      width: 48px;
+
     }
   }
+
+  img {
+      height: 48px;
+      width: 48px;
+      @media all and (max-width: 1000px) {
+        height: 16px;
+        width: 16px;
+      }
+    }
 
   .active {
     background-color: #ffffff28;
@@ -89,7 +105,8 @@ export default function StoresList() {
         </div>
         {stores.map((store: Store) => {
           return (
-            <div tabIndex={0}
+            <div
+              tabIndex={0}
               className={`store-item ${
                 activeStoresId.includes(store.storeID) && "active"
               }`}
