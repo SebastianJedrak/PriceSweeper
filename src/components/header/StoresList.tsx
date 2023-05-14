@@ -46,6 +46,7 @@ const Stores = styled.div`
     @media all and (max-width: 1000px) {
       height: 16px;
       width: 16px;
+      margin-right: 5px;
     }
   }
 
@@ -89,11 +90,10 @@ export default function StoresList() {
 
   // Hide stores
 
-  const [hideStores, setHideStores] = useState(false);
+  const [hideStores, setHideStores] = useState(window.screen.width > 1000 ? false : true);
 
   const hideStoresHandler = () => {
     setHideStores(!hideStores);
-    console.log(hideStores);
   };
 
   // allStoresHandler button
@@ -149,7 +149,7 @@ export default function StoresList() {
           );
         })}
         <div className="button-wrapper">
-          <Button onClick={allStoresHandler} text="All Stores" />
+          <Button onClick={allStoresHandler} text="Pick All" />
         </div>
       </Stores>
     </section>
