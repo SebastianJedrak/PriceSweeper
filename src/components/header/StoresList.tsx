@@ -89,7 +89,7 @@ export default function StoresList() {
         </div>
         {stores.map((store: Store) => {
           return (
-            <div
+            <div tabIndex={0}
               className={`store-item ${
                 activeStoresId.includes(store.storeID) && "active"
               }`}
