@@ -24,6 +24,9 @@ const Game = styled.li`
     @media all and (max-width: 1000px) {
       flex-direction: column;
     }
+    @media all and (max-width: 500px) {
+      min-width: max-content;
+    }
   }
 
   img {
@@ -62,7 +65,7 @@ const Game = styled.li`
     border-radius: 5px;
     color: white;
     min-width: 80px;
-      }
+  }
 
   .meta-wrapper a {
     text-decoration: underline;
@@ -103,7 +106,7 @@ const Game = styled.li`
   .store-name {
     word-wrap: break-word;
     @media all and (max-width: 500px) {
-    display: none;
+      display: none;
     }
   }
 
