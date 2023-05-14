@@ -60,6 +60,7 @@ const Stores = styled.div`
     @media all and (max-width: 500px) {
       height: 32px;
       width: 32px;
+      margin-right: 0;
     }
   }
 
