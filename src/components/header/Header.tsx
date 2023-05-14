@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
     url(${backgroundImg});
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
   padding: 50px 0 ;
 `;
 

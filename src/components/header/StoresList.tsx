@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styled from "styled-components";
 import Button from "../UI/Button";
 import { Store, StoreContext } from "../../ctx/StoreProvider";
@@ -13,6 +13,14 @@ const Stores = styled.div`
     margin: 48px 24px;
   }
 
+  .stores-header {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+    width: 100%;
+  }
 
   .store-item {
     color: white;
@@ -29,19 +37,17 @@ const Stores = styled.div`
       flex-direction: row;
       padding: 10px 10px;
       width: 180px;
-
-
     }
   }
 
   img {
-      height: 48px;
-      width: 48px;
-      @media all and (max-width: 1000px) {
-        height: 16px;
-        width: 16px;
-      }
+    height: 48px;
+    width: 48px;
+    @media all and (max-width: 1000px) {
+      height: 16px;
+      width: 16px;
     }
+  }
 
   .active {
     background-color: #ffffff28;
@@ -81,6 +87,15 @@ export default function StoresList() {
     }
   };
 
+  // Hide stores
+
+  const [hideStores, setHideStores] = useState(false);
+
+  const hideStoresHandler = () => {
+    setHideStores(!hideStores);
+    console.log(hideStores);
+  };
+
   // allStoresHandler button
 
   const allStoresHandler = () => {
@@ -97,12 +112,27 @@ export default function StoresList() {
       </section>
     );
 
+  // Hide stores return
+
+  if (hideStores === true)
+    return (
+      <section>
+        {" "}
+        <Stores>
+          {" "}
+          <h2 className="stores-header" onClick={hideStoresHandler}>
+            Pick Stores &#11167;
+          </h2>
+        </Stores>
+      </section>
+    );
+
   return (
     <section>
       <Stores onClick={onStoresHandler}>
-        <div className="button-wrapper">
-          <Button onClick={allStoresHandler} text="All Stores" />
-        </div>
+        <h2 className="stores-header" onClick={hideStoresHandler}>
+          Hide Stores &#x2B9D;
+        </h2>
         {stores.map((store: Store) => {
           return (
             <div
@@ -118,6 +148,9 @@ export default function StoresList() {
             </div>
           );
         })}
+        <div className="button-wrapper">
+          <Button onClick={allStoresHandler} text="All Stores" />
+        </div>
       </Stores>
     </section>
   );
