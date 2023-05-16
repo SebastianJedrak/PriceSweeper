@@ -203,7 +203,7 @@ export default function GameItem(props: GameData) {
       <div className="offer-link">
         {" "}
         <a href={dealUrl} target="_blank" rel="noreferrer">
-          <Button text="Go To Offer!" />
+          <Button text="Go to Offer &#128681;" />
         </a>
       </div>
     </Game>
