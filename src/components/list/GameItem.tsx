@@ -5,13 +5,12 @@ import { useContext } from "react";
 import { StoreContext } from "../../ctx/StoreProvider";
 
 const Game = styled.li`
-  color: black;
   display: flex;
   flex-direction: row;
   align-items: center;
 
   //Card
-  background-color: darkgray;
+  background-color: ${({theme}) => theme.white};
   border: 1px solid gray;
   border-radius: 5px;
   padding: 10px;
@@ -63,13 +62,13 @@ const Game = styled.li`
     margin-right: 20px;
     border: 1px solid white;
     border-radius: 5px;
-    color: white;
+    color: ${({theme}) => theme.white};
     min-width: 80px;
   }
 
   .meta-wrapper a {
     text-decoration: underline;
-    color: white;
+    color: ${({theme}) => theme.white};
   }
 
   .meta-wrapper p {
@@ -90,7 +89,7 @@ const Game = styled.li`
 
   .meta-gray {
     background-color: #cccccc;
-    color: black;
+    color: ${({theme}) => theme.black};
   }
 
   .game-details {
@@ -111,7 +110,7 @@ const Game = styled.li`
   }
 
   :nth-child(2n) {
-    background-color: #727272;
+    background-color: #${({theme}) => theme.white};
   }
 
   .normal-price-on-sale {

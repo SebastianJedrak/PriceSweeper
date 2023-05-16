@@ -14,7 +14,7 @@ const Stores = styled.div`
   }
 
   .stores-header {
-    color: white;
+    color: ${({theme}) => theme.white};
     text-align: center;
     margin-bottom: 20px;
     text-decoration: underline;
@@ -23,7 +23,7 @@ const Stores = styled.div`
   }
 
   .store-item {
-    color: white;
+    color: ${({theme}) => theme.white};
     margin: 16px;
     display: flex;
     flex-direction: column;
@@ -65,8 +65,8 @@ const Stores = styled.div`
   }
 
   .active {
-    background-color: #ffffff28;
-    border: 1px solid white;
+    background-color: ${({theme}) => theme.white + "15"};
+    border: 1px solid ${({theme}) => theme.white};
     border-radius: 5px;
   }
 

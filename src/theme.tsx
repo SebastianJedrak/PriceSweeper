@@ -1,14 +1,14 @@
 export const theme = {
   primaryColor: {
-    300: "",
-    400: "",
-    500: "",
+    primary300: "",
+    primary400: "",
+    primary500: "",
   },
   secondaryColor: {
-    300: "",
-    400: "",
-    500: "",
+    secondary300: "",
+    secondary400: "",
+    secondary500: "",
   },
-  black: "black",
-  white: "white"
+  black: "#000000",
+  white: "#FFFFFF",
 };

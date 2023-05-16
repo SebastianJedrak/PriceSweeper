@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const LogoText = styled.h1`
-    color: white;
+    color:  ${({theme}) => theme.white};
     text-align: center;
     margin: 0;
     margin-bottom: 20px;

@@ -8,7 +8,7 @@ import { PageContext } from "../../ctx/PageProvider";
 const SearchForm = styled.form`
   margin: 0 auto;
   width: max-content;
-  color: white;
+  color: ${({theme}) => theme.white};
 
   .sale-input {
     display: block;

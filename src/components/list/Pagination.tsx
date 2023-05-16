@@ -32,7 +32,7 @@ const PaginationWrapper = styled.div`
   }
 
   .active {
-    background-color: darkgray;
+    background-color: ${({theme}) => theme.white};
   }
 
   .page-up-container {
