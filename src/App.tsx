@@ -5,15 +5,18 @@ import StoreProvider from "./ctx/StoreProvider";
 import GamesListProvider from "./ctx/GamesListProvider";
 import PageProvider from "./ctx/PageProvider";
 import Footer from "./components/Footer";
+import { ThemeProvider } from "styled-components";
 
 function App() {
   return (
     <GamesListProvider>
       <PageProvider>
         <StoreProvider>
-          <Header />
-          <GamesList />
-          <Footer />
+          <ThemeProvider theme={{}}>
+            <Header />
+            <GamesList />
+            <Footer />
+          </ThemeProvider>
         </StoreProvider>
       </PageProvider>
     </GamesListProvider>
