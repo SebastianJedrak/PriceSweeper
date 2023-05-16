@@ -14,6 +14,10 @@ const SearchForm = styled.form`
     display: block;
   }
 
+  .sale-input * {
+    cursor: pointer;
+  }
+
   .input-search {
     padding: 5px;
     min-width: 250px;
