@@ -14,16 +14,18 @@ const Stores = styled.div`
   }
 
   .stores-header {
-    color: ${({theme}) => theme.white};
+    color: ${({ theme }) => theme.secondaryColor.secondaryLight};
     text-align: center;
-    margin-bottom: 20px;
     text-decoration: underline;
     cursor: pointer;
     width: 100%;
+    span {
+      color: ${({ theme }) => theme.primaryColor.primary400};
+    }
   }
 
   .store-item {
-    color: ${({theme}) => theme.white};
+    color: ${({ theme }) => theme.secondaryColor.secondaryLight};
     margin: 16px;
     display: flex;
     flex-direction: column;
@@ -65,8 +67,9 @@ const Stores = styled.div`
   }
 
   .active {
-    background-color: ${({theme}) => theme.white + "15"};
-    border: 1px solid ${({theme}) => theme.white};
+    background-color: ${({ theme }) =>
+      theme.secondaryColor.secondary200 + "15"};
+    border: 1px solid ${({ theme }) => theme.secondaryColor.secondary100};
     border-radius: 5px;
   }
 
@@ -137,7 +140,7 @@ export default function StoresList() {
         <Stores>
           {" "}
           <h2 className="stores-header" onClick={hideStoresHandler}>
-            Pick Stores &#11167;
+            Pick Stores <span>&#11167;</span> 
           </h2>
         </Stores>
       </section>
@@ -147,7 +150,7 @@ export default function StoresList() {
     <section>
       <Stores onClick={onStoresHandler}>
         <h2 className="stores-header" onClick={hideStoresHandler}>
-          Hide Stores &#x2B9D;
+          Hide Stores <span>&#x2B9D;</span> 
         </h2>
         {stores.map((store: Store) => {
           return (

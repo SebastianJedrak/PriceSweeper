@@ -8,9 +8,10 @@ const Game = styled.li`
   display: flex;
   flex-direction: row;
   align-items: center;
+  color: ${({theme}) => theme.primaryColor.primaryDark};
 
   //Card
-  background-color: ${({theme}) => theme.white};
+  background-color: ${({theme}) => theme.secondaryColor.secondaryLight};
   border: 1px solid gray;
   border-radius: 5px;
   padding: 10px;
@@ -62,13 +63,13 @@ const Game = styled.li`
     margin-right: 20px;
     border: 1px solid white;
     border-radius: 5px;
-    color: ${({theme}) => theme.white};
+    color: ${({theme}) => theme.secondaryColor.secondaryLight};
     min-width: 80px;
   }
 
   .meta-wrapper a {
     text-decoration: underline;
-    color: ${({theme}) => theme.white};
+    color: ${({theme}) => theme.secondaryColor.secondaryLight};
   }
 
   .meta-wrapper p {
@@ -89,7 +90,7 @@ const Game = styled.li`
 
   .meta-gray {
     background-color: #cccccc;
-    color: ${({theme}) => theme.black};
+    color: ${({theme}) => theme.primaryColor.primaryDark};
   }
 
   .game-details {
@@ -110,7 +111,7 @@ const Game = styled.li`
   }
 
   :nth-child(2n) {
-    background-color: #${({theme}) => theme.white};
+    background-color: ${({theme}) => theme.primaryColor.primaryLight};
   }
 
   .normal-price-on-sale {

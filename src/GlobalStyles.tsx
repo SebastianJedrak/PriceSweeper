@@ -6,9 +6,28 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  h1,h2 {
+    margin: 30px 0;
+    text-align: center;
+
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-weight: 500;
+  }
   
   body {
-    background-color: #fffaef;
+    background-color: white;
   }
   
   li {
@@ -16,7 +35,6 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   a {
-    color: black;
     text-decoration: none;
   }
   

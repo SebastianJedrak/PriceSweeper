@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const FooterWrapper = styled.footer`
-  background-color: ${({theme}) => theme.black};
-  margin-top: 10px;
+  background-color: ${({theme}) => theme.primaryColor.primaryDark};
+  margin-top: 30px;
   padding: 20px;
-  color: ${({theme}) => theme.white};
+  color: ${({theme}) => theme.secondaryColor.secondaryLight};
   text-align: center;
 `;
 

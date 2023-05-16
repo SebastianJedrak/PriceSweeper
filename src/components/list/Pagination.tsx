@@ -11,7 +11,9 @@ type Props = {
 const PaginationWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0 10px;
+  margin: 15px 10px 0;
+  color: ${({theme}) => theme.primaryColor.primaryDark};
+
   .pages {
     text-align: center;
     min-width: 70%;
@@ -32,7 +34,9 @@ const PaginationWrapper = styled.div`
   }
 
   .active {
-    background-color: ${({theme}) => theme.white};
+    background-color: ${({theme}) => theme.primaryColor.primary600};
+    color: ${({theme}) => theme.secondaryColor.secondaryLight};
+    border-radius: 2.5px;
   }
 
   .page-up-container {

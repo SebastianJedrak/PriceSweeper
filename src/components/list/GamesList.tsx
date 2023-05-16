@@ -32,11 +32,6 @@ const Section = styled.section`
     margin: 0 auto;
   }
 
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
   @keyframes rotate {
     from {
       transform: rotate(0deg);

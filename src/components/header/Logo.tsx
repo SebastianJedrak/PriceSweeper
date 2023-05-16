@@ -1,12 +1,17 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const LogoText = styled.h1`
-    color:  ${({theme}) => theme.white};
-    text-align: center;
-    margin: 0;
-    margin-bottom: 20px;
-`
+  color: ${({ theme }) => theme.secondaryColor.secondaryLight};
+  text-align: center;
+  span {
+    color: ${({ theme }) => theme.primaryColor.primary500};
+  }
+`;
 
-export default function Logo () {
-    return <LogoText>PriceSweeper</LogoText>
+export default function Logo() {
+  return (
+    <LogoText>
+      Price<span>Sweeper</span>
+    </LogoText>
+  );
 }
