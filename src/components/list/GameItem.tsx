@@ -19,9 +19,7 @@ const Game = styled.li`
 
   .store-wrapper {
     display: flex;
-    flex-direction: row;
-    min-width: 20%;
-    margin-right: 20px;
+   
     @media all and (max-width: 1000px) {
       flex-direction: column;
     }
@@ -52,6 +50,9 @@ const Game = styled.li`
   .store-prices-wrapper {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    min-width: 20%;
+    margin-right: 20px;
     @media all and (max-width: 500px) {
       flex-direction: column;
       align-items: start;
