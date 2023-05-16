@@ -93,7 +93,7 @@ const Game = styled.li`
     @media all and (max-width: 500px) {
 display:none    }
   }
-
+  
   .meta-wrapper p {
     text-align: center;
   }
