@@ -8,7 +8,7 @@ const Stores = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 30px;
-  margin-bottom: 100px;
+  padding-bottom: 60px;
   justify-content: center;
   @media all and (max-width: 1000px) {
     margin: 48px 24px;
