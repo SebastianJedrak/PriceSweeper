@@ -23,6 +23,11 @@ const SearchForm = styled.form`
     color: 1px solid ${({ theme }) => theme.primaryColor.primaryDark};
     background-color: ${({ theme }) => theme.secondaryColor.secondaryLight};
   }
+
+  .sale-input-checkbox {
+    filter: hue-rotate(220deg);
+    margin-right: 5px;
+  }
 `;
 
 export default function Search() {
