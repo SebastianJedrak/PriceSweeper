@@ -19,12 +19,12 @@ const Section = styled.section`
 
   .sort-desc-wrapper {
     cursor: pointer;
-    width: 120px;
+    width: 100px;
     display: flex;
     justify-content: space-between;
   }
 
-  .sort-desc {
+  .sort-desc-wrapper * {
     margin: 0
   }
 
