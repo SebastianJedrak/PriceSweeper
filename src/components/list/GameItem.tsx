@@ -8,11 +8,11 @@ const Game = styled.li`
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: ${({theme}) => theme.primaryColor.primaryDark};
+  color: ${({ theme }) => theme.primaryColor.primaryDark};
 
   //Card
-  background-color: ${({theme}) => theme.secondaryColor.secondary100};
-  border: 1px solid ${({theme}) => theme.secondaryColor.secondaryDark};
+  background-color: ${({ theme }) => theme.secondaryColor.secondary100};
+  border: 1px solid ${({ theme }) => theme.secondaryColor.secondaryDark};
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
@@ -21,6 +21,7 @@ const Game = styled.li`
     display: flex;
     flex-direction: row;
     min-width: 20%;
+    margin-right: 20px;
     @media all and (max-width: 1000px) {
       flex-direction: column;
     }
@@ -48,10 +49,23 @@ const Game = styled.li`
     min-width: 80px;
   }
 
+  .store-prices-wrapper {
+    display: flex;
+    align-items: center;
+    @media all and (max-width: 500px) {
+      flex-direction: column;
+      align-items: start;
+      margin-right: 5px;
+    }
+  }
+
   .prices-wrapper {
     width: 68px;
-    text-align: end;
     margin-right: 20px;
+    @media all and (max-width: 500px) {
+      margin-right: 0px;
+      min-width: fit-content;
+    }
   }
 
   .meta-wrapper {
@@ -61,15 +75,22 @@ const Game = styled.li`
     align-items: center;
     height: 60px;
     margin-right: 20px;
-    border: 1px solid ${({theme}) => theme.secondaryColor.secondaryDark};
+    border: 1px solid ${({ theme }) => theme.secondaryColor.secondaryDark};
     border-radius: 5px;
-    color: ${({theme}) => theme.secondaryColor.secondaryLight};
+    color: ${({ theme }) => theme.secondaryColor.secondaryLight};
     min-width: 80px;
+    @media all and (max-width: 500px) {
+      margin-right: 5px;
+      min-width: 50px;
+
+    }
   }
 
   .meta-wrapper a {
     text-decoration: underline;
-    color: ${({theme}) => theme.secondaryColor.secondaryLight};
+    color: ${({ theme }) => theme.secondaryColor.secondaryLight};
+    @media all and (max-width: 500px) {
+display:none    }
   }
 
   .meta-wrapper p {
@@ -90,7 +111,7 @@ const Game = styled.li`
 
   .meta-gray {
     background-color: #cccccc;
-    color: ${({theme}) => theme.primaryColor.primaryDark};
+    color: ${({ theme }) => theme.primaryColor.primaryDark};
   }
 
   .game-details {
@@ -111,7 +132,7 @@ const Game = styled.li`
   }
 
   :nth-child(2n) {
-    background-color: ${({theme}) => theme.primaryColor.primary100};
+    background-color: ${({ theme }) => theme.primaryColor.primary100};
   }
 
   .normal-price-on-sale {
@@ -161,35 +182,37 @@ export default function GameItem(props: GameData) {
         )}
       </div>
 
-      {/* Stores */}
-      <div className="store-wrapper">
+      <div className="store-prices-wrapper">
         {" "}
-        {store[0] ? (
-          <img src={store[0].images.icon} alt={store[0].storeName} />
-        ) : (
-          <div>
-            <img src="" alt="" />
-          </div>
-        )}
-        {store[0] ? (
-          <h3 className="store-name">{store[0].storeName}</h3>
-        ) : (
-          <div className="store-name" />
-        )}
-      </div>
-
-      {/* Prices */}
-      <div className="prices-wrapper">
-        {props.normalPrice === props.salePrice ? (
-          <p>{props.normalPrice}&#x24;</p>
-        ) : (
-          <p className="normal-price-on-sale">{props.normalPrice}&#x24;</p>
-        )}
-        {props.normalPrice === props.salePrice ? (
-          ""
-        ) : (
-          <p>{props.salePrice}&#x24;</p>
-        )}
+        {/* Stores */}
+        <div className="store-wrapper">
+          {" "}
+          {store[0] ? (
+            <img src={store[0].images.icon} alt={store[0].storeName} />
+          ) : (
+            <div>
+              <img src="" alt="" />
+            </div>
+          )}
+          {store[0] ? (
+            <h3 className="store-name">{store[0].storeName}</h3>
+          ) : (
+            <div className="store-name" />
+          )}
+        </div>
+        {/* Prices */}
+        <div className="prices-wrapper">
+          {props.normalPrice === props.salePrice ? (
+            <p>{props.normalPrice}&#x24;</p>
+          ) : (
+            <p className="normal-price-on-sale">{props.normalPrice}&#x24;</p>
+          )}
+          {props.normalPrice === props.salePrice ? (
+            ""
+          ) : (
+            <p>{props.salePrice}&#x24;</p>
+          )}
+        </div>
       </div>
 
       {/* Game Details */}
