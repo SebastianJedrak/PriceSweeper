@@ -8,7 +8,7 @@ import { PageContext } from "../../ctx/PageProvider";
 const SearchForm = styled.form`
   margin: 0 auto;
   width: max-content;
-  color:  ${({theme}) => theme.secondaryColor.secondaryLight};
+  color: ${({ theme }) => theme.secondaryColor.secondaryLight};
 
   .sale-input {
     display: block;
@@ -17,6 +17,11 @@ const SearchForm = styled.form`
   .input-search {
     padding: 5px;
     min-width: 250px;
+    height: 30px;
+    border: 1px solid ${({ theme }) => theme.primaryColor.primaryDark};
+    border-right: none;
+    color: 1px solid ${({ theme }) => theme.primaryColor.primaryDark};
+    background-color: ${({ theme }) => theme.secondaryColor.secondaryLight};
   }
 `;
 
@@ -49,13 +54,18 @@ export default function Search() {
   return (
     <>
       <SearchForm onSubmit={getSearchValue}>
-        <input className="input-search" type="text" placeholder="Search" ref={search} />
+        <input
+          className="input-search"
+          type="text"
+          placeholder="Search"
+          ref={search}
+        />
         <Button
           text="Search"
           // onClickFunction={getSearchValue}
         />
         <div className="sale-input">
-          <input type="checkbox" id="isOnSale" onClick={onSaleHandler} />
+          <input className="sale-input-checkbox" type="checkbox" id="isOnSale" onClick={onSaleHandler} />
           <label htmlFor="isOnSale">Only on Sale</label>
         </div>
       </SearchForm>
