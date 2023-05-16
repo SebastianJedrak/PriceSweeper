@@ -8,13 +8,13 @@ const StyledHeader = styled.header`
   background: linear-gradient(
       to top,
       #fffaef 0%,
-      #19150abb 20%
+      #19150abb 10%
     ),
     url(${backgroundImg});
-  background-size: cover;
+  background-size: fill;
   background-repeat: no-repeat;
   background-position: top;
-  padding: 50px 0 ;
+  padding: 30px 0 ;
 `;
 
 export default function Header() {
