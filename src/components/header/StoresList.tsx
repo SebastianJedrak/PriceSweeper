@@ -46,6 +46,12 @@ const Stores = styled.div`
     }
   }
 
+  .store-item:hover {
+    background-color: ${({ theme }) => theme.primaryColor.primary200 + "15"};
+    border: 1px solid ${({ theme }) => theme.primaryColor.primary100};
+    border-radius: 5px;
+  }
+
   .store-name {
     @media all and (max-width: 500px) {
       display: none;
@@ -68,10 +74,13 @@ const Stores = styled.div`
   }
 
   .active {
-    background-color: ${({ theme }) =>
-      theme.primaryColor.primary400 + "30"};
+    background-color: ${({ theme }) => theme.primaryColor.primary400 + "30"};
     border: 1px solid ${({ theme }) => theme.primaryColor.primary200};
     border-radius: 5px;
+  }
+
+  .active:hover {
+    background-color: ${({ theme }) => theme.primaryColor.primary600 + "30"};
   }
 
   .button-wrapper {
