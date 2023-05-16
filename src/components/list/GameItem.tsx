@@ -12,7 +12,7 @@ const Game = styled.li`
 
   //Card
   background-color: ${({theme}) => theme.secondaryColor.secondaryLight};
-  border: 1px solid gray;
+  border: 1px solid ${({theme}) => theme.secondaryColor.secondaryDark};
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
@@ -61,7 +61,7 @@ const Game = styled.li`
     align-items: center;
     height: 60px;
     margin-right: 20px;
-    border: 1px solid white;
+    border: 1px solid ${({theme}) => theme.secondaryColor.secondaryDark};
     border-radius: 5px;
     color: ${({theme}) => theme.secondaryColor.secondaryLight};
     min-width: 80px;
