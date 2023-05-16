@@ -69,8 +69,8 @@ const Stores = styled.div`
 
   .active {
     background-color: ${({ theme }) =>
-      theme.secondaryColor.secondary200 + "15"};
-    border: 1px solid ${({ theme }) => theme.secondaryColor.secondary100};
+      theme.primaryColor.primary400 + "20"};
+    border: 1px solid ${({ theme }) => theme.primaryColor.primary200};
     border-radius: 5px;
   }
 
