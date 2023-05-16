@@ -27,7 +27,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   body {
-    background-color: white;
+    background-color: #fffaef;
   }
   
   li {

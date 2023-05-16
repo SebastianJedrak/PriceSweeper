@@ -7,7 +7,7 @@ import backgroundImg from "../../img/main-header-img.png";
 const StyledHeader = styled.header`
   background: linear-gradient(
       to top,
-      #ffffff 0%,
+      #fffaef 0%,
       #0f1604aa 5%
     ),
     url(${backgroundImg});

@@ -11,7 +11,7 @@ const Game = styled.li`
   color: ${({theme}) => theme.primaryColor.primaryDark};
 
   //Card
-  background-color: ${({theme}) => theme.secondaryColor.secondaryLight};
+  background-color: ${({theme}) => theme.secondaryColor.secondary100};
   border: 1px solid ${({theme}) => theme.secondaryColor.secondaryDark};
   border-radius: 5px;
   padding: 10px;
@@ -111,7 +111,7 @@ const Game = styled.li`
   }
 
   :nth-child(2n) {
-    background-color: ${({theme}) => theme.primaryColor.primaryLight};
+    background-color: ${({theme}) => theme.primaryColor.primary100};
   }
 
   .normal-price-on-sale {

@@ -77,6 +77,7 @@ const Stores = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+    margin: 20px 0;
   }
 `;
 
@@ -138,9 +139,8 @@ export default function StoresList() {
       <section>
         {" "}
         <Stores>
-          {" "}
           <h2 className="stores-header" onClick={hideStoresHandler}>
-            Pick Stores <span>&#11167;</span> 
+            Pick Stores <span>&#11167;</span>
           </h2>
         </Stores>
       </section>
@@ -150,8 +150,11 @@ export default function StoresList() {
     <section>
       <Stores onClick={onStoresHandler}>
         <h2 className="stores-header" onClick={hideStoresHandler}>
-          Hide Stores <span>&#x2B9D;</span> 
+          Hide Stores <span>&#x2B9D;</span>
         </h2>
+        <div className="button-wrapper">
+          <Button onClick={allStoresHandler} text="Pick All" />
+        </div>
         {stores.map((store: Store) => {
           return (
             <div
@@ -167,9 +170,6 @@ export default function StoresList() {
             </div>
           );
         })}
-        <div className="button-wrapper">
-          <Button onClick={allStoresHandler} text="Pick All" />
-        </div>
       </Stores>
     </section>
   );
