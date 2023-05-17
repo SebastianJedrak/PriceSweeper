@@ -38,6 +38,13 @@ export const GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
+  select {
+    background-color: #d4efab;
+    color: #19150a;
+    border-radius: 2.5px;
+  }
+
   
   @media all and (max-width: 475px) {
     * {
