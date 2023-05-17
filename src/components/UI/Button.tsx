@@ -20,9 +20,7 @@ const ButtonStyled = styled.button`
   }
   border-radius: 2.5px;
 
-  &:active,
-  &:focus,
-  &:checked {
+  &:focus-visible {
     outline: 2px dotted ${({ theme }) => theme.secondaryColor.secondary600};
   }
 `

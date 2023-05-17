@@ -20,9 +20,7 @@ const PaginationWrapper = styled.div`
   }
 
   .page {
-    &:active,
-    &:focus,
-    &:checked {
+    &:focus-visible {
       outline: 2px dotted ${({ theme }) => theme.secondaryColor.secondaryDark};
     }
   }
@@ -55,9 +53,7 @@ const PaginationWrapper = styled.div`
     text-decoration: underline;
     cursor: pointer;
     padding: 0;
-    &:active,
-    &:focus,
-    &:checked {
+    &:focus-visible {
       outline: 2px dotted ${({ theme }) => theme.secondaryColor.secondaryDark};
     }
     &:hover {

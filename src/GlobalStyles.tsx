@@ -50,8 +50,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: #d4efab
   }
 
-  select:active,
-  select:focus {
+  select:focus-visible {
     outline: 1px dotted black;
   }
 

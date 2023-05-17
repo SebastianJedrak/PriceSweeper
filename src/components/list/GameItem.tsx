@@ -85,9 +85,7 @@ const Game = styled.li`
       min-width: 50px;
     }
 
-    &:active,
-    &:focus,
-    &:checked {
+    &:focus-visible {
       outline: 2px dotted ${({ theme }) => theme.secondaryColor.secondary600};
     }
   }

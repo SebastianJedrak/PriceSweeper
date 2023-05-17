@@ -31,8 +31,7 @@ const SearchForm = styled.form`
   .sale-input-checkbox {
     filter: hue-rotate(220deg);
     margin-right: 5px;
-    &:active,
-    &:focus {
+    &:focus-visible {
       outline: 1px dotted ${({ theme }) => theme.secondaryColor.secondary600};
     }
   }

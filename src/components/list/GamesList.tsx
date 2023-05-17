@@ -23,9 +23,7 @@ const Section = styled.section`
     display: flex;
     justify-content: space-between;
 
-    &:active,
-    &:focus,
-    &:checked {
+    &:focus-visible {
       outline: 1px dotted ${({ theme }) => theme.secondaryColor.secondaryDark};
     }
   }

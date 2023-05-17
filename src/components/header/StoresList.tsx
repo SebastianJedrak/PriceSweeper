@@ -24,9 +24,7 @@ const Stores = styled.div`
       color: ${({ theme }) => theme.primaryColor.primary400};
     }
 
-    &:active,
-    &:focus,
-    &:checked {
+    &:focus-visible {
       outline: 1px dotted ${({ theme }) => theme.secondaryColor.secondary600};
     }
   }
@@ -50,9 +48,7 @@ const Stores = styled.div`
     @media all and (max-width: 500px) {
       width: fit-content;
     }
-    &:active,
-    &:focus,
-    &:checked {
+    &:focus-visible{
       outline: 2px dotted ${({ theme }) => theme.secondaryColor.secondary600};
     }
   }
