@@ -9,19 +9,15 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 120%;
   }
 
-  h2 {
-    margin: 30px 0;
-    text-align: center;
-
-  }
-
   h1 {
     font-size: 2.5rem;
   }
 
   h2 {
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1.8rem;
+    margin: 30px 0;
+    text-align: center;
   }
 
   h3 {
