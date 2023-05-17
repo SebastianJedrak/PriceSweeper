@@ -75,6 +75,11 @@ const Game = styled.li`
 
   }
 
+  .meta-wrapper-anchor > .meta-wrapper {
+    min-width: 0;
+    margin-right:0;
+  }
+
   .meta-wrapper {
     display: flex;
     flex-direction: column;
