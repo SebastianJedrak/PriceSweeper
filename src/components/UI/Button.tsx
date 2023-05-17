@@ -23,7 +23,7 @@ const ButtonStyled = styled.button`
   &:active,
   &:focus,
   &:checked {
-    outline: 1px dotted ${({ theme }) => theme.secondaryColor.secondary600};
+    outline: 2px dotted ${({ theme }) => theme.secondaryColor.secondary600};
   }
 `
 

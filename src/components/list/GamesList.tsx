@@ -156,12 +156,12 @@ export default function GamesList() {
           <option value="Metacritic">Rating</option>
         </select>
         {sortDesc ? (
-          <div className="sort-desc-wrapper" tabIndex={0} onClick={sortDirectionHandler}>
+          <div tabIndex={0} className="sort-desc-wrapper" onClick={sortDirectionHandler}>
             <span className="sort-desc">Descending</span>
             <span className="sort-desc-arrow">&#11167;</span>
           </div>
         ) : (
-          <div className="sort-desc-wrapper" onClick={sortDirectionHandler}>
+          <div tabIndex={0} className="sort-desc-wrapper" onClick={sortDirectionHandler}>
             <span className="sort-desc">Ascending</span>
             <span>&#x2B9D;</span>
           </div>

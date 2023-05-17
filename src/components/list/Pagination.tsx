@@ -12,12 +12,19 @@ const PaginationWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 15px 10px 0;
-  color: ${({theme}) => theme.primaryColor.primaryDark};
+  color: ${({ theme }) => theme.primaryColor.primaryDark};
 
   .pages {
     text-align: center;
     min-width: 70%;
-    
+  }
+
+  .page {
+    &:active,
+    &:focus,
+    &:checked {
+      outline: 2px dotted ${({ theme }) => theme.secondaryColor.secondaryDark};
+    }
   }
 
   .dropdown {
@@ -34,21 +41,28 @@ const PaginationWrapper = styled.div`
   }
 
   .active {
-    background-color: ${({theme}) => theme.primaryColor.primary600};
-    color: ${({theme}) => theme.secondaryColor.secondaryLight};
+    background-color: ${({ theme }) => theme.primaryColor.primary600};
+    color: ${({ theme }) => theme.secondaryColor.secondaryLight};
     border-radius: 2.5px;
   }
 
   .page-up-container {
     text-align: end;
     min-width: 15%;
-
   }
 
   .page-up {
     text-decoration: underline;
     cursor: pointer;
     padding: 0;
+    &:active,
+    &:focus,
+    &:checked {
+      outline: 2px dotted ${({ theme }) => theme.secondaryColor.secondaryDark};
+    }
+    &:hover {
+      color: ${({ theme }) => theme.primaryColor.primary600};
+    }
   }
 `;
 
@@ -85,7 +99,7 @@ export default function Pagination(props: Props) {
 
   return (
     <PaginationWrapper>
-       <div className="dropdown">
+      <div className="dropdown">
         <label htmlFor="select">Items per page: </label>
         <select
           ref={itemsPerPageRefValue}
@@ -107,7 +121,8 @@ export default function Pagination(props: Props) {
             <span
               key={i + 1}
               onClick={toPageHandler.bind(_, i + 1)}
-              className={i + 1 === props.activePage ? "active" : ""}
+              tabIndex={0}
+              className={i + 1 === props.activePage ? "active page" : "page"}
             >
               {i + 1}
             </span>
@@ -116,9 +131,9 @@ export default function Pagination(props: Props) {
 
         <i onClick={rightArrowHandler}>&raquo;</i>
       </div>
-     
+
       <div className="page-up-container">
-        <span className="page-up" onClick={pageUpHandler}>
+        <span tabIndex={0} className="page-up" onClick={pageUpHandler}>
           Page Up
         </span>
       </div>
