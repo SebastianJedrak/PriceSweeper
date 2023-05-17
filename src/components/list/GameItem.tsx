@@ -69,6 +69,12 @@ const Game = styled.li`
     margin-right: 2.5vw;
   }
 
+  .meta-wrapper-anchor {
+    min-width: 80px;
+    margin-right: 2.5vw;
+
+  }
+
   .meta-wrapper {
     display: flex;
     flex-direction: column;
@@ -86,13 +92,8 @@ const Game = styled.li`
     }
   }
 
-  .meta-wrapper a {
+  .link-to-meta {
     text-decoration: underline;
-    color: ${({ theme }) => theme.secondaryColor.secondaryLight};
-  }
-
-  .meta-wrapper p {
-    text-align: center;
   }
 
   .meta-green {
@@ -184,19 +185,27 @@ export default function GameItem(props: GameData) {
   return (
     <Game>
       {/* Metacritic */}
-      <div tabIndex={0} className={`meta-wrapper ${metacriticBackgroundColor}`}>
-        {-props.metacriticScore !== 0 ? (
-          <>
+
+      {-props.metacriticScore !== 0 ? (
+        <a className={`meta-wrapper-anchor`} href={metacriticUrl} target="_blank" rel="noreferrer">
+          <div
+            tabIndex={0}
+            className={`meta-wrapper ${metacriticBackgroundColor}`}
+          >
             {" "}
-            <p>{props.metacriticScore}</p>
-            <a href={metacriticUrl} target="_blank" rel="noreferrer">
-              Metacritic
-            </a>
-          </>
-        ) : (
-          <p>No Rating</p>
-        )}
-      </div>
+            <p>{props.metacriticScore}</p>{" "}
+            <p className="link-to-meta">Metacritic</p>{" "}
+          </div>
+        </a>
+      ) : (
+        <div
+          tabIndex={0}
+          className={`meta-wrapper ${metacriticBackgroundColor}`}
+        >
+          {" "}
+          <p>No Rating</p>{" "}
+        </div>
+      )}
 
       <div className="store-prices-wrapper">
         {" "}
