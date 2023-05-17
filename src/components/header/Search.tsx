@@ -51,6 +51,7 @@ export default function Search() {
   const { setPageHandler } = useContext(PageContext);
   const getSearchValue = (e: React.FormEvent) => {
     e.preventDefault();
+    if (search.current!.value === "") return;
     setSearch(search.current!.value);
 
     //scroll
