@@ -23,6 +23,8 @@ const Game = styled.li`
 
     @media all and (max-width: 1000px) {
       flex-direction: column;
+      align-items: start;
+
     }
     @media all and (max-width: 500px) {
       min-width: max-content;
