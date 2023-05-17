@@ -13,7 +13,7 @@ const ButtonStyled = styled.button`
   cursor: pointer;
   background-color: ${({theme}) => theme.secondaryColor.secondary600};
   color: ${({theme}) => theme.primaryColor.primaryDark};
-  font-weight: 550;
+  font-weight: 600;
   border: 1px solid ${({theme}) => theme.primaryColor.primaryDark};
   &:hover {
     background-color: ${({theme}) => theme.secondaryColor.secondary400};
