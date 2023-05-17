@@ -53,7 +53,7 @@ export const GlobalStyles = createGlobalStyle`
   
   @media all and (max-width: 475px) {
     * {
-      overflow: auto;
+      overflow: hidden;
     }
   }
   `;

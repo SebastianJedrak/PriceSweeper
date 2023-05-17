@@ -8,7 +8,7 @@ type Props = {
 
 const ButtonStyled = styled.button`
   padding: 5px;
-  min-width: 80px;
+  min-width: 100px;
   height: 30px;
   cursor: pointer;
   background-color: ${({theme}) => theme.secondaryColor.secondary600};

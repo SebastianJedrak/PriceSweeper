@@ -44,7 +44,7 @@ const Game = styled.li`
 
   .offer-link {
     margin-left: auto;
-    min-width: 100px;
+    min-width: 110px;
   }
 
   .store-prices-wrapper {
@@ -123,6 +123,10 @@ display:none    }
     @media all and (max-width: 1000px) {
       flex-direction: column;
     }
+  }
+
+  .game-title {
+    word-wrap: break-word;
   }
 
   .store-name {
