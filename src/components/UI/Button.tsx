@@ -19,6 +19,12 @@ const ButtonStyled = styled.button`
     background-color: ${({theme}) => theme.secondaryColor.secondary400};
   }
   border-radius: 2.5px;
+
+  &:active,
+  &:focus,
+  &:checked {
+    outline: 1px dotted ${({ theme }) => theme.secondaryColor.secondary600};
+  }
 `
 
 export default function Button(props: Props) {

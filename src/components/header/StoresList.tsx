@@ -22,7 +22,7 @@ const Stores = styled.div`
     width: 100%;
     span {
       color: ${({ theme }) => theme.primaryColor.primary400};
-  }
+    }
   }
 
   .store-item {
