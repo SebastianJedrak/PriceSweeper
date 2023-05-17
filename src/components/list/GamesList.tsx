@@ -22,6 +22,12 @@ const Section = styled.section`
     width: 100px;
     display: flex;
     justify-content: space-between;
+
+    &:active,
+    &:focus,
+    &:checked {
+      outline: 1px dotted ${({ theme }) => theme.secondaryColor.secondaryDark};
+    }
   }
 
   .sort-desc-wrapper:hover {
@@ -150,7 +156,7 @@ export default function GamesList() {
           <option value="Metacritic">Rating</option>
         </select>
         {sortDesc ? (
-          <div className="sort-desc-wrapper" onClick={sortDirectionHandler}>
+          <div className="sort-desc-wrapper" tabIndex={0} onClick={sortDirectionHandler}>
             <span className="sort-desc">Descending</span>
             <span className="sort-desc-arrow">&#11167;</span>
           </div>
