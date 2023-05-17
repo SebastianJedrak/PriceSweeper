@@ -48,7 +48,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   select:hover {
-    background-color: #d4efab
+    background-color: #eaf7d5
   }
 
   select:focus-visible {
