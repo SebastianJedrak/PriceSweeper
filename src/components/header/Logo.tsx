@@ -6,6 +6,7 @@ const LogoText = styled.h1`
   span {
     color: ${({ theme }) => theme.primaryColor.primary500};
   }
+  font-family: 'Righteous', cursive;;
 `;
 
 export default function Logo() {
