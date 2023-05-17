@@ -26,15 +26,13 @@ const Game = styled.li`
       align-items: start;
 
     }
-    @media all and (max-width: 500px) {
-      min-width: max-content;
-    }
+
   }
 
   img {
     height: 32px;
     width: 32px;
-    margin-right: 10px;
+    margin-right: 1vw;
   }
 
   .thumb {
@@ -54,22 +52,22 @@ const Game = styled.li`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-width: 20%;
-    margin-right: 20px;
-    @media all and (max-width: 500px) {
+    margin-right: 2.5vw;
+    min-width: 300px;
+    @media all and (max-width: 1000px) {
+      min-width: 240px;
+    }
+    @media all and (max-width: 600px) {
       flex-direction: column;
       align-items: start;
-      margin-right: 5px;
+      min-width: 32px;
     }
   }
 
   .prices-wrapper {
     width: 48px;
-    margin-right: 20px;
-    @media all and (max-width: 500px) {
-      margin-right: 0px;
-      min-width: fit-content;
-    }
+    margin-right: 2.5vw;
+
   }
 
   .meta-wrapper {
@@ -78,15 +76,11 @@ const Game = styled.li`
     justify-content: center;
     align-items: center;
     height: 60px;
-    margin-right: 20px;
+    margin-right: 2.5vw;
     border: 1px solid ${({ theme }) => theme.secondaryColor.secondaryDark};
     border-radius: 5px;
     color: ${({ theme }) => theme.secondaryColor.secondaryLight};
     min-width: 80px;
-    @media all and (max-width: 500px) {
-      margin-right: 5px;
-      min-width: 50px;
-    }
 
     &:focus-visible {
       outline: 2px dotted ${({ theme }) => theme.secondaryColor.secondary600};
@@ -96,9 +90,6 @@ const Game = styled.li`
   .meta-wrapper a {
     text-decoration: underline;
     color: ${({ theme }) => theme.secondaryColor.secondaryLight};
-    @media all and (max-width: 500px) {
-      display: none;
-    }
   }
 
   .meta-wrapper p {
@@ -138,7 +129,7 @@ const Game = styled.li`
 
   .store-name {
     word-wrap: break-word;
-    @media all and (max-width: 500px) {
+    @media all and (max-width: 600px) {
       display: none;
     }
   }
