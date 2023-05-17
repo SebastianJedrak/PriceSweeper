@@ -28,7 +28,13 @@ const SearchForm = styled.form`
     background-color: ${({ theme }) => theme.secondaryColor.secondaryLight};
   }
 
-  .no-value{border: 1px solid ${({ theme }) => theme.primaryColor.primaryDark};}
+  .no-value {
+    border: 1px solid ${({ theme }) => theme.red.red600};
+  }
+
+  .no-value::placeholder {
+    color: ${({ theme }) => theme.red.red400};
+  }
 
   .sale-input-checkbox {
     filter: hue-rotate(220deg);
@@ -45,7 +51,7 @@ const SearchForm = styled.form`
 `;
 
 export default function Search() {
-  const [noSearch, setNoSearch] = useState(false)
+  const [noSearch, setNoSearch] = useState(false);
   const { setSearch, setSortBy, onSale, setOnSale } =
     useContext(GamesListContext);
 
@@ -54,7 +60,7 @@ export default function Search() {
   const { setPageHandler } = useContext(PageContext);
   const getSearchValue = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (search.current!.value === "") return setNoSearch(true);
     setSearch(search.current!.value);
 
@@ -69,8 +75,8 @@ export default function Search() {
 
   // No search value
   const changeSearchHandler = () => {
-    setNoSearch(false)
-  }
+    setNoSearch(false);
+  };
 
   //On Sale
   const onSaleHandler = () => {
@@ -84,7 +90,7 @@ export default function Search() {
         <input
           className={`input-search ${noSearch ? "no-value" : ""}`}
           type="text"
-          placeholder="Search"
+          placeholder={`${noSearch ? "Enter Game Title" : "Search"}`}
           ref={search}
           onClick={changeSearchHandler}
         />

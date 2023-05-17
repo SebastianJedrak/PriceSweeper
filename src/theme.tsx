@@ -21,5 +21,5 @@ export const theme = {
     secondaryDark: "#19150a",
     secondaryLight: "#fffaef",
   },
-  red: "#ff0000"
+  red: {red400: "#fc3434", red600: "#ff0000"}
 };
