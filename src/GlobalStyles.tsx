@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 120%;
   }
 
-  h1,h2 {
+  h2 {
     margin: 30px 0;
     text-align: center;
 
