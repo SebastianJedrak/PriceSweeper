@@ -23,6 +23,12 @@ const Stores = styled.div`
     span {
       color: ${({ theme }) => theme.primaryColor.primary400};
     }
+
+    &:active,
+    &:focus,
+    &:checked {
+      outline: 1px dotted ${({ theme }) => theme.secondaryColor.secondary600};
+    }
   }
 
   .store-item {
@@ -43,6 +49,11 @@ const Stores = styled.div`
     }
     @media all and (max-width: 500px) {
       width: fit-content;
+    }
+    &:active,
+    &:focus,
+    &:checked {
+      outline: 1px dotted ${({ theme }) => theme.secondaryColor.secondary600};
     }
   }
 
@@ -159,7 +170,7 @@ export default function StoresList() {
   return (
     <section>
       <Stores onClick={onStoresHandler}>
-        <h2 className="stores-header" onClick={hideStoresHandler}>
+        <h2 tabIndex={0} className="stores-header" onClick={hideStoresHandler}>
           Hide Stores <span>&#x2B9D;</span>
         </h2>
         <div className="button-wrapper">
