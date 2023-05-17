@@ -23,6 +23,11 @@ const PaginationWrapper = styled.div`
     &:focus-visible {
       outline: 2px dotted ${({ theme }) => theme.secondaryColor.secondaryDark};
     }
+    &:hover {
+      background-color: ${({ theme }) => theme.primaryColor.primary400};
+      color: ${({ theme }) => theme.secondaryColor.secondaryLight};
+      border-radius: 2.5px;
+    }
   }
 
   .dropdown {
@@ -36,6 +41,12 @@ const PaginationWrapper = styled.div`
     margin: 0 4px;
     padding: 1px 6px;
     cursor: pointer;
+  }
+
+  i:hover {
+    background-color: ${({ theme }) => theme.primaryColor.primary400};
+    color: ${({ theme }) => theme.secondaryColor.secondaryLight};
+    border-radius: 2.5px;
   }
 
   .active {
