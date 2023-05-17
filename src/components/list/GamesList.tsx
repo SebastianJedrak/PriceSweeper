@@ -24,8 +24,16 @@ const Section = styled.section`
     justify-content: space-between;
   }
 
+  .sort-desc-wrapper:hover {
+    color: ${({ theme }) => theme.primaryColor.primary600};
+  }
+
   .sort-desc-wrapper * {
-    margin: 0
+    margin: 0;
+  }
+
+  .sort-desc-arrow {
+    color: ${({ theme }) => theme.primaryColor.primary600};
   }
 
   ul {
@@ -144,7 +152,7 @@ export default function GamesList() {
         {sortDesc ? (
           <div className="sort-desc-wrapper" onClick={sortDirectionHandler}>
             <span className="sort-desc">Descending</span>
-            <span>&#11167;</span>
+            <span className="sort-desc-arrow">&#11167;</span>
           </div>
         ) : (
           <div className="sort-desc-wrapper" onClick={sortDirectionHandler}>

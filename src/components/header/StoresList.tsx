@@ -14,19 +14,15 @@ const Stores = styled.div`
     margin: 48px 24px;
   }
 
-  h2 {
-    max-width: 200px;
-  }
-
   .stores-header {
     color: ${({ theme }) => theme.secondaryColor.secondaryLight};
-    text-align: center;
+    max-width: 200px;
     text-decoration: underline;
     cursor: pointer;
     width: 100%;
     span {
       color: ${({ theme }) => theme.primaryColor.primary400};
-    }
+  }
   }
 
   .store-item {
