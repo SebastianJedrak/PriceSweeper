@@ -17,6 +17,7 @@ const Game = styled.li`
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
+  box-shadow: 2px 2px 2px lightgray;
 
   .store-wrapper {
     display: flex;
