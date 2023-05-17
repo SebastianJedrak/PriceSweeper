@@ -9,6 +9,7 @@ const Game = styled.li`
   flex-direction: row;
   align-items: center;
   color: ${({ theme }) => theme.primaryColor.primaryDark};
+  max-height: 95px;
 
   //Card
   background-color: ${({ theme }) => theme.secondaryColor.secondary100};
@@ -54,6 +55,7 @@ const Game = styled.li`
     justify-content: space-between;
     margin-right: 2.5vw;
     min-width: 300px;
+    overflow: auto;
     @media all and (max-width: 1000px) {
       min-width: 240px;
     }
@@ -125,6 +127,8 @@ const Game = styled.li`
 
   .game-title {
     word-wrap: break-word;
+    max-height: 48px;
+    overflow: auto;
   }
 
   .store-name {
