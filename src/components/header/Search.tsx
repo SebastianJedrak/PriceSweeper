@@ -28,6 +28,8 @@ const SearchForm = styled.form`
     background-color: ${({ theme }) => theme.secondaryColor.secondaryLight};
   }
 
+  .no-value{border: 1px solid ${({ theme }) => theme.primaryColor.primaryDark};}
+
   .sale-input-checkbox {
     filter: hue-rotate(220deg);
     margin-right: 5px;

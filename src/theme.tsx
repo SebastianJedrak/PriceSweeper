@@ -20,5 +20,6 @@ export const theme = {
     secondary600: "#ffce63",
     secondaryDark: "#19150a",
     secondaryLight: "#fffaef",
-  }
+  },
+  red: "#ff0000"
 };

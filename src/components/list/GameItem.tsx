@@ -119,7 +119,7 @@ const Game = styled.li`
 
   .meta-red {
     cursor: pointer;
-    background-color: #ff0000;
+    background-color: ${({ theme }) => theme.red};
     &:hover {
       background-color: #fa1111;
     }
