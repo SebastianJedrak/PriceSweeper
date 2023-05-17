@@ -32,6 +32,11 @@ const SearchForm = styled.form`
     filter: hue-rotate(220deg);
     margin-right: 5px;
   }
+
+  Button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
 `;
 
 export default function Search() {

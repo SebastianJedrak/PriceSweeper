@@ -8,15 +8,17 @@ type Props = {
 
 const ButtonStyled = styled.button`
   padding: 5px;
-  min-width: 100px;
+  min-width: 80px;
   height: 30px;
   cursor: pointer;
   background-color: ${({theme}) => theme.secondaryColor.secondary600};
   color: ${({theme}) => theme.primaryColor.primaryDark};
+  font-weight: 550;
   border: 1px solid ${({theme}) => theme.primaryColor.primaryDark};
   &:hover {
     background-color: ${({theme}) => theme.secondaryColor.secondary400};
   }
+  border-radius: 2.5px;
 `
 
 export default function Button(props: Props) {
