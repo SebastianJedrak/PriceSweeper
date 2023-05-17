@@ -14,6 +14,10 @@ const Stores = styled.div`
     margin: 48px 24px;
   }
 
+  h2 {
+    max-width: 200px;
+  }
+
   .stores-header {
     color: ${({ theme }) => theme.secondaryColor.secondaryLight};
     text-align: center;
