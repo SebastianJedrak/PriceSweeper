@@ -19,7 +19,7 @@ const Game = styled.li`
 
   .store-wrapper {
     display: flex;
-   
+
     @media all and (max-width: 1000px) {
       flex-direction: column;
     }
@@ -83,7 +83,12 @@ const Game = styled.li`
     @media all and (max-width: 500px) {
       margin-right: 5px;
       min-width: 50px;
+    }
 
+    &:active,
+    &:focus,
+    &:checked {
+      outline: 2px dotted ${({ theme }) => theme.secondaryColor.secondary600};
     }
   }
 
@@ -91,9 +96,10 @@ const Game = styled.li`
     text-decoration: underline;
     color: ${({ theme }) => theme.secondaryColor.secondaryLight};
     @media all and (max-width: 500px) {
-display:none    }
+      display: none;
+    }
   }
-  
+
   .meta-wrapper p {
     text-align: center;
   }
@@ -173,7 +179,7 @@ export default function GameItem(props: GameData) {
   return (
     <Game>
       {/* Metacritic */}
-      <div className={`meta-wrapper ${metacriticBackgroundColor}`}>
+      <div tabIndex={0} className={`meta-wrapper ${metacriticBackgroundColor}`}>
         {-props.metacriticScore !== 0 ? (
           <>
             {" "}
