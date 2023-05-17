@@ -61,7 +61,7 @@ const Game = styled.li`
   }
 
   .prices-wrapper {
-    width: 68px;
+    width: 48px;
     margin-right: 20px;
     @media all and (max-width: 500px) {
       margin-right: 0px;
