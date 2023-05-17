@@ -8,6 +8,7 @@ import logo from "../../img/minesweeper-logo.png";
 
 const Section = styled.section`
   min-height: 100vh;
+  margin: 0 1vw;
 
   .select-wrapper {
     display: flex;
