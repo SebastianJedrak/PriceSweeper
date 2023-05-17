@@ -40,9 +40,14 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   select {
-    background-color: #d4efab;
+    background-color: #f4fbea;
     color: #19150a;
     border-radius: 2.5px;
+    cursor: pointer;
+  }
+
+  select:hover {
+    background-color: #d4efab
   }
 
   

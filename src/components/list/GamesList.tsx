@@ -33,7 +33,7 @@ const Section = styled.section`
   }
 
   .sort-desc-arrow {
-    color: ${({ theme }) => theme.primaryColor.primary600};
+    color: ${({ theme }) => theme.primaryColor.primary500};
   }
 
   ul {
