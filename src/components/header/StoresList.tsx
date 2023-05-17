@@ -23,6 +23,9 @@ const Stores = styled.div`
     span {
       color: ${({ theme }) => theme.primaryColor.primary400};
     }
+    &:hover {
+      color: ${({ theme }) => theme.primaryColor.primary400};
+    }
 
     &:focus-visible {
       outline: 1px dotted ${({ theme }) => theme.secondaryColor.secondary600};
@@ -48,7 +51,7 @@ const Stores = styled.div`
     @media all and (max-width: 500px) {
       width: fit-content;
     }
-    &:focus-visible{
+    &:focus-visible {
       outline: 2px dotted ${({ theme }) => theme.secondaryColor.secondary600};
     }
   }
