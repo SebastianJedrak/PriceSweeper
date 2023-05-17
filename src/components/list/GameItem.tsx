@@ -25,9 +25,7 @@ const Game = styled.li`
     @media all and (max-width: 1000px) {
       flex-direction: column;
       align-items: start;
-
     }
-
   }
 
   img {
@@ -69,7 +67,6 @@ const Game = styled.li`
   .prices-wrapper {
     width: 48px;
     margin-right: 2.5vw;
-
   }
 
   .meta-wrapper {
@@ -83,7 +80,7 @@ const Game = styled.li`
     border-radius: 5px;
     color: ${({ theme }) => theme.secondaryColor.secondaryLight};
     min-width: 80px;
-
+    font-weight: 500;
     &:focus-visible {
       outline: 2px dotted ${({ theme }) => theme.secondaryColor.secondary600};
     }
@@ -99,15 +96,27 @@ const Game = styled.li`
   }
 
   .meta-green {
-    background-color: #66cc33;
+    cursor: pointer;
+    background-color: ${({ theme }) => theme.primaryColor.primary600};
+    &:hover {
+      background-color: ${({ theme }) => theme.primaryColor.primary500};
+    }
   }
 
   .meta-yellow {
-    background-color: #ffcc33;
+    cursor: pointer;
+    background-color: ${({ theme }) => theme.secondaryColor.secondary600};
+    &:hover {
+      background-color: ${({ theme }) => theme.secondaryColor.secondary500};
+    }
   }
 
   .meta-red {
+    cursor: pointer;
     background-color: #ff0000;
+    &:hover {
+      background-color: #fa1111;
+    }
   }
 
   .meta-gray {
