@@ -31,6 +31,10 @@ const SearchForm = styled.form`
   .sale-input-checkbox {
     filter: hue-rotate(220deg);
     margin-right: 5px;
+    &:active,
+    &:focus {
+      outline: 1px dotted ${({ theme }) => theme.secondaryColor.secondary600};
+    }
   }
 
   Button {
@@ -79,7 +83,12 @@ export default function Search() {
           // onClickFunction={getSearchValue}
         />
         <div className="sale-input">
-          <input className="sale-input-checkbox" type="checkbox" id="isOnSale" onClick={onSaleHandler} />
+          <input
+            className="sale-input-checkbox"
+            type="checkbox"
+            id="isOnSale"
+            onClick={onSaleHandler}
+          />
           <label htmlFor="isOnSale">Only on Sale</label>
         </div>
       </SearchForm>
