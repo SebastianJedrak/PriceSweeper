@@ -10,13 +10,17 @@ const StyledLogo = styled.div`
     margin-bottom: 15px;
   }
 
-  span {
+  .logo-span {
     color: ${({ theme }) => theme.primaryColor.primary500};
+  }
+
+  span {
+    color: ${({ theme }) => theme.secondaryColor.secondary300};
   }
 
   p {
     color: ${({ theme }) => theme.secondaryColor.secondaryLight};
-    width: 60%;
+    width: 300px;
     margin: 0 auto;
     margin-bottom: 30px;
     text-align: center;
@@ -27,9 +31,11 @@ export default function Logo() {
   return (
     <StyledLogo>
       <h1>
-        <span>Price</span>Sweeper
+        <span className="logo-span">Price</span>Sweeper
       </h1>
-      <p>Looking for PC game deals? You're hitting the gold <span>mine!</span></p>
+      <p>
+        Looking for PC game deals? You're hitting the gold <span>mine!</span>
+      </p>
     </StyledLogo>
   );
 }
