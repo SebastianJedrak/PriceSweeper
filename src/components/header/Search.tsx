@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Button from "../UI/Button";
-import { useRef, useContext } from "react";
+import { useRef, useContext, useState } from "react";
 import { GamesListContext } from "../../ctx/GamesListProvider";
 import { resultsHeader } from "../list/GamesList";
 import { PageContext } from "../../ctx/PageProvider";
@@ -43,6 +43,7 @@ const SearchForm = styled.form`
 `;
 
 export default function Search() {
+  const [noSearch, setNoSearch] = useState(false)
   const { setSearch, setSortBy, onSale, setOnSale } =
     useContext(GamesListContext);
 
@@ -51,7 +52,8 @@ export default function Search() {
   const { setPageHandler } = useContext(PageContext);
   const getSearchValue = (e: React.FormEvent) => {
     e.preventDefault();
-    if (search.current!.value === "") return;
+    
+    if (search.current!.value === "") return setNoSearch(true);
     setSearch(search.current!.value);
 
     //scroll
@@ -63,6 +65,11 @@ export default function Search() {
     setSortBy("title");
   };
 
+  // No search value
+  const changeSearchHandler = () => {
+    setNoSearch(false)
+  }
+
   //On Sale
   const onSaleHandler = () => {
     if (onSale === 0) setOnSale(1);
@@ -73,10 +80,11 @@ export default function Search() {
     <>
       <SearchForm onSubmit={getSearchValue}>
         <input
-          className="input-search"
+          className={`input-search ${noSearch ? "no-value" : ""}`}
           type="text"
           placeholder="Search"
           ref={search}
+          onClick={changeSearchHandler}
         />
         <Button
           text="Search"
