@@ -50,6 +50,11 @@ export const GlobalStyles = createGlobalStyle`
     background-color: #d4efab
   }
 
+  select:active,
+  select:focus {
+    outline: 1px dotted black;
+  }
+
   
   @media all and (max-width: 475px) {
     * {
