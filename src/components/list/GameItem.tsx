@@ -19,6 +19,7 @@ const Game = styled.li`
 
   .store-wrapper {
     display: flex;
+    align-items: center;
 
     @media all and (max-width: 1000px) {
       flex-direction: column;
