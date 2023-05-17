@@ -133,11 +133,12 @@ const Game = styled.li`
 
   .game-details {
     display: flex;
-    flex-direction: row;
     width: 50%;
+    align-items: center;
 
     @media all and (max-width: 1000px) {
       flex-direction: column;
+      align-items: start;
     }
   }
 
