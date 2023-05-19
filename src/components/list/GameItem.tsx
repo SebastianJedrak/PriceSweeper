@@ -93,7 +93,7 @@ const Game = styled.li`
     height: 60px;
     margin-right: 2.5vw;
     border: 1px solid ${({ theme }) => theme.secondaryColor.secondaryDark};
-    border-radius: 5px;
+    border-radius: 2.5px;
     color: ${({ theme }) => theme.secondaryColor.secondaryLight};
     min-width: 80px;
     font-weight: 500;

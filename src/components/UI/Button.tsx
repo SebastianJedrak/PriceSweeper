@@ -9,7 +9,7 @@ type Props = {
 const ButtonStyled = styled.button`
   padding: 5px;
   min-width: 80px;
-  min-height: 30px;
+  min-height: 40px;
   cursor: pointer;
   background-color: ${({theme}) => theme.secondaryColor.secondary600};
   color: ${({theme}) => theme.primaryColor.primaryDark};

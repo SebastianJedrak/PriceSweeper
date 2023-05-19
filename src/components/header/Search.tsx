@@ -25,7 +25,7 @@ const SearchForm = styled.form`
     width: 40vw ;
     min-width: 220px;
     max-width: 300px;
-    height: 30px;
+    height: 40px;
     border: 1px solid ${({ theme }) => theme.primaryColor.primaryDark};
     border-right: none;
     color: 1px solid ${({ theme }) => theme.primaryColor.primaryDark};
