@@ -50,11 +50,4 @@ export const GlobalStyles = createGlobalStyle`
   select:focus-visible {
     outline: 1px dotted black;
   }
-
-  
-  @media all and (max-width: 475px) {
-    * {
-      overflow: hidden;
-    }
-  }
-  `;
+`
