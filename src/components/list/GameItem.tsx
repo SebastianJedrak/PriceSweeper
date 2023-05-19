@@ -144,6 +144,7 @@ margin-bottom: 5px;
     display: flex;
     width: 50%;
     align-items: center;
+    max-height: 90px;
     @media all and (max-width: 1000px) {
       flex-direction: column;
       align-items: start;
@@ -153,6 +154,7 @@ margin-bottom: 5px;
   .game-title {
     word-wrap: break-word;
     overflow: auto;
+
   }
 
   .store-name {
