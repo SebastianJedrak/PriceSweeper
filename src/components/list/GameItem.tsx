@@ -9,7 +9,10 @@ const Game = styled.li`
   flex-direction: row;
   align-items: center;
   color: ${({ theme }) => theme.primaryColor.primaryDark};
-  max-height: 95px;
+  max-height: 110px;
+  @media all and (max-width: 600px) {
+    align-items: start;
+    }
 
   //Card
   background-color: ${({ theme }) => theme.secondaryColor.secondary100};
@@ -41,6 +44,9 @@ const Game = styled.li`
     @media all and (max-width: 1000px) {
       width: fit-content;
     }
+    @media all and (max-width: 600px) {
+      margin-bottom: 5px;
+    }
   }
 
   .offer-link {
@@ -59,7 +65,6 @@ const Game = styled.li`
       min-width: 240px;
     }
     @media all and (max-width: 600px) {
-      flex-direction: column;
       align-items: start;
       min-width: 32px;
     }
@@ -73,12 +78,11 @@ const Game = styled.li`
   .meta-wrapper-anchor {
     min-width: 80px;
     margin-right: 2.5vw;
-
   }
 
   .meta-wrapper-anchor > .meta-wrapper {
     min-width: 0;
-    margin-right:0;
+    margin-right: 0;
   }
 
   .meta-wrapper {
@@ -95,6 +99,11 @@ const Game = styled.li`
     font-weight: 500;
     &:focus-visible {
       outline: 2px dotted ${({ theme }) => theme.secondaryColor.secondary600};
+    }
+
+    @media all and (max-width: 600px) {
+      height: 48px;
+margin-bottom: 5px;
     }
   }
 
@@ -135,7 +144,6 @@ const Game = styled.li`
     display: flex;
     width: 50%;
     align-items: center;
-
     @media all and (max-width: 1000px) {
       flex-direction: column;
       align-items: start;
@@ -144,7 +152,6 @@ const Game = styled.li`
 
   .game-title {
     word-wrap: break-word;
-    max-height: 48px;
     overflow: auto;
   }
 
@@ -161,6 +168,13 @@ const Game = styled.li`
 
   .normal-price-on-sale {
     text-decoration: line-through;
+  }
+
+  .metacrtic-store-price-wrapper {
+    display: flex;
+    @media all and (max-width: 600px) {
+      flex-direction: column;
+    }
   }
 `;
 
@@ -191,59 +205,65 @@ export default function GameItem(props: GameData) {
 
   return (
     <Game>
-      {/* Metacritic */}
-
-      {-props.metacriticScore !== 0 ? (
-        <a className={`meta-wrapper-anchor`} href={metacriticUrl} target="_blank" rel="noreferrer">
+      <div className="metacrtic-store-price-wrapper">
+        {" "}
+        {/* Metacritic */}
+        {-props.metacriticScore !== 0 ? (
+          <a
+            className={`meta-wrapper-anchor`}
+            href={metacriticUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div
+              tabIndex={0}
+              className={`meta-wrapper ${metacriticBackgroundColor}`}
+            >
+              {" "}
+              <p>{props.metacriticScore}</p>{" "}
+              <p className="link-to-meta">Metacritic</p>{" "}
+            </div>
+          </a>
+        ) : (
           <div
             tabIndex={0}
             className={`meta-wrapper ${metacriticBackgroundColor}`}
           >
             {" "}
-            <p>{props.metacriticScore}</p>{" "}
-            <p className="link-to-meta">Metacritic</p>{" "}
+            <p>No Rating</p>{" "}
           </div>
-        </a>
-      ) : (
-        <div
-          tabIndex={0}
-          className={`meta-wrapper ${metacriticBackgroundColor}`}
-        >
+        )}
+        <div className="store-prices-wrapper">
           {" "}
-          <p>No Rating</p>{" "}
-        </div>
-      )}
-
-      <div className="store-prices-wrapper">
-        {" "}
-        {/* Stores */}
-        <div className="store-wrapper">
-          {" "}
-          {store[0] ? (
-            <img src={store[0].images.icon} alt={store[0].storeName} />
-          ) : (
-            <div>
-              <img src="" alt="" />
-            </div>
-          )}
-          {store[0] ? (
-            <h3 className="store-name">{store[0].storeName}</h3>
-          ) : (
-            <div className="store-name" />
-          )}
-        </div>
-        {/* Prices */}
-        <div className="prices-wrapper">
-          {props.normalPrice === props.salePrice ? (
-            <p>{props.normalPrice}&#x24;</p>
-          ) : (
-            <p className="normal-price-on-sale">{props.normalPrice}&#x24;</p>
-          )}
-          {props.normalPrice === props.salePrice ? (
-            ""
-          ) : (
-            <p>{props.salePrice}&#x24;</p>
-          )}
+          {/* Stores */}
+          <div className="store-wrapper">
+            {" "}
+            {store[0] ? (
+              <img src={store[0].images.icon} alt={store[0].storeName} />
+            ) : (
+              <div>
+                <img src="" alt="" />
+              </div>
+            )}
+            {store[0] ? (
+              <h3 className="store-name">{store[0].storeName}</h3>
+            ) : (
+              <div className="store-name" />
+            )}
+          </div>
+          {/* Prices */}
+          <div className="prices-wrapper">
+            {props.normalPrice === props.salePrice ? (
+              <p>{props.normalPrice}&#x24;</p>
+            ) : (
+              <p className="normal-price-on-sale">{props.normalPrice}&#x24;</p>
+            )}
+            {props.normalPrice === props.salePrice ? (
+              ""
+            ) : (
+              <p>{props.salePrice}&#x24;</p>
+            )}
+          </div>
         </div>
       </div>
 
