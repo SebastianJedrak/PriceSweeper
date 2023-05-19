@@ -20,7 +20,9 @@ const SearchForm = styled.form`
 
   .input-search {
     padding: 5px;
-    min-width: 250px;
+    width: 40vw ;
+    min-width: 220px;
+    max-width: 300px;
     height: 30px;
     border: 1px solid ${({ theme }) => theme.primaryColor.primaryDark};
     border-right: none;
