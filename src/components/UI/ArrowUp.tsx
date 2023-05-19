@@ -1,15 +1,13 @@
 export default function ArrowUp() {
   return (
     <svg
-      width="48"
-      height="48"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
+      height="48"
+      viewBox="0 96 960 960"
+      width="48"
+      fill="#a9e057"
     >
-      <title>arrow_drop_up</title>
-      <g fill="none" >
-        <path d="M7 14l5-5 5 5H7z" fill="#a9e057"></path>
-      </g>
+      <path d="m283 711-43-43 240-240 240 239-43 43-197-197-197 198Z" />
     </svg>
   );
 }

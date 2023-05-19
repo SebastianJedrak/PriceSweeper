@@ -5,6 +5,8 @@ import Pagination from "./Pagination";
 import styled from "styled-components";
 import { PageContext } from "../../ctx/PageProvider";
 import logo from "../../img/minesweeper-logo.png";
+import ArrowDown from "../UI/ArrowDown";
+import ArrowUp from "../UI/ArrowUp";
 
 const Section = styled.section`
   min-height: 100vh;
@@ -23,7 +25,10 @@ const Section = styled.section`
     width: 100px;
     display: flex;
     justify-content: space-between;
-
+    svg {
+      height: 100%;
+      fill: ${({ theme }) => theme.primaryColor.primaryDark};
+    }
     &:focus-visible {
       outline: 1px dotted ${({ theme }) => theme.secondaryColor.secondaryDark};
     }
@@ -31,14 +36,13 @@ const Section = styled.section`
 
   .sort-desc-wrapper:hover {
     color: ${({ theme }) => theme.primaryColor.primary600};
+    svg {
+      fill: ${({ theme }) => theme.primaryColor.primary600};
+    }
   }
 
   .sort-desc-wrapper * {
     margin: 0;
-  }
-
-  .sort-desc-arrow {
-    color: ${({ theme }) => theme.primaryColor.primary500};
   }
 
   ul {
@@ -62,6 +66,11 @@ const Section = styled.section`
 
   .logo > img {
     animation: rotate 2.5s infinite linear;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
   }
 `;
 
@@ -155,14 +164,22 @@ export default function GamesList() {
           <option value="Metacritic">Rating</option>
         </select>
         {sortDesc ? (
-          <div tabIndex={0} className="sort-desc-wrapper" onClick={sortDirectionHandler}>
+          <div
+            tabIndex={0}
+            className="sort-desc-wrapper"
+            onClick={sortDirectionHandler}
+          >
             <span className="sort-desc">Descending</span>
-            <span className="sort-desc-arrow">&#11167;</span>
+            <ArrowDown />
           </div>
         ) : (
-          <div tabIndex={0} className="sort-desc-wrapper" onClick={sortDirectionHandler}>
+          <div
+            tabIndex={0}
+            className="sort-desc-wrapper"
+            onClick={sortDirectionHandler}
+          >
             <span className="sort-desc">Ascending</span>
-            <span>&#x2B9D;</span>
+            <ArrowUp />
           </div>
         )}
       </div>
