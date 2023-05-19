@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Button from "../UI/Button";
 import { Store, StoreContext } from "../../ctx/StoreProvider";
 import { GamesListContext } from "../../ctx/GamesListProvider";
+import ArrowDown from "../UI/ArrowDown";
+import ArrowUp from "../UI/ArrowUp";
 
 const Stores = styled.div`
   display: flex;
@@ -22,14 +24,15 @@ const Stores = styled.div`
   }
 
   .stores-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: ${({ theme }) => theme.secondaryColor.secondaryLight};
     max-width: 200px;
     text-decoration: underline;
     cursor: pointer;
     width: 100%;
-    span {
-      color: ${({ theme }) => theme.primaryColor.primary400};
-    }
+    
     &:hover {
       color: ${({ theme }) => theme.primaryColor.primary400};
     }
@@ -167,7 +170,7 @@ export default function StoresList() {
         {" "}
         <Stores>
           <h2 className="stores-header" onClick={hideStoresHandler}>
-            Pick Stores <span>&#11167;</span>
+            Pick Stores <ArrowDown/>
           </h2>
         </Stores>
       </section>
@@ -177,7 +180,7 @@ export default function StoresList() {
     <section>
       <Stores onClick={onStoresHandler}>
         <h2 tabIndex={0} className="stores-header" onClick={hideStoresHandler}>
-          Hide Stores <span>&#x2B9D;</span>
+          Hide Stores <ArrowUp/>
         </h2>
         <div className="button-wrapper">
           <Button onClick={allStoresHandler} text="Pick All" />
