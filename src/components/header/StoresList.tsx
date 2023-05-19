@@ -14,6 +14,13 @@ const Stores = styled.div`
     margin: 48px 24px;
   }
 
+  .stores-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px;
+    justify-content: center;
+  }
+
   .stores-header {
     color: ${({ theme }) => theme.secondaryColor.secondaryLight};
     max-width: 200px;
@@ -106,7 +113,7 @@ export default function StoresList() {
   const { setActiveStores, activeStoresId } = useContext(GamesListContext);
 
   const onStoresHandler = (e: React.MouseEvent) => {
-    const storeTarget = (e.target as HTMLElement).closest("div.store-item");
+    const storeTarget = (e.target as HTMLElement).closest("li.store-item");
     if (!storeTarget) return;
     const storeTargetId = storeTarget.getAttribute("data-id");
 
@@ -175,21 +182,23 @@ export default function StoresList() {
         <div className="button-wrapper">
           <Button onClick={allStoresHandler} text="Pick All" />
         </div>
-        {stores.map((store: Store) => {
-          return (
-            <div
-              tabIndex={0}
-              className={`store-item ${
-                activeStoresId.includes(store.storeID) && "active"
-              }`}
-              key={store.storeID}
-              data-id={store.storeID}
-            >
-              <img src={store.images.logo} alt={store.storeName} />
-              <p className="store-name">{store.storeName}</p>
-            </div>
-          );
-        })}
+        <ul className="stores-wrapper">
+          {stores.map((store: Store) => {
+            return (
+              <li
+                tabIndex={0}
+                className={`store-item ${
+                  activeStoresId.includes(store.storeID) && "active"
+                }`}
+                key={store.storeID}
+                data-id={store.storeID}
+              >
+                <img src={store.images.logo} alt={store.storeName} />
+                <p className="store-name">{store.storeName}</p>
+              </li>
+            );
+          })}
+        </ul>
       </Stores>
     </section>
   );
