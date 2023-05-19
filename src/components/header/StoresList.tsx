@@ -13,7 +13,7 @@ const Stores = styled.div`
   padding-bottom: 100px;
   justify-content: center;
   @media all and (max-width: 1000px) {
-    margin: 48px 24px;
+    margin: 48px 8px;
   }
 
   .stores-wrapper {
@@ -21,6 +21,8 @@ const Stores = styled.div`
     flex-wrap: wrap;
     margin: 30px;
     justify-content: center;
+    @media all and (max-width: 1000px) {
+      margin: 0px;}
   }
 
   .stores-header {
@@ -72,11 +74,6 @@ const Stores = styled.div`
     border-radius: 5px;
   }
 
-  .store-name {
-    @media all and (max-width: 500px) {
-      display: none;
-    }
-  }
 
   img {
     height: 48px;
@@ -85,11 +82,6 @@ const Stores = styled.div`
       height: 16px;
       width: 16px;
       margin-right: 5px;
-    }
-    @media all and (max-width: 500px) {
-      height: 32px;
-      width: 32px;
-      margin-right: 0;
     }
   }
 
@@ -109,7 +101,9 @@ const Stores = styled.div`
     justify-content: center;
     margin: 20px 0;
   }
-`;
+  
+`
+
 
 export default function StoresList() {
   const { stores, isError } = useContext(StoreContext);
@@ -170,7 +164,7 @@ export default function StoresList() {
         {" "}
         <Stores>
           <h2 className="stores-header" onClick={hideStoresHandler}>
-            Pick Stores <ArrowDown/>
+            Pick Stores <ArrowDown />
           </h2>
         </Stores>
       </section>
@@ -180,7 +174,7 @@ export default function StoresList() {
     <section>
       <Stores onClick={onStoresHandler}>
         <h2 tabIndex={0} className="stores-header" onClick={hideStoresHandler}>
-          Hide Stores <ArrowUp/>
+          Hide Stores <ArrowUp />
         </h2>
         <div className="button-wrapper">
           <Button onClick={allStoresHandler} text="Pick All" />
