@@ -113,6 +113,7 @@ margin-bottom: 5px;
     background-color: ${({ theme }) => theme.primaryColor.primary600};
     &:hover {
       background-color: ${({ theme }) => theme.primaryColor.primary500};
+      color:white;
     }
   }
 
@@ -121,6 +122,7 @@ margin-bottom: 5px;
     background-color: ${({ theme }) => theme.secondaryColor.secondary600};
     &:hover {
       background-color: ${({ theme }) => theme.secondaryColor.secondary500};
+      color:white;
     }
   }
 
@@ -129,6 +131,7 @@ margin-bottom: 5px;
     background-color: ${({ theme }) => theme.red.red600};
     &:hover {
       background-color: ${({ theme }) => theme.red.red400};
+      color:white;
     }
   }
 
@@ -141,11 +144,11 @@ margin-bottom: 5px;
     display: flex;
     width: 50%;
     align-items: center;
-    margin-bottom: auto;
     max-height: 90px;
     @media all and (max-width: 1000px) {
       flex-direction: column;
       align-items: start;
+      margin-bottom: auto;
     }
   }
 
