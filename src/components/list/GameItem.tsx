@@ -10,9 +10,6 @@ const Game = styled.li`
   align-items: center;
   color: ${({ theme }) => theme.primaryColor.primaryDark};
   max-height: 110px;
-  @media all and (max-width: 600px) {
-    align-items: start;
-    }
 
   //Card
   background-color: ${({ theme }) => theme.secondaryColor.secondary100};
