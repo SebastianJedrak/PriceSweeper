@@ -21,11 +21,20 @@ const Stores = styled.div`
     0% {
       max-height: 0;
       overflow: hidden;
+      margin: 0;
     }
     100% {
       max-height: 600px;
       overflow: hidden;
     }
+  }
+
+  .drop-enter {
+    animation: dropIn 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  .drop-exit-active {
+    animation: dropIn 0.6s reverse cubic-bezier(0.32, 0, 0.67, 0);
   }
 
   .stores-wrapper {
@@ -35,7 +44,6 @@ const Stores = styled.div`
     justify-content: center;
     overflow: auto;
     max-height: 600px;
-    animation: dropIn 0.5s cubic-bezier(0.65, 0, 0.35, 1);
     @media all and (max-width: 1000px) {
       margin: 0px;
     }
@@ -131,7 +139,6 @@ export default function StoresList() {
 
   const nodeRef = useRef(null);
 
-
   const onStoresHandler = (e: React.MouseEvent) => {
     const storeTarget = (e.target as HTMLElement).closest("li.store-item");
     if (!storeTarget) return;
@@ -182,12 +189,15 @@ export default function StoresList() {
   return (
     <section>
       <Stores onClick={onStoresHandler}>
-        <h2 tabIndex={0} className="stores-header" onClick={hideStoresHandler} >
+        <h2 tabIndex={0} className="stores-header" onClick={hideStoresHandler}>
           Hide Stores {!hideStores ? <ArrowUp /> : <ArrowDown />}
         </h2>
-        <div className="button-wrapper">
-          <Button onClick={allStoresHandler} text="Pick All" />
-        </div>
+      
+          <div className="button-wrapper">
+            <Button onClick={allStoresHandler} text="Pick All" />
+          </div>
+    
+
         <CSSTransition
           in={!hideStores}
           timeout={500}
@@ -196,25 +206,23 @@ export default function StoresList() {
           unmountOnExit
           nodeRef={nodeRef}
         >
-        
-            <ul className="stores-wrapper"  > 
-              {stores.map((store: Store) => {
-                return (
-                  <li
-                    tabIndex={0}
-                    className={`store-item ${
-                      activeStoresId.includes(store.storeID) && "active"
-                    }`}
-                    key={store.storeID}
-                    data-id={store.storeID}
-                  >
-                    <img src={store.images.logo} alt={store.storeName} />
-                    <p className="store-name">{store.storeName}</p>
-                  </li>
-                );
-              })}
-            </ul>
-      
+          <ul ref={nodeRef} className="stores-wrapper">
+            {stores.map((store: Store) => {
+              return (
+                <li
+                  tabIndex={0}
+                  className={`store-item ${
+                    activeStoresId.includes(store.storeID) && "active"
+                  }`}
+                  key={store.storeID}
+                  data-id={store.storeID}
+                >
+                  <img src={store.images.logo} alt={store.storeName} />
+                  <p className="store-name">{store.storeName}</p>
+                </li>
+              );
+            })}
+          </ul>
         </CSSTransition>
       </Stores>
     </section>
