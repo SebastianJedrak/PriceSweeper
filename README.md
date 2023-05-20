@@ -7,22 +7,25 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">PriceSweeper</h3>
+  <h1 align="center">PriceSweeper</h1>
 
 </div>
 
-TODO badges
+![version](https://img.shields.io/github/last-commit/SebastianJedrak/PriceSweeper)
+![version](https://img.shields.io/github/release-date/SebastianJedrak/PriceSweeper)
+![version](https://img.shields.io/github/v/release/SebastianJedrak/PriceSweeper?include_prereleases)
+![version](https://img.shields.io/github/languages/top/SebastianJedrak/PriceSweeper)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-TODO description
+PriceSweeper is a price comparison website for PC games. The main goal is to find the best deals in all popular online stores. Serach for your favorite game and find out how much you can save.
+
+Looking for PC game deals? You're hitting the gold mine!
 
 ### Built With
 
-
 [![React][React.js]][React-url]
-
 
 
 ## Installation
@@ -39,8 +42,6 @@ TODO description
 Ready to go!
 
 
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -51,15 +52,17 @@ TODO usage
 <!-- CONTACT -->
 ## Contact
 
-TODO contact
+Sebastian Jędrak: jedrak.sebastian@gmail.com
 
+Project: https://pricesweeper.netlify.app/
+
+Repository: https://github.com/SebastianJedrak/PriceSweeper
 
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-TODO links
-
+Thanks to https://apidocs.cheapshark.com/ for awesome API!
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
