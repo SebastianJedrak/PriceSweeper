@@ -17,7 +17,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-PriceSweeper is a price comparison website for PC games. The main goal is to find the best deals in all popular online stores. Serach for your favorite game and find out how much you can save.
+PriceSweeper is a price comparison website for PC games. The main goal is to find the best deals in all popular online stores. Search for your favorite game and find out how much you can save.
 
 Looking for PC game deals? You're hitting the gold mine!
 
@@ -46,7 +46,7 @@ Ready to go!
 ### Search
 <img src="https://github.com/SebastianJedrak/PriceSweeper/assets/115486676/d65ac11f-4b48-4892-ae9e-5ee0fef8b1ed" alt="search">
 
-Search bar enables to find best offers in the most popular online stores. You can input any game title you want, I hope results will surprise you positively :) If you want to only get games on sale, please check the corresponding checkbox. 
+The search bar enables to find the best offers in the most popular online stores. You can input any game title you want, I hope results will surprise you positively :) If you want to get games only on sale, please check the corresponding checkbox. 
 
 ### Stores
 <img src="https://github.com/SebastianJedrak/PriceSweeper/assets/115486676/1e81c094-466d-4126-9b59-ab4f186b63d1" alt="stores">
@@ -56,11 +56,11 @@ Stores list contains all available online stores. You can choose which one inclu
 ### Results
 <img src="https://github.com/SebastianJedrak/PriceSweeper/assets/115486676/076167c3-c55c-4992-8787-a20163e8bf34" alt="results">
 
-Results are the most important section of the website. There you can find all the best offers in online stores. By default, most recent deals will be displayed. You can search for specific title by using the search bar. Stores list will include or exclude shops that may interested you. 
+Results are the most important section of the website. There you can find all the best offers in online stores. By default, most recent deals will be displayed. You can search for a specific title by using the search bar. Stores list will include or exclude shops that might interest you. 
 <br />
-Result section contain information about game rating from Metacritic sevice. By clicking it, you will be redirected to Metacritic page with more information about coresponding game.
+Result section contains information about game rating from Metacritic sevice. By clicking it, you will be redirected to Metacritic page with more information about corresponding game.
 <br />
-If you're interested by specific offer, click the "Go to Offer" button to be redirected to store. Any buy will be contribute cheapshark.com
+If you're interested in specific offer, click the "Go to Offer" button to be redirected to the store. Any purchase will be contribute cheapshark.com
 
 <!-- CONTACT -->
 ## Contact
