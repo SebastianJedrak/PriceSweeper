@@ -273,7 +273,7 @@ export default function GameItem(props: GameData) {
       <div className="game-details">
         {" "}
         <img className="thumb" src={props.thumb} alt={props.title} />
-        <span className="game-title">{props.title}</span>
+        <h3 className="game-title">{props.title}</h3>
       </div>
 
       {/* Button */}

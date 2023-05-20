@@ -8,6 +8,14 @@ const StyledLogo = styled.div`
     font-family: "Righteous", cursive;
     letter-spacing: 2.5px;
     margin-bottom: 15px;
+    font-size: 2.5rem;
+    @media all and (max-width: 1000px) {
+      font-size: 2.3rem;
+    }
+
+    @media all and (max-width: 600px) {
+      font-size: 2.0rem;
+    }
   }
 
   .logo-span {
@@ -19,6 +27,11 @@ const StyledLogo = styled.div`
   }
 
   p {
+    text-align: center;
+    margin-bottom: 2.5px;
+  }
+
+  p:last-child {
     color: ${({ theme }) => theme.secondaryColor.secondaryLight};
     width: 300px;
     margin: 0 auto;
@@ -33,8 +46,9 @@ export default function Logo() {
       <h1>
         <span className="logo-span">Price</span>Sweeper
       </h1>
+      <p>Looking for PC game deals?</p>
       <p>
-        Looking for PC game deals? You're hitting the gold <span>mine!</span>
+        You're hitting the gold <span>mine!</span>
       </p>
     </StyledLogo>
   );

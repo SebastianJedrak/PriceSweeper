@@ -58,6 +58,14 @@ const Stores = styled.div`
     &:focus-visible {
       outline: 1px dotted ${({ theme }) => theme.secondaryColor.secondary600};
     }
+    @media all and (max-width: 1000px) {
+      max-width: 180px;
+    }
+
+    @media all and (max-width: 600px) {
+      max-width: 170px;
+
+    }
   }
 
   .store-item {

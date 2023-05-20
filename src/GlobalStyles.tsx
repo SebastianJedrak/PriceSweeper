@@ -9,18 +9,22 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 120%;
   }
 
-  h1 {
-    font-size: 2.5rem;
-  }
-
   h2 {
     font-weight: 400;
     font-size: 1.8rem;
     margin: 30px 0;
     text-align: center;
+    @media all and (max-width: 1000px) {
+      font-size: 1.6rem;
+    }
+
+    @media all and (max-width: 600px) {
+      font-size: 1.4rem;
+    }
   }
 
   h3 {
+    font-size: 1.1rem;
     font-weight: 500;
   }
   
@@ -50,4 +54,4 @@ export const GlobalStyles = createGlobalStyle`
   select:focus-visible {
     outline: 1px dotted black;
   }
-`
+`;
