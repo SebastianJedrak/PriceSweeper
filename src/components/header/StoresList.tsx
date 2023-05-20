@@ -16,6 +16,18 @@ const Stores = styled.div`
     margin: 48px 20px;
   }
 
+  @keyframes dropIn {
+    0% {
+      max-height: 0;
+      overflow: hidden;
+    }
+    100% {
+      max-height: 600px;
+      overflow: hidden;
+
+    }
+  }
+
   .stores-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +35,7 @@ const Stores = styled.div`
     justify-content: center;
     overflow: auto;
     max-height: 600px;
-
+    animation: dropIn .5s cubic-bezier(0.65, 0, 0.35, 1); 
     @media all and (max-width: 1000px) {
       margin: 0px;
     }
