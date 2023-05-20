@@ -94,7 +94,7 @@ const Game = styled.li`
     margin-right: 2.5vw;
     border: 1px solid ${({ theme }) => theme.secondaryColor.secondaryDark};
     border-radius: 2.5px;
-    color: ${({ theme }) => theme.secondaryColor.secondaryLight};
+    color: ${({ theme }) => theme.secondaryColor.secondaryDark};
     min-width: 80px;
     font-weight: 500;
     &:focus-visible {
