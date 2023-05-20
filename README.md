@@ -10,7 +10,7 @@
 </div>
 
 ![version](https://img.shields.io/github/last-commit/SebastianJedrak/PriceSweeper)
-![version](https://img.shields.io/github/release-date/SebastianJedrak/PriceSweeper)
+![version](https://img.shields.io/github/v/release/SebastianJedrak/PriceSweeper?include_prereleases)
 ![version](https://img.shields.io/github/languages/top/SebastianJedrak/PriceSweeper)
 
 <!-- ABOUT THE PROJECT -->
