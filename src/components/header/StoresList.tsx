@@ -13,7 +13,7 @@ const Stores = styled.div`
   padding-bottom: 100px;
   justify-content: center;
   @media all and (max-width: 1000px) {
-    margin: 48px 8px;
+    margin: 48px 20px;
   }
 
   .stores-wrapper {
@@ -21,8 +21,12 @@ const Stores = styled.div`
     flex-wrap: wrap;
     margin: 30px;
     justify-content: center;
+    overflow: auto;
+    max-height: 600px;
+
     @media all and (max-width: 1000px) {
-      margin: 0px;}
+      margin: 0px;
+    }
   }
 
   .stores-header {
@@ -34,7 +38,7 @@ const Stores = styled.div`
     text-decoration: underline;
     cursor: pointer;
     width: 100%;
-    
+
     &:hover {
       color: ${({ theme }) => theme.primaryColor.primary400};
     }
@@ -74,7 +78,6 @@ const Stores = styled.div`
     border-radius: 5px;
   }
 
-
   img {
     height: 48px;
     width: 48px;
@@ -101,9 +104,7 @@ const Stores = styled.div`
     justify-content: center;
     margin: 20px 0;
   }
-  
-`
-
+`;
 
 export default function StoresList() {
   const { stores, isError } = useContext(StoreContext);
