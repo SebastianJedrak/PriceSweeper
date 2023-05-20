@@ -179,25 +179,11 @@ export default function StoresList() {
       </section>
     );
 
-  // Hide stores return
-
-  // if (hideStores === true)
-  //   return (
-  //     <section>
-  //       {" "}
-  //       <Stores>
-  //         <h2 className="stores-header" onClick={hideStoresHandler}>
-  //           Pick Stores <ArrowDown />
-  //         </h2>
-  //       </Stores>
-  //     </section>
-  //   );
-
   return (
     <section>
       <Stores onClick={onStoresHandler}>
         <h2 tabIndex={0} className="stores-header" onClick={hideStoresHandler} >
-          Hide Stores <ArrowUp />
+          Hide Stores {!hideStores ? <ArrowUp /> : <ArrowDown />}
         </h2>
         <div className="button-wrapper">
           <Button onClick={allStoresHandler} text="Pick All" />
