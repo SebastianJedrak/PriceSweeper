@@ -3,9 +3,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+<img src="https://github.com/SebastianJedrak/PriceSweeper/assets/115486676/bf35864b-5e14-4ef3-b0f9-8e419900f933" alt="Logo" width="160" height="160">
 
   <h1 align="center">PriceSweeper</h1>
 
@@ -66,7 +64,6 @@ Thanks to https://apidocs.cheapshark.com/ for awesome API!
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 
