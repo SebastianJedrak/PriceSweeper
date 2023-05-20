@@ -30,7 +30,7 @@ Looking for PC game deals? You're hitting the gold mine!
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/SebastianJedrak/PriceSweeper.git
    ```
 2. Install NPM packages
    ```sh
@@ -43,9 +43,24 @@ Ready to go!
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-TODO usage
+### Search
+<img src="https://github.com/SebastianJedrak/PriceSweeper/assets/115486676/d65ac11f-4b48-4892-ae9e-5ee0fef8b1ed" alt="search">
 
+Search bar enables to find best offers in the most popular online stores. You can input any game title you want, I hope results will surprise you positively :) If you want to only get games on sale, please check the corresponding checkbox. 
 
+### Stores
+<img src="https://github.com/SebastianJedrak/PriceSweeper/assets/115486676/1e81c094-466d-4126-9b59-ab4f186b63d1" alt="stores">
+
+Stores list contains all available online stores. You can choose which one includes to your search query. All stores are included by default. You can also hide the list to get more clean UI. 
+
+### Results
+<img src="https://github.com/SebastianJedrak/PriceSweeper/assets/115486676/076167c3-c55c-4992-8787-a20163e8bf34" alt="results">
+
+Results are the most important section of the website. There you can find all the best offers in online stores. By default, most recent deals will be displayed. You can search for specific title by using the search bar. Stores list will include or exclude shops that may interested you. 
+<br />
+Result section contain information about game rating from Metacritic sevice. By clicking it, you will be redirected to Metacritic page with more information about coresponding game.
+<br />
+If you're interested by specific offer, click the "Go to Offer" button to be redirected to store. Any buy will be contribute cheapshark.com
 
 <!-- CONTACT -->
 ## Contact
