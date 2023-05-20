@@ -5,6 +5,7 @@ import { Store, StoreContext } from "../../ctx/StoreProvider";
 import { GamesListContext } from "../../ctx/GamesListProvider";
 import ArrowDown from "../UI/ArrowDown";
 import ArrowUp from "../UI/ArrowUp";
+import { CSSTransition } from "react-transition-group";
 
 const Stores = styled.div`
   display: flex;
@@ -24,7 +25,6 @@ const Stores = styled.div`
     100% {
       max-height: 600px;
       overflow: hidden;
-
     }
   }
 
@@ -35,7 +35,7 @@ const Stores = styled.div`
     justify-content: center;
     overflow: auto;
     max-height: 600px;
-    animation: dropIn .5s cubic-bezier(0.65, 0, 0.35, 1); 
+    animation: dropIn 0.5s cubic-bezier(0.65, 0, 0.35, 1);
     @media all and (max-width: 1000px) {
       margin: 0px;
     }
@@ -64,7 +64,6 @@ const Stores = styled.div`
 
     @media all and (max-width: 600px) {
       max-width: 170px;
-
     }
   }
 
