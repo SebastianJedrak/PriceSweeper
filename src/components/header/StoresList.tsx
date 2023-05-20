@@ -15,6 +15,7 @@ const Stores = styled.div`
   justify-content: center;
   @media all and (max-width: 1000px) {
     margin: 48px 20px;
+    justify-content: start;
   }
 
   @keyframes dropIn {
@@ -46,7 +47,12 @@ const Stores = styled.div`
     max-height: 600px;
     @media all and (max-width: 1000px) {
       margin: 0px;
+      justify-content: start;
+      width: 70%;
     }
+  }
+  .header-wrapper {
+    margin: 0 auto;
   }
 
   .stores-header {
@@ -90,8 +96,7 @@ const Stores = styled.div`
       flex-direction: row;
       padding: 10px 10px;
       width: 180px;
-    }
-    @media all and (max-width: 500px) {
+      margin: 10px;
       width: fit-content;
     }
     &:focus-visible {
@@ -189,9 +194,15 @@ export default function StoresList() {
   return (
     <section>
       <Stores onClick={onStoresHandler}>
-        <h2 tabIndex={0} className="stores-header" onClick={hideStoresHandler}>
-          Hide Stores {!hideStores ? <ArrowUp /> : <ArrowDown />}
-        </h2>
+        <div className="header-wrapper">
+          <h2
+            tabIndex={0}
+            className="stores-header"
+            onClick={hideStoresHandler}
+          >
+            Hide Stores {!hideStores ? <ArrowUp /> : <ArrowDown />}
+          </h2>
+        </div>
 
         <div
           className="button-wrapper"
