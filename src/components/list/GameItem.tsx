@@ -141,6 +141,7 @@ margin-bottom: 5px;
     display: flex;
     width: 50%;
     align-items: center;
+    margin-bottom: auto;
     max-height: 90px;
     @media all and (max-width: 1000px) {
       flex-direction: column;
