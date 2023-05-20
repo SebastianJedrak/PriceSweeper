@@ -1,4 +1,4 @@
-import { useContext, useState, useRef, useEffect } from "react";
+import { useContext, useState, useRef } from "react";
 import styled from "styled-components";
 import Button from "../UI/Button";
 import { Store, StoreContext } from "../../ctx/StoreProvider";
@@ -192,11 +192,15 @@ export default function StoresList() {
         <h2 tabIndex={0} className="stores-header" onClick={hideStoresHandler}>
           Hide Stores {!hideStores ? <ArrowUp /> : <ArrowDown />}
         </h2>
-      
-          <div className="button-wrapper">
-            <Button onClick={allStoresHandler} text="Pick All" />
-          </div>
-    
+
+        <div
+          className="button-wrapper"
+          style={
+            hideStores ? { visibility: "hidden" } : { visibility: "visible" }
+          }
+        >
+          <Button onClick={allStoresHandler} text="Pick All" />
+        </div>
 
         <CSSTransition
           in={!hideStores}
