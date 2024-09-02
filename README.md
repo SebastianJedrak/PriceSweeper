@@ -66,7 +66,7 @@ If you're interested in specific offer, click the "Go to Offer" button to be red
 
 Sebastian Jędrak: jedrak.sebastian@gmail.com
 
-Project: https://pricesweeper.netlify.app/
+Project: https://sjpricesweeper.netlify.app/
 
 Repository: https://github.com/SebastianJedrak/PriceSweeper
 
